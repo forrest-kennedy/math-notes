@@ -2,7 +2,7 @@ IF YOU ONLY WANT TO READ MY NOTES, just download the .tex files from inside cour
 
 1) Install TexLive with default paths.
 
-2) NOTE: STEP (2) CAN BE DONE CONCURRENTLY WITH (1)! Install Vim (text editor), VimPlug (Vim plugin manager), VimTex (Vim plug in), and Ultisnips (Vim plug in). Make sure that your ~/.vimrc file contains at least the contents of ~/Documents/math-notes/gilles-system/minimal-vimrc. If you have no .vimrc folder in ~, we recommend copy and pasting ~/Documents/math-notes/gilles-system/minimal-vimrc to ~ and making sure to rename it ".vimrc". 
+2) NOTE: STEP (2) CAN BE DONE CONCURRENTLY WITH (1)! Install Zathura (PDF Viewer), Vim (text editor), VimPlug (Vim plugin manager), VimTex (Vim plug in), and Ultisnips (Vim plug in). Make sure that your ~/.vimrc file contains at least the contents of ~/Documents/math-notes/gilles-system/minimal-vimrc. If you have no .vimrc folder in ~, we recommend copy and pasting ~/Documents/math-notes/gilles-system/minimal-vimrc to ~ and making sure to rename it ".vimrc". 
 
 2) Clone Repo into ~/Documents. See (https://castel.dev/post/lecture-notes-3/) for an explaination of the file structure. Basically, every semester needs a preamble.tex file, every course needs a info.yaml file to automatically compile and populate the dir with the master document components, and you must have a system link to the working course dir in ~.
 
