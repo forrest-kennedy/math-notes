@@ -11,10 +11,10 @@ def get_week(d=datetime.today()):
 # example:
 # USERCALENDARID = 'xxxxxxxxxxxxxxxxxxxxxxxxxg@group.calendar.google.com'
 USERCALENDARID = 'primary'
-CURRENT_COURSE_SYMLINK = Path('/home/forrekenn/Documents/math-notes/gilles-system/current_course').expanduser()
+CURRENT_COURSE_SYMLINK = Path('~/Documents/math-notes/gilles-system/current_course').expanduser()
 CURRENT_COURSE_ROOT = CURRENT_COURSE_SYMLINK.resolve()
 CURRENT_COURSE_WATCH_FILE = Path('/tmp/current_course').resolve()
-ROOT = Path('/home/forrekenn/Documents/math-notes/bachelors/spring-2025').expanduser()
+ROOT = Path('~/Documents/math-notes/bachelors/spring-2025').expanduser()
 DATE_FORMAT = '%A %d %B %Y'
 
 
