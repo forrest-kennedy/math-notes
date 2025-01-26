@@ -1,3 +1,5 @@
+IF YOU ONLY WANT TO READ MY NOTES, just download the .tex files from inside course folders or try downloading master.pdf in any course. Be careful! master.pdf may or may not be up to date depending on my last compilation before the last commit.
+
 1) Install TexLive with default paths.
 
 2) Clone Repo into ~/Documents. See (https://castel.dev/post/lecture-notes-3/) for an explaination of the file structure. Basically, every semester needs a preamble.tex file, every course needs a info.yaml file, and you must have a system link to the working course dir in ~.
