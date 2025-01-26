@@ -1,0 +1,60 @@
+[/]
+custom-list=['custom9', 'custom6', 'custom4', 'custom3', '__dummy__', 'custom0', 'custom1', 'custom2', 'custom5', 'custom7', 'custom8']
+
+[custom-keybindings/custom0]
+binding=['<Alt>s']
+command='/home/forre/Documents/university/scripts-gilles/rofi-courses.py'
+name='change-current-course'
+
+[custom-keybindings/custom1]
+binding=['<Alt>o']
+command='zathura /home/forre/current_course/master.pdf\n'
+name='open-notes'
+
+[custom-keybindings/custom2]
+binding=['<Alt>d']
+command='xdg-open /home/forre/current_course\n'
+name='open-current-course-dir'
+
+[custom-keybindings/custom3]
+binding=['<Alt>v']
+command='/home/forre/Documents/university/scripts-gilles/rofi-lectures-view.py'
+name='rofi-lectures-view'
+
+[custom-keybindings/custom4]
+binding=['<Alt>l']
+command='/home/forre/Documents/university/scripts-gilles/rofi-lectures.py'
+name='rofi-lectures'
+
+[custom-keybindings/custom5]
+binding=['<Primary><Alt>i']
+command='/home/forre/Documents/university/scripts-gilles/init-all-courses.py'
+name='initalize-all-courses'
+
+[custom-keybindings/custom6]
+binding=['<Primary><Alt>c']
+command='/home/forre/Documents/university/scripts-gilles/compile-all-masters.py'
+name='compile-all-masters'
+
+[custom-keybindings/custom7]
+binding=['Super_L', '<Primary>o']
+command='rofi -show drun'
+name='rofi'
+
+[custom-keybindings/custom8]
+binding=['<Alt>t']
+command='gnome-terminal --working-directory=/home/forre/current_course\n'
+name='open-current-course-terminal'
+
+[custom-keybindings/custom9]
+binding=['<Alt>m']
+command='gnome-terminal -- bash -c "sudo vim /home/forre/current_course/master.tex"\n'
+name='open-current-course-master'
+
+[media-keys]
+calculator=['XF86Calculator', '<Primary>equal']
+terminal=['<Primary><Alt>t', '<Primary>t']
+
+[wm]
+maximize=['<Primary><Shift>m']
+minimize=['<Primary>m']

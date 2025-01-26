@@ -1,0 +1,13 @@
+Make sure you have TexLive installed, preferably in the user's home drive. Installing across all users would be nice, but it just leads to so many permissions problems as you try to execute the code.
+
+I think I should be able to just pull this repo and it will work so long as the paths stay the same. 
+
+CHECK THE CONFIG.py FILE
+
+Run through all of the scripts one by one in terminal. There will be bugs   ¯\_(ツ)_/¯
+
+Most of the hiccups I had came from permissions troubles. Again, I think that has to do with the fact that I installed TexLive to the root of my file system, and that made accessing packages a pain in the ass.
+
+Once you verify that the commands work, import the gilles-os-commands from the repo to your linux system and see if they work (I have never tried this)
+
+

@@ -1,0 +1,49 @@
+\lecture{1}{Monday 13 January 2025}{Some historical motivations for Analysis}
+
+\section{The Heat Equation}
+
+In 1822, Fourier derived the heat equation. In one dimension: 
+\[
+	\frac{\partial u}{\partial t} - \frac{\partial^{2} u}{\partial x^{2}} = 0
+.\] 
+
+where $u\left( x, t \right) $ is the temperature as a function of position and time. A natural problem to solve with the equation is to assume you are given a function $u\left( x, 0 \right) $ which represents the initial temperature distribution of the system which we could measure then ask if it is possible to find a general $u\left( x, t \right) $ given $u\left( x, 0 \right) $. Stated another way, if we know the initial temperature distribution, can we find the distribution at an arbitrary time $t$ using only the heat equation. The answer to this question is yes!
+
+If we assume that $u\left( x, 0 \right)$ is a periodic function then:
+\[
+	u\left( x, 0 \right) = \sum_{n \in \Z} a_n e^{inx}
+.\]
+
+Then, rearranging and integrating: 
+\[
+	a_n = \frac{1}{2\pi} \int_0^{2\pi} u\left( x, 0 \right) e^{inx} dx
+.\] 
+Then, we will guess that the solution is of the form:
+\[
+	u\left( x, t \right) = \sum_{n \in \Z} a_n\left( t \right)  e^{inx}
+.\]
+ 
+Substituting into the heat equation we get:
+\[
+	\frac{\partial u}{\partial t} - \frac{\partial^{2} u}{\partial x^{2}} = \sum_{n \in \Z} a_n'\left( t \right)  e^{inx} -  a_n\left( t \right) \left( in \right)^{2}  e^{inx} = \sum \left( a_n'\left( t \right) + a_n\left( t \right) n^{2}  \right) e^{inx} = 0  
+.\]
+
+So we have the differential equation:
+
+\[
+a_n'\left( t \right) + a_n\left( t \right) n^{2} = 0
+.\]
+
+which has the solution:
+
+\[
+a_n\left( t \right) = a_n\left( 0 \right) e^{-n^{2}t}
+.\] 
+
+We can find $a_n\left( 0 \right) $ with the integral above, so we have our solution! If we check the solution experimentally, we see the right behavior, so what's the problem? The issue is:
+
+\[
+	u\left( x, 0 \right) \neq \sum_{n \in \Z} a_n e^{inx}	
+!\] 
+
+At least, when we look at the graph for any specific $n \in \N$ we see that at the extreme points of the function, we get oscilations away from the true value of $u\left( x, 0 \right) $. This affect is called the Gibbs phenomenon. This tells us that the function cannot equal the partial sum. On the other hand, the assumption works, so there must be some kind of notion of equality, but we are not in a position to say what that is right now. This gives us a specific example where Newton's calculus fails. The issue in this example has to do with the definition of "convergence" but there is a deeper issue. When we wrote down $	u\left( x, 0 \right) = \sum_{n \in \Z} a_n e^{inx}$, we were writing down nonsense, but we didn't know it. In order to know which statements are valid and which are not, we need to develop an axiomatic system that we can use to build up definitions, theorems, and proofs. This is the buisness of Mathematical Analysis: to provide a rigorous base for analysis to rest upon which contains no nonsense!

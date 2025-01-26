@@ -1,0 +1,87 @@
+\lecture{7}{Thursday 23 January 2025}{The Axiom of Completeness}
+
+We will take an axiomatic approach to Analysis. There are some things which we will just assume are true. Mathematical Formalism is the idea that formal languages with no semantics can serve as the foundation of mathematics. Under this interpretation, the symbols of mathematics do not mean anything at all! They are only symbols and rules for manipulating symbols. Formulating all of mathematics in terms of a formal language allows us to side step assuming the existence of anything. The trade off is that proofs are extraordinarily complex, involve a lot of symbols, and are generally unreadable. For our purposes of writing readable proofs for the most important theorems from Newton's Calculus, we will take a different set of axioms where we do assert the existence of certain mathematical objects. The philosopher should be satisfied with these axioms because they are formally provable within axiomatic set theory. We don't \textit{need} to assume the existence of anything, but we choose to in order to  make our lives easier.
+\begin{axiom}[Algebraic Properties of \R]
+	Assume the existence of a set $\R$, called \textbf{the Real Numbers}, which is an ordered field.	
+\end{axiom}
+
+This axiom gets us most of the way there, however notice that the rational numbers are also an ordered field. We will need to introduce one more axiom to get a unique set for $\R$; but first, we need to define a little bit of mathematical machinery.
+
+\begin{definition}[Bounded Above Property of Subsets of $\R$]
+	A set $A \subset \R$ is \textbf{bounded above} if there exists a number $b \in \R$ such that $a \le b$ $\forall a \in A$. The number $b$ is called an \textbf{upper bound} for $A$.
+\end{definition}
+
+\begin{definition}[Bounded Below Property of Subsets of $\R$]
+	A set $A \subset \R$ is \textbf{bounded below} if there exists a number $b \in \R$ such that $b \le a$ $\forall a \in A$. The number $b$ is called a \textbf{lower bound} for $A$.
+\end{definition}
+
+\begin{definition}[The Least Upper Bound]
+	An element $s \in \R$ is called the \textbf{least upper bound} for $A \subset \R$ if $s$ meets two conditions:
+	\begin{enumerate}
+		\item $s$ is an upper bound for $A$
+		\item $\forall b$ where $b$ is an upper bound, $s \le b$.
+	\end{enumerate}
+\end{definition}
+
+\begin{definition}[The Greatest Lower Bound]
+	An element $l \in \R$ is called the \textbf{greatest lower bound} for $A \subset \R$ if $l$ meets two conditions:
+	\begin{enumerate}
+		\item $l$ is a lower bound for $A$
+		\item $\forall b$ where $b$ is an upper bound, $l \ge  b$.
+	\end{enumerate}
+\end{definition}
+
+\begin{eg}
+	Given the set $A = \{\frac{1}{n} | n \in \N\} = \{1, \frac{1}{2}, \frac{1}{3}, \frac{1}{4}, \ldots\}$, find: upper bounds, the least upper bound, lower bounds, and the greatest lower bound.
+
+\end{eg}
+
+\begin{enumerate}
+	\item some upper bounds: $1, 2, 1.1, 3$ 
+	\item least upper bound: $1$ 
+	\item some lower bounds: $0, -1, -100$
+	\item greatest lower bound =  $0$
+\end{enumerate}
+
+\begin{eg}
+	There is no upper bound for $\N$
+\end{eg}
+
+The above arguments were not very rigorous, so now we will do a slightly more rigorous problem just to prove that we can.
+
+\begin{theorem}
+	Given the set $A = \{\frac{1}{n} | n \in \N\} = \{1, \frac{1}{2}, \frac{1}{3}, \frac{1}{4}, \ldots\}$, then the least upper bound for $A$ is $1$.
+\end{theorem}
+
+\begin{proof}
+	We will prove the two conditions one at a time:
+	\begin{enumerate}
+		\item Observe that $1 \ge \frac{1}{n}$ $\forall n \in \N$ $\implies 1$ is an upper bound for $A$.
+		\item If b is an upper bound, then, because $1 \in A$, $b \ge 1 \implies 1$ is the upper bound for $A$. 
+	\end{enumerate}
+\end{proof}
+
+\begin{theorem}
+	If some subset of $\R$ has a least upper bound, then it is unique.
+\end{theorem}
+
+\begin{proof}
+	FSOC assume $s_1$ and $s_2$ are two distinct greatest upper bounds of some set $A$, then we have $s_1 \le s_2$ and $s_2 \le s_1$ by applying the second condition of the least upper bound property to $s_1$ and $s_2$ one at a time. Thus, $s_1 = s_2$. This contradicts our assumption that $s_1$ and $s_2$ are distinct.
+\end{proof}
+Now we are ready to state the Axioms of Completeness: 
+
+\begin{axiom}[The Axiom of Completeness]
+	Every non-empty set $A$ where  $A \subset \R$ which is bounded above has a least upper bound $b \in \R$
+\end{axiom}
+
+\begin{theorem}
+	Up to isomorphism, there is one unique complete ordered field. 
+\end{theorem}
+
+\begin{proof}
+	The proof of the above theorem is beyond the scope of this course, but it is worth stating because when we work with $\R$ we can be sure that we are working on the right set without having to worry that what we are describing has more interpretations than as real numbers. 
+\end{proof}
+
+\begin{note}
+	The Axiom of Completeness is not stateable in first-order logic. You can tell because of the "for every nonempty set $A$." Here, we are quantifying over a set of sets which is not allowed.
+\end{note}

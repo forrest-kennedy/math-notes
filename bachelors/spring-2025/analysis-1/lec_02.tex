@@ -1,0 +1,87 @@
+\lecture{2}{Wednesday 15 January 2025}{}
+
+
+Once we realize that the we don't know how to add up infinitely many functions, it is easy to see that we don't really know how to add infinitely many \textbf{numbers} either! Consider:
+
+\begin{align*}
+	1 &= 1 \\ 
+	1 - 1 &= 0\\
+	1 - 1 + 1 &= 1 \\
+	1 - 1 + 1 - 1 &= 0 \\
+		      &\vdots \\
+	1 - 1 + 1 - 1 + 1 + \ldots &= \text{ ?} \\
+\end{align*}
+
+Already there seems to be a problem! The series does seem to converge to any number. Of course, we don't know what converge means yet, but there is a deeper problem. Consider the rearrangements:
+
+\begin{align*}
+	1 + (- 1 + 1) + (- 1 + 1) + \ldots &= 1 \\  
+	(1 + - 1) + (1 + - 1) + (1 + \dots &= 0 	
+\end{align*}
+
+Clearly, these can't both be right. Again, we have been tricked into writing nonsense because we don't have any axioms to tell us which statements are allowed and which are not. Here, the problem has to do with our adding up of an infinite number of things. When we are properly automatized, we will see that we just don't do that. Instead, we will solve this problem with a "limit," \textbf{in order to understand the limit, we will need to develop $\R$, the real number system.} This is the goal of Chapter 1. The point is: adding up infinite things, whether they are functions or just numbers, leads to problems, and whatever formal system we come up with will need to be without these problems if we want it to formalize calculus, which is based around the notion of adding up infinitely many things.
+
+
+\section*{Chapter 1}
+To motivate the definition of $\R$ let's explore ways in which $\R$ is different to other number systems. Why should we expect the definition of $\R$ to be useful and lead us to a notion of a "continuum?"
+
+\begin{lemma}
+	For all $m, n \in \Z$, if $n \vert m^{2}$ and $n$ is prime, then $n \vert m$
+\end{lemma}
+
+\begin{proof}
+	Assume for the sake of contradiction that $n$ does \textit{not} divide $m$, then $n$ cannot be a prime factor of $m$, so $m = abcd\ldots$ for some prime numbers $a, b, c, d, \ldots$, importantly \textbf{$n$ cannot be part of the product since $n$ does not divide  $m$}. Then $m^{2} = \left( abcd\ldots \right)^{2} = a^{2}b^{2}c^{2}d^{2} \ldots$ which does not contain $n$, so  $n \nmid m^{2}$ which contradicts our assumption. Thus it must be the case that $n \vert m$.
+\end{proof}
+
+\begin{theorem}
+	There is no rational number whose square is $2$
+\end{theorem}
+
+\begin{proof}
+	Assume for contradiction: $\exists r$ s.t.  $r = \frac{p}{q}$ where $p, q \in  \Z$ and $r^{2} = 2$. Also assume, WLOG, that \textbf{$p, q$ share no common factors} then:
+	\begin{align}
+		&r^{2} = \left( \frac{p}{q} \right) ^{2} = 2 \\
+		& \implies p^{2} = 2q^{2} \\
+		& \implies 2 \vert p^{2} \\
+		& \implies 2 \vert p \text{ (by Lemma 1)} \\ 
+		&\implies p = 2n \text{ where } n \in \Z \\
+		& \implies \left( 2n \right)^{2} = 4n^{2} = 2q^{2} \text{ (from Eq. 2) } \\
+		& \implies 2 \vert q^{2} \implies 2 \vert q 
+	\end{align}
+
+	Thus $2 \vert p$ and $2 \vert q$ which violates our assumption that $p, q$ share no common factors! Thus is must be the case that there is no rational number whose square is $2$.
+
+\end{proof}
+
+
+\begin{theorem}
+	If $n \in N$ and $n$ is \textbf{not} a perfect square, then there is no $r \in \Q$ such that $r^{2} = n $
+\end{theorem}
+
+\begin{proof}
+	Assume for contradiction: $\exists r$ s.t.  $r = \frac{p}{q}$ where $p, q \in  \Z$,  $gcd\left( p, q \right) = 1$, $r^{2} = n$, and $n$ is not a perfect square.
+	\begin{align}
+		&r^{2} = \left( \frac{p}{q} \right) ^{2} = n \\
+		& \implies p^{2} = nq^{2} 
+	\end{align}
+	Recall that by the Fundamental Theorem of Arithmetic that we can express any number as a product of prime numbers, so:
+	\[
+		n = k_1^{1} \cdot k_2^{2} \cdot k_3^{3} \cdot k_4^{4} \cdot \ldots      
+	.\] 
+	Substitute $n$ into Eq. 9:
+	\[
+		p^{2} = \left( k_1^{1} \cdot k_2^{2} \cdot k_3^{3} \cdot k_4^{4} \cdot \ldots \right) q^{2} 
+	.\] 
+
+	Since $n$ is not a perfect square, we know that $\exists j \text{ s.t. } k_j$ is odd because if this were not the case, $n$ would be a perfect square. From the above, we can see that $k_j | p^{2}$. If $k_j$ divides the LHS, it must also divide the RHS, so $k_j | nq^{2}$. We know that $p^{2}$ contains an even number of $k_j$ terms, and we also know that $n$ contains an odd number of $k_j$ terms. For both sides to have the same number of $k_j$ terms, as all equal numbers should, it must be the case that $k_j | q^{2}$ which implies $k_j | q$ by Lemma 1. Thus,  $gcd\left( p, q \right) = k_j \neq 1$ which contradicts our assumption that $gcd\left( p, q \right) = 1$.
+\end{proof}
+
+After this we talked about "set theory." We did not go into the details. 
+
+\begin{theorem}
+	The Algebra of Sets exists. $\N$, $\Z$, $\Q$ exist.	
+\end{theorem}
+
+\begin{proof}
+	The above is taken as an axiom, but rest assured that their existence can be derived from first-order logic and the ZFC axioms. 
+\end{proof}

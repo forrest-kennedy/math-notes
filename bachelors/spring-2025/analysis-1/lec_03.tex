@@ -1,0 +1,142 @@
+\lecture{Homework 1}{Tuesday 21 January 2025}{Homework 1}
+
+
+1. Prove that there is no rational number, r, such that $r^{2} = 8$.
+
+\begin{proof}
+
+	BWOC, assume there exists a number $r \in \Q$ such that for some $a, b \in \Z$ with $gcd\left( a, b \right) = 1$:
+	\[
+		r^{2} = \left(\frac{a}{b}\right)^{2} = 8
+	.\] 
+	then:
+	\begin{align}
+		&\implies a^{2} = 8b^{2}\\ 
+		&\implies 2^{2}|a^{2} \implies 2|a^{2} \implies 2|a \text{ (by Lemma 1)}
+	\end{align}
+
+	so for some $n \in \N$ :
+	\begin{align}
+		\left( 2^{2}n \right)^{2} &= 8b^{2}\\
+		16n^{2}                   &= 8b^{2}\\
+		2n^{2}  		  &= b^{2} \implies 2|b
+	\end{align}
+	Notice $2|a$ and $2|b$ which violates our assumption that $gcd\left( a,b \right) = 1$. Thus it must be the case that there does not exist a number $r \in \Q$ such that $r^{2} = 8$
+
+\end{proof}
+
+
+2. Prove that if $a,b \in  \R$ then:
+\[
+	 \mid  \mid a \mid  -  \mid b  \mid  \mid \leq  \mid a - b  \mid  
+.\] 
+
+\begin{proof}
+	If $a, b \in \R$, then the triangle inequality holds:
+	\[
+		 \mid a + b  \mid  \le  \mid a  \mid +  \mid b \mid 	
+	.\]
+
+	Now consider:
+	\begin{align}
+		 \mid a \mid =  \mid a - b + b  \mid \le  \mid a-b \mid +  \mid b \mid \\
+		 \mid b \mid =  \mid b - a + a  \mid \le  \mid b-a \mid +  \mid a \mid \\ 
+	\end{align}
+
+	Rearranging and using the definition of the absolute value function and the fact that $ \mid a-b \mid =  \mid b-a \mid $:
+	\begin{align}
+		 &\mid a \mid -  \mid b \mid  \le  \mid a-b \mid \\
+		 &\mid b \mid -  \mid a  \mid \le    \mid b-a \mid \\ 	
+		 &\implies  \mid  \mid a \mid - \mid b \mid  \mid \le  \mid a-b \mid  
+	\end{align}
+\end{proof}
+
+
+3. Let $y_1 = 6$ and for each $n \in \N$ define
+\[
+	y_{n+1} = \frac{2}{3}y_n -2 
+.\] 
+
+Prove the following statements:
+\begin{enumerate}[label = \alph*.]
+	\item Prove that $y_{n + 1} \le y_n$ for all $n \in \N$.
+	\item Prove that $y_n > -6$ for all $n \in \N$
+   	
+\end{enumerate}
+
+\begin{proof}
+	We will show part a by induction. For the base case take $n = 1$, then $y_1 = 6$ and $y_2 = \frac{2}{3}\left( 6 \right) - 2 = 2$, and we have $y_2 \le y_1$.
+
+	For the inductive step, assume $y_{n+1} \le y_n$ then we need to show that $y_{n+2} \le y_{n+1}$. 
+	\begin{align}
+		y_{n+1} &\le y_n \\
+		\frac{2}{3}y_{n+1} - 2 &\le \frac{2}{3}y_n - 2 \\
+		\implies y_{n+2} &\le y_{n+1}
+	\end{align}
+
+	Thus, we have shown the theorem by induction.
+\end{proof}
+
+\begin{proof}
+	We will show part b by induction. For the base case, take $n=1$, then $y_1 = 6 > -6$.
+	
+	For the inductive step, assume $y_n > -6$, then $\frac{2}{3}y_n - 2 > \frac{2}{3} \left( -6 \right) - 2 \implies y_{n+1} > -6$
+
+	Thus, we have shown the theorem by induction.
+\end{proof}
+
+4. Prove that if $x \in \R$ and $x > -1$ then for every $n \in \N$ we have $\left( 1 + x \right)^{n} \ge  1+nx$ 
+
+\begin{proof}
+	We will show the theorem by induction. For the base base, take $n = 1$, then $1 + x \ge 1 + x$, which is true.
+
+	For the inductive step, assume $\left( 1 + x \right)^{n} \ge 1+nx$, then multiply both sides by $\left( 1 + x \right) $ to get:
+	\[
+		\left( 1 + x \right)^{n+1} \ge \left( 1+nx \right) \left( 1+x \right) = 1 + x + nx + nx^{2} = 1 + \left( n+1 \right)x + nx^{2}  
+	.\]
+
+	Since $x > -1$, we know that $nx^{2} > 0$, so we have:
+	\[
+		\left( 1+x \right)^{n+1} \ge 1 + \left( n+1 \right) x + nx^{2} \ge 1 + \left( n+1 \right) x			
+	.\] 
+\end{proof}
+
+5. Prove or give a counterexample for the following statement: Two real numbers
+satisfy $a < b$ if and only if $a < b + \epsilon$ for all $\epsilon > 0$
+
+The statement is false. Take the case where $a=b$ to be the counterexample. We can adjust the statement slightly to make it true. 
+
+\begin{theorem}
+Two real numbers satisfy $a \le b$ if and only if $a \le  b + \epsilon$ for all $\epsilon > 0$	
+\end{theorem}
+
+\begin{enumerate}
+	\item $\left( \implies \right) $ If $a \le  b$, then $a - b \le  0$, so $a - b \le  \epsilon$ for all $\epsilon > 0$.
+	\item $\left( \impliedby \right) $ Assume $a \le  b + \epsilon$ for all $\epsilon > 0$. Let $\epsilon_0 = a - b$, then it must be that $a - b = \epsilon_0$ and $a - b \le  \epsilon_0$, a contradiction! Thus, the theorem must be true.
+ 
+\end{enumerate}
+
+6. Given a function $f \text{: } C \to D$ and a set $A \subset C$, let $f\left( A \right) $ represent the range of $f$ over the set $A$ i.e. $f\left( A \right)  = \{f\left( x \right)  | x \in A\}$.
+
+
+Answer the following questions:
+\begin{enumerate}[label = \alph*.]
+	\item Let $f \text{: } \R \to \R$ given by $f\left( x \right) = x^{2}$. If $A = [0, 2]$ and  $B = [1, 4]$, find $f\left( A \right) $ and $f\left( B \right) $. Does $f\left( A \cap B \right) = f\left( A \right) \cap f\left( B \right) $ in this case? Does $f\left( A \cup B \right) = f\left( A \right) \cup f\left( B \right) $?
+
+		$f\left( A \right) = [0, 4], f\left( B \right) = [1, 16], f\left( A \cup B \right) = [0, 16], f\left( A \cap B\right) = [1, 4] $. Yes to both.
+	\item Find two sets $A$ and $B$ for which $f\left( A \cap B \right) \neq f\left( A \right) \cap f\left( B \right) $.
+	\item Let $g \text{: } C \to D$ be any function and let $A, B, C \subset C$ be any two subsets of the domain. Prove that $g\left( A \cup B \right) = g\left( A \right) \cup g\left( B \right) $
+	\begin{proof}
+	If $x \in g\left( A \cup B \right) $, then $x = a^{2}$ or $x = b^{2}$ where $a \in A$ and $b \in B$. $A \cup B$ contains all  $a \in A$ and $b \in B$, so $x \in g\left( A \cup B \right) $ since it contains all $a^{2}, b^{2}$ where $a, b \in A, B$.
+
+		If $x \in g\left( A \right) \cup g\left( B \right) $, then either $x \in g\left( A \right) $ or $x \in g\left( B \right) $. In the first scenario, $x = a^{2}$  for some $a \in A$ which we know is in $g\left( A \cup B \right) $. In the second scenario, $x = b^{2}$ for some $b \in B$ which we know is in $g\left( A \cup B \right) $.
+	\end{proof}
+   	
+\end{enumerate}
+
+
+
+
+
+
+
