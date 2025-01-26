@@ -20,7 +20,7 @@ Plug 'sirver/ultisnips'
     let g:UltiSnipsExpandTrigger = '<tab>'
     let g:UltiSnipsJumpForwardTrigger = '<tab>'
     let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
-    let g:UltiSnipsSnippetDirectories = ['/home/forrekenn/Documents/math-notes/gilles-system/gilles-snips/latex-snippets']
+    let g:UltiSnipsSnippetDirectories = ['~/Documents/math-notes/gilles-system/gilles-snips/latex-snippets']
 
 
 call plug#end()  " End Vim-Plug
