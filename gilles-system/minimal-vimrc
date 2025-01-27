@@ -1,5 +1,6 @@
 " Set Vim line numbers ON by default
-set number
+set number relativenumber
+
 
 " Set spell check
 setlocal spell
@@ -20,7 +21,11 @@ Plug 'sirver/ultisnips'
     let g:UltiSnipsExpandTrigger = '<tab>'
     let g:UltiSnipsJumpForwardTrigger = '<tab>'
     let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
-    let g:UltiSnipsSnippetDirectories = ['~/Documents/math-notes/gilles-system/gilles-snips/latex-snippets']
+    let g:UltiSnipsSnippetDirectories = ['/home/forrekenn/Documents/math-notes/gilles-system/gilles-snips/latex-snippets']
+
+" Use release branch (recommended)
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+nnoremap K :call CocAction('doHover')<CR>
 
 
 call plug#end()  " End Vim-Plug
