@@ -1,0 +1,32 @@
+\lecture{6}{Monday 27 January 2025}{Homework 2}
+
+
+1. Compute, without proof, the supremum and infimum (if they exist) of each of the following sets:
+
+
+2. Let $A \subset \R$ and $B \subset \R$ be two non-empty sets, each of which is bounded above. If $s=\text{sup }A $ and $t=\text{sup }B $, find and prove a formula for $\text{sup } A \cup B$
+
+\begin{proof}
+	We argue that $\sup A \cup B = max\left( s, t \right) $ by cases:
+	\begin{enumerate}
+		\item ($s>t$) WLOG with respect to the $s < t$ case, since $t=\sup B$, we have  $t \ge b$ for all $b \in B$, thus by using our case assumption we get $s > t \ge b$ for all $b \in b$ and $s \ge  a$ for all $a \in A$ by the definition of the supremum of a set. Therefore, $s \ge u$ for all $u \in A \cup B$ and $\sup A \cup B = s = max\left( s, t \right) $.
+		\item ($s = t$) If $s=t$ by the definition of the supremum we have $s \ge a$ for all $a \in A$ and $t = s \ge b$ for all $b \in B$. Thus  $max\left( s, t \right) = s = t \ge a$ for all $a \in A$ and $max\left( s, t \right) = s = t \ge b$ for all $b \in B$. Therefore, $\sup A \cup B = max\left( s, t \right) $.
+	\end{enumerate}
+\end{proof}
+
+5. Let $A \subset \R$ and $c \in \R$. We define the set $cA$ as:
+\[
+	cA = \{ca | a \in A\}
+.\] 
+
+If $A$ is non-empty and bounded above and $c\ge 0$, then prove that $sup \text{ } cA$ = $c \cdot sup \text{ } A $.
+
+\begin{proof}
+	Let $s = sup\left( cA \right) $, then $s \ge  ca$ for all $a \in A$	
+\end{proof}
+
+
+
+
+
+

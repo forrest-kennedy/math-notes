@@ -51,6 +51,15 @@ snippet ... "ldots" iA
 \ldots
 endsnippet
 
+snippet bf "Insert \textbf{}" bA
+\textbf{${1:}}$0
+endsnippet
+
+snippet ital "Insert \textit{}" bA
+\textit{${1:}}$0
+endsnippet
+
+
 snippet table "Table environment" b
 \begin{table}[${1:htpb}]
 	\centering
@@ -83,6 +92,7 @@ snippet item "Itemize" bA
 \end{itemize}
 endsnippet
 
+
 snippet desc "Description" b
 \begin{description}
 	\item[$1] $0
@@ -105,6 +115,19 @@ context "math()"
 snippet iff "iff" Ai
 \iff
 endsnippet
+
+context "math()"
+snippet abv "Insert \left| ... \right| (math mode only)" Ai
+\left|${1:}\right|$0
+endsnippet
+
+context "math()"
+snippet txt "Insert \text{}" Ai
+\text{${1:}}$0
+endsnippet
+
+
+
 
 snippet mk "Math" wA
 $${1}$`!p
