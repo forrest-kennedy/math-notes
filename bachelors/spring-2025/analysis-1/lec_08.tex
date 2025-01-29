@@ -1,0 +1,118 @@
+\lecture{8}{Wednesday 29 January 2025}{}
+
+- Math Club in MATH350
+
+\begin{definition}
+	Let $A, B$ be two sets, we say that $A$ has the \textbf{same cardinality} as $B$ if there exists $f:A\to B $ which is a bijection. In the case we write $A \sim B$. Note that $A\sim B \iff B \sim A$
+\end{definition}
+
+
+\begin{eg}
+	$A = \{1, 2\}$, $B= \{apple, bananana\}$. Then $A \sim B$ since we can define $f: A \to B$ such that:
+	\[
+	f\left( x \right) =
+	\begin{cases}
+		f\left( 1 \right) & = \text{apple}\\
+		f\left( 2 \right) & = \text{banana}
+	\end{cases}
+	.\] 
+	$f$ is a bijection, so $A \sim B$
+\end{eg}
+
+\begin{eg}
+	let $E = \{2, 4, 6, 8, \ldots\}$. Claim: $\N \sim E$. Define $f: \N \to E$ given by: 
+	\[
+		\begin{cases}
+			f\left( 1 \right) & = 2 \\
+			f\left( 2 \right) & = 4 \\
+			f\left( 3 \right) & = 6 \\
+			\ldots
+		\end{cases}
+	.\] 
+	$f$ is a bijection, so $\N \sim E$
+\end{eg}
+
+\begin{eg}
+	$\N \sim \Z$
+\end{eg}
+
+\begin{proof}
+	$f: \N \to \Z$ is given by 
+	\[
+	f\left( n \right) = 	
+	\begin{cases}
+		\frac{n-1}{2} & \text{if $n$ is odd}\\
+		\frac{-n}{2} & \text{if $n$ is even}.
+	
+	\end{cases}
+	.\] 
+	$f$ is a bijection, so $\N \sim \Z$
+\end{proof}
+
+\begin{theorem}
+	Let $A, B, C$ be sets. If $A \sim B$ and $B \sim C$, then $A \sim C$.
+\end{theorem}
+
+\begin{proof}
+	As $A \sim B$, hence there exists a bijection $f:A \to B$. As $B \sim C$, there exists a bijection $g:B \to C$. Therefore, $g \circ f: A \to C$ is a bijection
+\end{proof}
+
+
+\begin{theorem}
+	Let $X, Y$ be two sets. If there exists an injective function $f: X \to Y$ and an injective function $g: Y \to X$, then there exists a bijection $h: X \to Y$ and hence $X \sim Y$.
+\end{theorem}
+
+The above will make our lives easier. We no longer need to find an explicit function. Notice no need to check either function for surjectivity. We get it for free.
+
+\begin{theorem}
+	$\N \sim \Z^{2}$ where
+	\[
+		\Z^{2} = \{\left( m,n \right)  : m, n \in \Z\}
+	.\] 
+\end{theorem}
+
+\begin{proof}[Informal Proof]
+	Take grid of points down to the number line.
+\end{proof}
+
+\begin{proof}
+	Let $f: \N \to \Z^{2}$ given by 
+	\[
+		f\left( n \right) = \left( n, 0 \right) 
+	.\] 
+	$f$ is clearly injective.As $\Z \sim \N$  $\implies$ there exists $g: \Z \to \N$ which is a bijection. Define
+	\[
+	h: \Z^{2} \to \N	
+	.\] 
+	where $h\left( m, n \right) = 2^{g\left( m \right) } \cdot 3^{g\left( n \right) }$. Now we will show that $h$ is injective. Assume that $h\left( m_1, n_1 \right) = h\left( m_2, n_2 \right) $. We want to show that $m_1 = m_2$ and $n_1 = n_2$:
+	\[
+	2^{g\left( m_1 \right) } 3^{g\left( n_1 \right) } = 2^{g\left( n_1 \right)}3^{g\left( n_2 \right) }
+	.\] 
+	As $2$ and $3$ are prime numbers, by unique factorization:
+	\[
+	\implies g\left( m_1 \right) = g\left( m_2 \right) \text{ and } g\left( n_1 \right)  = g\left( n_2 \right).
+	.\] 
+
+	But $g: \Z \to \N$ is a bijection, hence $m_1 = m_2$ and $n_1 = n_2$ $\implies$ $h$ is injective. Thus, by the Cantor-Schroder-Berstein theorem, there exists $z: \N \to \Z^{2}$ which is a bijection.
+\end{proof}
+
+
+\begin{theorem}
+	Show that $\N \to \N^{3}$ where $\N^{3} = \{\left( a, b, c \right) : a, b, c \in \N\}$
+\end{theorem}
+
+\begin{proof}
+	Let $f: \N \to \N^{2}$ be $f\left( n \right) =  \left( n, 1, 1 \right) $. This $f$ is injective. Let $g: \N^{3} \to \N$ where $g\left( a, b, c \right) = 2^{a}3^{b}5^{c}$. This $g$ is injective by the same logic as before. By CSB, then there exists a bijection $z: \N \to \N^{3}$.
+\end{proof}
+
+
+\begin{theorem}
+	A set  $S$ is c called \textbf{countably infinite} if $S \sim \N$. A set $S$ is called \textbf{countable} if either $S$ is finite or countably infinite. $S$ is called \textbf{uncountable} if it is not countable. (This definition's slightly different from the textbook).
+\end{theorem}
+
+\begin{eg}
+	$A = \{1, 2\}$ is finite and countable. $\Z = \{\ldots, -2, -1, 0, 1, 2, \ldots\}$ is countably infinite and countable.
+\end{eg}
+
+
+
