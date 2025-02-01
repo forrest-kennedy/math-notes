@@ -1,142 +1,87 @@
-\lecture{Homework 1}{Tuesday 21 January 2025}{Homework 1}
+\lecture{3}{Wednesday 15 January 2025}{}
 
 
-1. Prove that there is no rational number, r, such that $r^{2} = 8$.
+Once we realize that the we don't know how to add up infinitely many functions, it is easy to see that we don't really know how to add infinitely many \textbf{numbers} either! Consider:
 
-\begin{proof}
+\begin{align*}
+	1 &= 1 \\ 
+	1 - 1 &= 0\\
+	1 - 1 + 1 &= 1 \\
+	1 - 1 + 1 - 1 &= 0 \\
+		      &\vdots \\
+	1 - 1 + 1 - 1 + 1 + \ldots &= \text{ ?} \\
+\end{align*}
 
-	BWOC, assume there exists a number $r \in \Q$ such that for some $a, b \in \Z$ with $gcd\left( a, b \right) = 1$:
-	\[
-		r^{2} = \left(\frac{a}{b}\right)^{2} = 8
-	.\] 
-	then:
-	\begin{align}
-		&\implies a^{2} = 8b^{2}\\ 
-		&\implies 2^{2}|a^{2} \implies 2|a^{2} \implies 2|a \text{ (by Lemma 1)}
-	\end{align}
+Already there seems to be a problem! The series does seem to converge to any number. Of course, we don't know what converge means yet, but there is a deeper problem. Consider the rearrangements:
 
-	so for some $n \in \N$ :
-	\begin{align}
-		\left( 2^{2}n \right)^{2} &= 8b^{2}\\
-		16n^{2}                   &= 8b^{2}\\
-		2n^{2}  		  &= b^{2} \implies 2|b
-	\end{align}
-	Notice $2|a$ and $2|b$ which violates our assumption that $gcd\left( a,b \right) = 1$. Thus it must be the case that there does not exist a number $r \in \Q$ such that $r^{2} = 8$
+\begin{align*}
+	1 + (- 1 + 1) + (- 1 + 1) + \ldots &= 1 \\  
+	(1 + - 1) + (1 + - 1) + (1 + \dots &= 0 	
+\end{align*}
 
-\end{proof}
+Clearly, these can't both be right. Again, we have been tricked into writing nonsense because we don't have any axioms to tell us which statements are allowed and which are not. Here, the problem has to do with our adding up of an infinite number of things. When we are properly automatized, we will see that we just don't do that. Instead, we will solve this problem with a "limit," \textbf{in order to understand the limit, we will need to develop $\R$, the real number system.} This is the goal of Chapter 1. The point is: adding up infinite things, whether they are functions or just numbers, leads to problems, and whatever formal system we come up with will need to be without these problems if we want it to formalize calculus, which is based around the notion of adding up infinitely many things.
 
 
-2. Prove that if $a,b \in  \R$ then:
-\[
-	 \mid  \mid a \mid  -  \mid b  \mid  \mid \leq  \mid a - b  \mid  
-.\] 
+\section*{Chapter 1}
+To motivate the definition of $\R$ let's explore ways in which $\R$ is different to other number systems. Why should we expect the definition of $\R$ to be useful and lead us to a notion of a "continuum?"
+
+\begin{lemma}
+	For all $m, n \in \Z$, if $n \vert m^{2}$ and $n$ is prime, then $n \vert m$
+\end{lemma}
 
 \begin{proof}
-	If $a, b \in \R$, then the triangle inequality holds:
-	\[
-		 \mid a + b  \mid  \le  \mid a  \mid +  \mid b \mid 	
-	.\]
-
-	Now consider:
-	\begin{align}
-		 \mid a \mid =  \mid a - b + b  \mid \le  \mid a-b \mid +  \mid b \mid \\
-		 \mid b \mid =  \mid b - a + a  \mid \le  \mid b-a \mid +  \mid a \mid \\ 
-	\end{align}
-
-	Rearranging and using the definition of the absolute value function and the fact that $ \mid a-b \mid =  \mid b-a \mid $:
-	\begin{align}
-		 &\mid a \mid -  \mid b \mid  \le  \mid a-b \mid \\
-		 &\mid b \mid -  \mid a  \mid \le    \mid b-a \mid \\ 	
-		 &\implies  \mid  \mid a \mid - \mid b \mid  \mid \le  \mid a-b \mid  
-	\end{align}
+	Assume for the sake of contradiction that $n$ does \textit{not} divide $m$, then $n$ cannot be a prime factor of $m$, so $m = abcd\ldots$ for some prime numbers $a, b, c, d, \ldots$, importantly \textbf{$n$ cannot be part of the product since $n$ does not divide  $m$}. Then $m^{2} = \left( abcd\ldots \right)^{2} = a^{2}b^{2}c^{2}d^{2} \ldots$ which does not contain $n$, so  $n \nmid m^{2}$ which contradicts our assumption. Thus it must be the case that $n \vert m$.
 \end{proof}
-
-
-3. Let $y_1 = 6$ and for each $n \in \N$ define
-\[
-	y_{n+1} = \frac{2}{3}y_n -2 
-.\] 
-
-Prove the following statements:
-\begin{enumerate}[label = \alph*.]
-	\item Prove that $y_{n + 1} \le y_n$ for all $n \in \N$.
-	\item Prove that $y_n > -6$ for all $n \in \N$
-   	
-\end{enumerate}
-
-\begin{proof}
-	We will show part a by induction. For the base case take $n = 1$, then $y_1 = 6$ and $y_2 = \frac{2}{3}\left( 6 \right) - 2 = 2$, and we have $y_2 \le y_1$.
-
-	For the inductive step, assume $y_{n+1} \le y_n$ then we need to show that $y_{n+2} \le y_{n+1}$. 
-	\begin{align}
-		y_{n+1} &\le y_n \\
-		\frac{2}{3}y_{n+1} - 2 &\le \frac{2}{3}y_n - 2 \\
-		\implies y_{n+2} &\le y_{n+1}
-	\end{align}
-
-	Thus, we have shown the theorem by induction.
-\end{proof}
-
-\begin{proof}
-	We will show part b by induction. For the base case, take $n=1$, then $y_1 = 6 > -6$.
-	
-	For the inductive step, assume $y_n > -6$, then $\frac{2}{3}y_n - 2 > \frac{2}{3} \left( -6 \right) - 2 \implies y_{n+1} > -6$
-
-	Thus, we have shown the theorem by induction.
-\end{proof}
-
-4. Prove that if $x \in \R$ and $x > -1$ then for every $n \in \N$ we have $\left( 1 + x \right)^{n} \ge  1+nx$ 
-
-\begin{proof}
-	We will show the theorem by induction. For the base base, take $n = 1$, then $1 + x \ge 1 + x$, which is true.
-
-	For the inductive step, assume $\left( 1 + x \right)^{n} \ge 1+nx$, then multiply both sides by $\left( 1 + x \right) $ to get:
-	\[
-		\left( 1 + x \right)^{n+1} \ge \left( 1+nx \right) \left( 1+x \right) = 1 + x + nx + nx^{2} = 1 + \left( n+1 \right)x + nx^{2}  
-	.\]
-
-	Since $x > -1$, we know that $nx^{2} > 0$, so we have:
-	\[
-		\left( 1+x \right)^{n+1} \ge 1 + \left( n+1 \right) x + nx^{2} \ge 1 + \left( n+1 \right) x			
-	.\] 
-\end{proof}
-
-5. Prove or give a counterexample for the following statement: Two real numbers
-satisfy $a < b$ if and only if $a < b + \epsilon$ for all $\epsilon > 0$
-
-The statement is false. Take the case where $a=b$ to be the counterexample. We can adjust the statement slightly to make it true. 
 
 \begin{theorem}
-Two real numbers satisfy $a \le b$ if and only if $a \le  b + \epsilon$ for all $\epsilon > 0$	
+	There is no rational number whose square is $2$
 \end{theorem}
 
-\begin{enumerate}
-	\item $\left( \implies \right) $ If $a \le  b$, then $a - b \le  0$, so $a - b \le  \epsilon$ for all $\epsilon > 0$.
-	\item $\left( \impliedby \right) $ Assume $a \le  b + \epsilon$ for all $\epsilon > 0$. Let $\epsilon_0 = a - b$, then it must be that $a - b = \epsilon_0$ and $a - b \le  \epsilon_0$, a contradiction! Thus, the theorem must be true.
- 
-\end{enumerate}
+\begin{proof}
+	Assume for contradiction: $\exists r$ s.t.  $r = \frac{p}{q}$ where $p, q \in  \Z$ and $r^{2} = 2$. Also assume, WLOG, that \textbf{$p, q$ share no common factors} then:
+	\begin{align}
+		&r^{2} = \left( \frac{p}{q} \right) ^{2} = 2 \\
+		& \implies p^{2} = 2q^{2} \\
+		& \implies 2 \vert p^{2} \\
+		& \implies 2 \vert p \text{ (by Lemma 1)} \\ 
+		&\implies p = 2n \text{ where } n \in \Z \\
+		& \implies \left( 2n \right)^{2} = 4n^{2} = 2q^{2} \text{ (from Eq. 2) } \\
+		& \implies 2 \vert q^{2} \implies 2 \vert q 
+	\end{align}
 
-6. Given a function $f \text{: } C \to D$ and a set $A \subset C$, let $f\left( A \right) $ represent the range of $f$ over the set $A$ i.e. $f\left( A \right)  = \{f\left( x \right)  | x \in A\}$.
+	Thus $2 \vert p$ and $2 \vert q$ which violates our assumption that $p, q$ share no common factors! Thus is must be the case that there is no rational number whose square is $2$.
 
-
-Answer the following questions:
-\begin{enumerate}[label = \alph*.]
-	\item Let $f \text{: } \R \to \R$ given by $f\left( x \right) = x^{2}$. If $A = [0, 2]$ and  $B = [1, 4]$, find $f\left( A \right) $ and $f\left( B \right) $. Does $f\left( A \cap B \right) = f\left( A \right) \cap f\left( B \right) $ in this case? Does $f\left( A \cup B \right) = f\left( A \right) \cup f\left( B \right) $?
-
-		$f\left( A \right) = [0, 4], f\left( B \right) = [1, 16], f\left( A \cup B \right) = [0, 16], f\left( A \cap B\right) = [1, 4] $. Yes to both.
-	\item Find two sets $A$ and $B$ for which $f\left( A \cap B \right) \neq f\left( A \right) \cap f\left( B \right) $.
-	\item Let $g \text{: } C \to D$ be any function and let $A, B, C \subset C$ be any two subsets of the domain. Prove that $g\left( A \cup B \right) = g\left( A \right) \cup g\left( B \right) $
-	\begin{proof}
-	If $x \in g\left( A \cup B \right) $, then $x = a^{2}$ or $x = b^{2}$ where $a \in A$ and $b \in B$. $A \cup B$ contains all  $a \in A$ and $b \in B$, so $x \in g\left( A \cup B \right) $ since it contains all $a^{2}, b^{2}$ where $a, b \in A, B$.
-
-		If $x \in g\left( A \right) \cup g\left( B \right) $, then either $x \in g\left( A \right) $ or $x \in g\left( B \right) $. In the first scenario, $x = a^{2}$  for some $a \in A$ which we know is in $g\left( A \cup B \right) $. In the second scenario, $x = b^{2}$ for some $b \in B$ which we know is in $g\left( A \cup B \right) $.
-	\end{proof}
-   	
-\end{enumerate}
+\end{proof}
 
 
+\begin{theorem}
+	If $n \in N$ and $n$ is \textbf{not} a perfect square, then there is no $r \in \Q$ such that $r^{2} = n $
+\end{theorem}
 
+\begin{proof}
+	Assume for contradiction: $\exists r$ s.t.  $r = \frac{p}{q}$ where $p, q \in  \Z$,  $gcd\left( p, q \right) = 1$, $r^{2} = n$, and $n$ is not a perfect square.
+	\begin{align}
+		&r^{2} = \left( \frac{p}{q} \right) ^{2} = n \\
+		& \implies p^{2} = nq^{2} 
+	\end{align}
+	Recall that by the Fundamental Theorem of Arithmetic that we can express any number as a product of prime numbers, so:
+	\[
+		n = k_1^{1} \cdot k_2^{2} \cdot k_3^{3} \cdot k_4^{4} \cdot \ldots      
+	.\] 
+	Substitute $n$ into Eq. 9:
+	\[
+		p^{2} = \left( k_1^{1} \cdot k_2^{2} \cdot k_3^{3} \cdot k_4^{4} \cdot \ldots \right) q^{2} 
+	.\] 
 
+	Since $n$ is not a perfect square, we know that $\exists j \text{ s.t. } k_j$ is odd because if this were not the case, $n$ would be a perfect square. From the above, we can see that $k_j | p^{2}$. If $k_j$ divides the LHS, it must also divide the RHS, so $k_j | nq^{2}$. We know that $p^{2}$ contains an even number of $k_j$ terms, and we also know that $n$ contains an odd number of $k_j$ terms. For both sides to have the same number of $k_j$ terms, as all equal numbers should, it must be the case that $k_j | q^{2}$ which implies $k_j | q$ by Lemma 1. Thus,  $gcd\left( p, q \right) = k_j \neq 1$ which contradicts our assumption that $gcd\left( p, q \right) = 1$.
+\end{proof}
 
+After this we talked about "set theory." We did not go into the details. 
 
+\begin{theorem}
+	The Algebra of Sets exists. $\N$, $\Z$, $\Q$ exist.	
+\end{theorem}
 
+\begin{proof}
+	The above is taken as an axiom, but rest assured that their existence can be derived from first-order logic and the ZFC axioms. 
+\end{proof}

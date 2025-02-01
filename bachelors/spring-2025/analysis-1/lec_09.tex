@@ -1,1 +1,61 @@
-\lecture{9}{Thursday 30 January 2025}{}
+\lecture{9}{Friday 31 January 2025}{1-31-25 Lecture}
+
+-Recall that a countably infinite set just means that $A \sim \N$.
+
+-Recall that a countable set is either finite or countably infinite.
+
+-Recall that an uncountable set is a set which is not countable. It is not clear a priori that these exist, but they do.
+
+\begin{eg}
+	$\N \sim \N^{2} \sim \Z \sim Z^{2}$ are all countable.
+\end{eg}
+
+\begin{theorem}
+	The set $\Q$ is countable (ie it is a countable infinite set).
+\end{theorem}
+
+\begin{proof}
+	Let $f: \N \to \Q$ be $f\left( n \right) = \frac{n}{2}$. This is an injective mapping. Every rational number $r \in \Q$ can be uniquely written as $\frac{p}{q} $ where $p \in \Z$, $q \in N$, and  $\text{ gcd}\left( p, q \right) = 1$. Define $g: \Q \to \Z^{2}$ given by $g\left( r \right) = \left( p, q \right) $. Clearly this is injective. As $\Z^{2} \sim \N$, $\exists h: \Z^{2} \to \N$ bijective. Thus $h \circ g: \Q \to \N$ is injective. Therefore, by the Cantor-Schroder-Bernstein theorem. $\Q \sim \N$, and $\Q$ is countable.
+\end{proof}
+
+\begin{theorem}
+	$\R$ is uncountable.
+\end{theorem}
+
+\begin{proof}
+	We proceed by contradiction. Therefore, $\N \sim \R$ i.e. $f: \N \to \R$ which is a bijection. Therefore, we can write $x_1 = f\left( 1 \right)$, $x_2 = f\left( 2 \right) $, $\ldots$. We have $\R = \{x_1, x_2, \ldots\}$. Consider a closed interval $I_1$ which does not contain $x_1$. Now let $I_2$ be a closed interval inside $I_1$ such that $x_2 \notin  I_2$. In general, given $I_n$ closed interval, construct a closed interval  $I_{n+1}$ such that
+	\begin{enumerate}
+		\item $I_{n+1} \subset I_n$.
+		\item $x_{n+1} \notin I_{n+1}$.
+	\end{enumerate}
+
+	Consider the set $\cap_{n=1}^{\inf} I_n$. As $x_n \notin I_n \implies x_n \notin \cap_{n=1}^{\inf}$. As $f: \N \to \R$ is a bijection (As $\R = \{x_1, x_2, \ldots\}$) we have $\cap_{n=1}^{\inf} I_n = \emptyset$.
+\end{proof}
+
+
+But are there any infinities which are small than the cardinality of $\N$
+\begin{theorem}
+	If $B$ is a countable set and $A \subset B$, then $A$ is countable.	
+\end{theorem}
+
+\begin{proof}
+	We will show the theorem by cases:
+	\begin{itemize}
+		\item $\left( B \text{ is a finite set}\right) $. As $A \subset B$, $A$ is also a finite set and $A $ is countable.
+		\item ($B$ is countably infinite). If $A$ is finite, then obviously  $A$ is countable
+		\item Now we assume that $A$ is an infinite set. As $B$ is countably infinite, we gave a bijection $f: \N \to B$. In particular, we can write
+			\[
+				B = \{f\left( 1 \right), f\left( 2 \right), \ldots\}
+			.\]
+			$A \subset B$ and is infinite. Let $n_1 = \text{ min} \{n \in \N : f\left( n \right) \in A\}$. More generally given $n_k$ we define $n_{k+1}$ as 
+			 \[
+				 n_{k+1} = \text{ min} \{n \in \N, n > n_k : f\left( n \right) \in A\}
+			.\] 
+			Define $g: \N \to A$ as $g\left( k \right) = f\left( n_k \right) $. By construction, $g$ is a bijection; therefore, $A \sim \N$ and $A$ is countable.
+	\end{itemize}
+\end{proof}
+
+
+
+
+

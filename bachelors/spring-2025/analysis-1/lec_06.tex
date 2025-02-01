@@ -1,52 +1,91 @@
-\lecture{6}{Monday 27 January 2025}{Homework 2}
+\lecture{6}{Thursday 23 January 2025}{The Axiom of Completeness}
+
+ 
 
 
-1. Compute, without proof, the supremum and infimum (if they exist) of each of the following sets:
 
-2. Let $A \subset \R$ and $B \subset \R$ be two non-empty sets, each of which is bounded above. If $s=\text{sup }A $ and $t=\text{sup }B $, find and prove a formula for $\text{sup } A \cup B$
+We will take an axiomatic approach to Analysis. There are some things which we will just assume are true. Mathematical Formalism is the idea that formal languages with no semantics can serve as the foundation of mathematics. Under this interpretation, the symbols of mathematics do not mean anything at all! They are only symbols and rules for manipulating symbols. Formulating all of mathematics in terms of a formal language allows us to side step assuming the existence of anything. The trade off is that proofs are extraordinarily complex, involve a lot of symbols, and are generally unreadable. For our purposes of writing readable proofs for the most important theorems from Newton's Calculus, we will take a different set of axioms where we do assert the existence of certain mathematical objects. The philosopher should be satisfied with these axioms because they are formally provable within axiomatic set theory. We don't \textit{need} to assume the existence of anything, but we choose to in order to  make our lives easier.
+\begin{axiom}[Algebraic Properties of \R]
+	Assume the existence of a set $\R$, called \textbf{the Real Numbers}, which is an ordered field.	
+\end{axiom}
 
-\begin{proof}
-	We argue that $\sup A \cup B = max\left( s, t \right) $ by cases:
+This axiom gets us most of the way there, however notice that the rational numbers are also an ordered field. We will need to introduce one more axiom to get a unique set for $\R$; but first, we need to define a little bit of mathematical machinery.
+
+\begin{definition}[Bounded Above Property of Subsets of $\R$]
+	A set $A \subset \R$ is \textbf{bounded above} if there exists a number $b \in \R$ such that $a \le b$ $\forall a \in A$. The number $b$ is called an \textbf{upper bound} for $A$.
+\end{definition}
+
+\begin{definition}[Bounded Below Property of Subsets of $\R$]
+	A set $A \subset \R$ is \textbf{bounded below} if there exists a number $b \in \R$ such that $b \le a$ $\forall a \in A$. The number $b$ is called a \textbf{lower bound} for $A$.
+\end{definition}
+
+\begin{definition}[The Least Upper Bound]
+	An element $s \in \R$ is called the \textbf{least upper bound} for $A \subset \R$ if $s$ meets two conditions:
 	\begin{enumerate}
-		\item ($s>t$) WLOG with respect to the $s < t$ case, since $t=\sup B$, we have  $t \ge b$ for all $b \in B$, thus by using our case assumption we get $s > t \ge b$ for all $b \in b$ and $s \ge  a$ for all $a \in A$ by the definition of the supremum of a set. Therefore, $s \ge u$ for all $u \in A \cup B$ and $\sup A \cup B = s = max\left( s, t \right) $.
-		\item ($s = t$) If $s=t$ by the definition of the supremum we have $s \ge a$ for all $a \in A$ and $t = s \ge b$ for all $b \in B$. Thus  $max\left( s, t \right) = s = t \ge a$ for all $a \in A$ and $max\left( s, t \right) = s = t \ge b$ for all $b \in B$. Therefore, $\sup A \cup B = max\left( s, t \right) $.
+		\item $s$ is an upper bound for $A$
+		\item $\forall b$ where $b$ is an upper bound, $s \le b$.
 	\end{enumerate}
-\end{proof}
+\end{definition}
 
-3. Let $A \subset \R$ and $B \subset \R$ be two non-empty sets, each of which is bounded above. 
+\begin{definition}[The Greatest Lower Bound]
+	An element $l \in \R$ is called the \textbf{greatest lower bound} for $A \subset \R$ if $l$ meets two conditions:
+	\begin{enumerate}
+		\item $l$ is a lower bound for $A$
+		\item $\forall b$ where $b$ is an upper bound, $l \ge  b$.
+	\end{enumerate}
+\end{definition}
+
+\begin{eg}
+	Given the set $A = \{\frac{1}{n} | n \in \N\} = \{1, \frac{1}{2}, \frac{1}{3}, \frac{1}{4}, \ldots\}$, find: upper bounds, the least upper bound, lower bounds, and the greatest lower bound.
+
+\end{eg}
+
 \begin{enumerate}
-	\item If $\sup A < \sup B$, show that there exists $b \in B$ such that $b$ is an upper bound for $A$.
-	\item Given an example to show that this is not always the case if we only assume $\sup A \le \sup B$.
+	\item some upper bounds: $1, 2, 1.1, 3$ 
+	\item least upper bound: $1$ 
+	\item some lower bounds: $0, -1, -100$
+	\item greatest lower bound =  $0$
 \end{enumerate}
 
+\begin{eg}
+	There is no upper bound for $\N$
+\end{eg}
+
+The above arguments were not very rigorous, so now we will do a slightly more rigorous problem just to prove that we can.
+
+\begin{theorem}
+	Given the set $A = \{\frac{1}{n} | n \in \N\} = \{1, \frac{1}{2}, \frac{1}{3}, \frac{1}{4}, \ldots\}$, then the least upper bound for $A$ is $1$.
+\end{theorem}
+
 \begin{proof}
+	We will prove the two conditions one at a time:
 	\begin{enumerate}
-		\item Combining the definition of the supremum of a set and the given, we get
-			\[
-				a \le \sup A < \sup B 
-			.\] 
-			Thus $\sup B$ is an upper bound for $A$, but it cannot be the \textit{least} upper bound because we assumed that $\sup A < \sup B$. Then by negating the $\e$ Characterization of the Supremum we see that $\exists \e > 0$ $\forall a \in A$ ($\sup B - \e \ge  a$). Let $\e_0$ be the $\e$ such that $\forall a \in A\left( \sup B - \e_0 \ge a\right) $. Since $\sup B$ is the least upper bound of $B$, again we can use the $\e$ Characterization of the supremum, $\forall $ $\e > 0 \exists b \in B$ ($\sup B - \e < b$) thus $\exists b \in B\left( \sup B - \e_0 < b \right) $. Thus, $\exists b \in B$ $\forall a \in A\left( b > \sup B - \e_0 \ge a \right) $. Therefore, there exists $b \in B$ such that $b \ge a$ for all $ a \in A$.
-		\item Take $A = \left( 1, 2 \right) $ and $B = \left( 0, 2 \right) $. In this case, $\sup A = \sup B$, but there is no element of $b$ which is an upper bound of $A$.
+		\item Observe that $1 \ge \frac{1}{n}$ $\forall n \in \N$ $\implies 1$ is an upper bound for $A$.
+		\item If b is an upper bound, then, because $1 \in A$, $b \ge 1 \implies 1$ is the upper bound for $A$. 
 	\end{enumerate}
 \end{proof}
 
-5. Let $A \subset \R$ and $c \in \R$. We define the set $cA$ as:
-\[
-	cA = \{ca | a \in A\}
-.\] 
-
-If $A$ is non-empty and bounded above and $c\ge 0$, then prove that $sup \text{ } cA$ = $c \cdot sup \text{ } A $.
+\begin{theorem}
+	If some subset of $\R$ has a least upper bound, then it is unique.
+\end{theorem}
 
 \begin{proof}
-	By the definition of the supremum, we have $\sup cA \ge ca \implies \frac{1}{c} \sup cA \ge a$. Then $\frac{1}{c} \sup cA$ is an upper bound for $A$. But $\sup A$ is the \textit{least} upper bound of $A$, so it must be that $\frac{1}{c} \sup cA\ge \sup A$, thus $\sup cA \ge c\sup A$.
+	FSOC assume $s_1$ and $s_2$ are two distinct greatest upper bounds of some set $A$, then we have $s_1 \le s_2$ and $s_2 \le s_1$ by applying the second condition of the least upper bound property to $s_1$ and $s_2$ one at a time. Thus, $s_1 = s_2$. This contradicts our assumption that $s_1$ and $s_2$ are distinct.
+\end{proof}
+Now we are ready to state the Axioms of Completeness: 
 
-	By the definition of the supremum, we have $\sup A \ge a$ for all $a \in A \implies c \sup A \ge ca$ $\forall a \in A$. Thus $c \sup A$ is an upper bound of  $cA$. But $\sup cA$ is the \textit{least} upper bound of $cA$, so it must be that $c \sup A \ge \sup cA$.
+\begin{axiom}[The Axiom of Completeness]
+	Every non-empty set $A$ where  $A \subset \R$ which is bounded above has a least upper bound $b \in \R$
+\end{axiom}
 
-	Thus, $\sup cA \ge c \sup A$ and $\sup cA \le c \sup A$; therefore, $\sup cA = c \sup A$. 
+\begin{theorem}
+	Up to isomorphism, there is one unique complete ordered field. 
+\end{theorem}
+
+\begin{proof}
+	The proof of the above theorem is beyond the scope of this course, but it is worth stating because when we work with $\R$ we can be sure that we are working on the right set without having to worry that what we are describing has more interpretations than as real numbers. 
 \end{proof}
 
-
-
-
-
-
+\begin{note}
+	The Axiom of Completeness is not stateable in first-order logic. You can tell because of the "for every nonempty set $A$." Here, we are quantifying over a set of sets which is not allowed.
+\end{note}

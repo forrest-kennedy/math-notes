@@ -1,128 +1,52 @@
-\lecture{7}{Tuesday 28 January 2025}{Complete Analysis Theorems List}
+\lecture{7}{Monday 27 January 2025}{Homework 2}
 
 
+1. Compute, without proof, the supremum and infimum (if they exist) of each of the following sets:
 
-\section{The Real Numbers}
-\begin{definition}[Definition of a "function"]
-	Given sets $A, B$ a function of $A \to B$ is a mapping that takes ea    ch element of $A$ to a single element of $B$.
-\end{definition}
-
-\begin{definition}[Definition of the "absolute value function"]
-	The \textbf{absolute value function"} is defined as $\left|\cdot\right|: \R \to \R$ such that:
-	\[
-		\left|x\right| =
-		\begin{cases} 
-		      x & x \ge  0 \\
-		      -x & x < 0 \\
-   		\end{cases}
-	.\] 
-\end{definition}
-
-\begin{theorem}[The Triangle Inequality]
-	With respect to multiplication and division, the absolute value function satisfies:
-	\begin{enumerate}
-		\item $\left|ab\right| = \left|a\right|\left|b\right|$
-		\item $\left|a+b\right| \le \left|a\right| + \left|b\right|$
-	\end{enumerate}
-\end{theorem}
+2. Let $A \subset \R$ and $B \subset \R$ be two non-empty sets, each of which is bounded above. If $s=\text{sup }A $ and $t=\text{sup }B $, find and prove a formula for $\text{sup } A \cup B$
 
 \begin{proof}
-	We will show the theorem by cases WLOG:
+	We argue that $\sup A \cup B = max\left( s, t \right) $ by cases:
 	\begin{enumerate}
-		\item $\left( a = 0 \right) $ $\left|a + b\right| = \left|0 + b\right| = \left| b\right| = \left|0\right| + \left|b\right| = \left|a\right| + \left|b\right|$
-		\item $\left(a > 0, b > 0 \right)$ By the definition of the absolute value function we have  $\left|a + b\right| = a + b = \left|a\right| + \left|b\right|$
-		\item $\left( a < 0, b < 0 \right)$ By the definition of the absolute value function we have $\left|a + b\right| = -\left( a+b \right) = -a + \left( -b \right) = \left|a\right| + \left|b\right|$
-		\item $\left( a > 0, b < 0 \right) $ By the definition of the absolute value, we have  $\left|a\right| = a$ and $\left|b\right| = -b$, so $\left|a\right| + \left|b\right| = a + \left( -b \right) $. We want to show that $\left|a\right| + \left|b\right| = a + \left( -b \right) \ge \left|a + b\right|$, so again we consider all the possible cases:
-			\begin{enumerate}
-				\item $\left( a + b = 0 \right)$ We have $a + \left( -b \right) \overset{?}{\geq} \left|0\right| = 0$. Indeed, since $a>0$ and $b<0$ we have $a > b$, and our equality holds.
-				\item $\left( a + b > 0 \right) $ We have $a + \left( -b \right) \overset{?}{\geq}a+b$. Since $b < 0$, we have $-b > 0$. Comparing the LHS and RHS the equality holds.
-				\item $\left( a + b < 0 \right) $ We have $a + \left( -b \right)  \overset{?}{\geq} -a + \left( -b \right) $. Comparing the LHS and the RHS, the equality holds.
-			\end{enumerate}
+		\item ($s>t$) WLOG with respect to the $s < t$ case, since $t=\sup B$, we have  $t \ge b$ for all $b \in B$, thus by using our case assumption we get $s > t \ge b$ for all $b \in b$ and $s \ge  a$ for all $a \in A$ by the definition of the supremum of a set. Therefore, $s \ge u$ for all $u \in A \cup B$ and $\sup A \cup B = s = max\left( s, t \right) $.
+		\item ($s = t$) If $s=t$ by the definition of the supremum we have $s \ge a$ for all $a \in A$ and $t = s \ge b$ for all $b \in B$. Thus  $max\left( s, t \right) = s = t \ge a$ for all $a \in A$ and $max\left( s, t \right) = s = t \ge b$ for all $b \in B$. Therefore, $\sup A \cup B = max\left( s, t \right) $.
 	\end{enumerate}
-
-	The above considerations exhaust all possible choices for $a$ and $b$. In all cases. we see that $\left|a+b\right| \le \left|a\right| +\left|b\right|$
 \end{proof}
 
-
-\begin{theorem}[The $\e$ criteria for equality]
-	Two real numbers $a$ and $b$ are equal if and only if for every real number $\eps > 0$ it follows that $\left|a - b\right| < \eps$.
-\end{theorem}
-
-\begin{proof}
-	We will show the theorem in both directions:
-	\begin{itemize}
-		\item $\left( \implies \right) $ Given $a = b$, we have $a - b = 0 < \eps$ for all $\eps > 0$.
-		\item $\left( \impliedby \right)$ Assume that for every $\eps > 0$, $\left|a-b\right| < \e$ and, FSOC, that $a \neq b$. Then, let $\e_0 = a-b$ which we know is nonzero because $a \neq b$. Now, $\left|a-b\right| = \e_0$ and $\left|a-b\right| < \e_0$ by our first assumption. We have reached a contradiction, therefore the reverse implication must hold.
-	\end{itemize}	
-\end{proof}
-
-\begin{definition}[Bounded Above Property of Subsets of $\R$]
-       A set $A \subset \R$ is \textbf{bounded above} if there exists a number $b \in \R$ such that $a \le b$ $\forall a \in A$. The number $b$ is called an \textbf{upper bound} for $A$.
- \end{definition}
- 
-  
- \begin{definition}[Bounded Below Property of Subsets of $\R$]
-         A set $A \subset \R$ is \textbf{bounded below} if there exists a number $b \in \R$ such that $b \le a$ $\forall a \in A$. The number $b$ is called a \textbf{lower bound} for $A$.
- \end{definition}
- 
- \begin{definition}[The Least Upper Bound]
-         An element $s \in \R$ is called the \textbf{least upper bound} for $A \subset \R$ if $s$ meets two conditions:
-         \begin{enumerate}
-                 \item $s$ is an upper bound for $A$
-                 \item $\forall b$ where $b$ is an upper bound, $s \le b$.
-         \end{enumerate}
- \end{definition}
- 
- \begin{definition}[The Greatest Lower Bound]
-         An element $l \in \R$ is called the \textbf{greatest lower bound} for $A \subset \R$ if $l$ meets two conditions:
-         \begin{enumerate}
-                 \item $l$ is a lower bound for $A$
- 		\item $\forall b$ where $b$ is an upper bound, $l \ge  b$.
+3. Let $A \subset \R$ and $B \subset \R$ be two non-empty sets, each of which is bounded above. 
+\begin{enumerate}
+	\item If $\sup A < \sup B$, show that there exists $b \in B$ such that $b$ is an upper bound for $A$.
+	\item Given an example to show that this is not always the case if we only assume $\sup A \le \sup B$.
 \end{enumerate}
-\end{definition}
-
-
-\begin{definition}
-	A real number $a_0$ is a \textbf{maximum} of the set $A$ if $a_0$ is an elemnt of $A$ and $a_0 \ge a$ for all $a \in A$. Similarly, a number $a_1$ is a \textbf{minimum} of $A$ if $a_1 \in A$ and $a_1 \le a$ for all $a \in A$.
-\end{definition}
-
-
-\begin{theorem}[The $\e$  Characterization of the Supremum]
-	Assume $s \in R$ is an upper bound for a set $A \subset \R$. Then, $s = \sup A$ if and only if, for every choice of $\e > 0$, there exists an element $a \in A$ satisfying $s - \e < a$.
-\end{theorem}
 
 \begin{proof}
-       	We will show that both the implication and the inverse implication are true:
-	
-	\begin{itemize}
-		\item $\left( \implies \right) $If $s$ is the \textit{least} upper bound of $A$, then $s - \e$ is not an upper bound for $A $, thus there exists an  $a \in A$ such that $s - \e < a$.
-		\item $\left( \impliedby \right) $ Assume $s$ is an upper bound of $A$ and that for every $\e > 0$, $s-\e <a$. That is, no number smaller than $s$ is an upper bound of $A$. Thus for all $b$ where $b$ is an upper bound of $A$, $s \le b$. Since we assumed that $s$ is an upper bound, $s$ meets both conditions to be the supremum. 
-	\end{itemize}	
-\end{proof}
-
-\begin{theorem}[Nested Interval Property of Subsets of $\R$]
-	For each $n \in \N$, assume we are given a closed interval $I_n = [a_n, b_n] = \{x \in R : a_n \le x\le b_n\}$. Assume also that each $I_n$ contains $I_{n+1}$. Then, the resulting nested sequence of closed intervals
-	\[
-	I_1 \supset I_2 \supset I_3 \supset \ldots
-	.\] 
-	has a nonempty intersection; that is, $\cap_{n=1}^{\inf} I_n \neq \emptyset$.
-\end{theorem}
-
-\begin{proof}
-	Let $A = \{a_n : n \in \N\}$ and $B = \{b_n : n \in \N\}$, then let $\alpha = \sup A$. From the definition of the supremum, we have  $\alpha \ge a_n$ for all $n \in \N$. Because of how we defined our sets, every  $b_n$ is an upper bound of $A$, so we have $\alpha \le b_n$ for all $n \in \N$. Thus $a_n \le \alpha \le b_n$ and $\alpha \in I_n$. Therefore,  $I_n$ is nonempty.
-\end{proof}
-
-\begin{theorem}[Archimedean Property]
-	The theorem has two parts:
 	\begin{enumerate}
-		\item Given any number $x \in \R$, there exists an $n \in \N$ satisfying $n > x$.
-		\item Given any real number  $y>0$, there exists an $n \in \N$ satisfying $\frac{1}{n} < y$.
+		\item Combining the definition of the supremum of a set and the given, we get
+			\[
+				a \le \sup A < \sup B 
+			.\] 
+			Thus $\sup B$ is an upper bound for $A$, but it cannot be the \textit{least} upper bound because we assumed that $\sup A < \sup B$. Then by negating the $\e$ Characterization of the Supremum we see that $\exists \e > 0$ $\forall a \in A$ ($\sup B - \e \ge  a$). Let $\e_0$ be the $\e$ such that $\forall a \in A\left( \sup B - \e_0 \ge a\right) $. Since $\sup B$ is the least upper bound of $B$, again we can use the $\e$ Characterization of the supremum, $\forall $ $\e > 0 \exists b \in B$ ($\sup B - \e < b$) thus $\exists b \in B\left( \sup B - \e_0 < b \right) $. Thus, $\exists b \in B$ $\forall a \in A\left( b > \sup B - \e_0 \ge a \right) $. Therefore, there exists $b \in B$ such that $b \ge a$ for all $ a \in A$.
+		\item Take $A = \left( 1, 2 \right) $ and $B = \left( 0, 2 \right) $. In this case, $\sup A = \sup B$, but there is no element of $b$ which is an upper bound of $A$.
 	\end{enumerate}
-\end{theorem}
+\end{proof}
+
+5. Let $A \subset \R$ and $c \in \R$. We define the set $cA$ as:
+\[
+	cA = \{ca | a \in A\}
+.\] 
+
+If $A$ is non-empty and bounded above and $c\ge 0$, then prove that $sup \text{ } cA$ = $c \cdot sup \text{ } A $.
 
 \begin{proof}
-	Statement 1 in the above theorem is equivalent to the statement: $\N$ is not bounded above. FSOC, assume that $\N$ is bounded above, then let $\alpha = \sup \N$. By the definition of the supremum, $\alpha - 1$ is not an upper bound. Thus, $\alpha - 1 < n$ for some $n \in \N$ implies $\alpha < n + 1$, but $n+1 \in \N$ by definition so $\alpha$ is less than some natural number and cannot be the supremum, a contradiction! Thus $\N$ is not bounded above, and we have proven statement 1. To prove statement 2, let $x = \frac{1}{y}$ and substitute into the expression in statement 1.
+	By the definition of the supremum, we have $\sup cA \ge ca \implies \frac{1}{c} \sup cA \ge a$. Then $\frac{1}{c} \sup cA$ is an upper bound for $A$. But $\sup A$ is the \textit{least} upper bound of $A$, so it must be that $\frac{1}{c} \sup cA\ge \sup A$, thus $\sup cA \ge c\sup A$.
+
+	By the definition of the supremum, we have $\sup A \ge a$ for all $a \in A \implies c \sup A \ge ca$ $\forall a \in A$. Thus $c \sup A$ is an upper bound of  $cA$. But $\sup cA$ is the \textit{least} upper bound of $cA$, so it must be that $c \sup A \ge \sup cA$.
+
+	Thus, $\sup cA \ge c \sup A$ and $\sup cA \le c \sup A$; therefore, $\sup cA = c \sup A$. 
 \end{proof}
+
+
+
 
 
 
