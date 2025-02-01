@@ -25,7 +25,8 @@
 			\[
 				a \le \sup A < \sup B 
 			.\] 
-			Thus $\sup B$ is an upper bound for $A$. Since $\sup B > \sup A$, it must be that $\sup B$ is not the least upper bound of $A$. Then by negating the $\e$ Characterization of the Supremum we see that there must exist an $\e > 0 $ such that $\sup B - \e > a$ for all $a \in A$. We also know from the given that for all $\e > 0 $, there exists an $b \in B$ such that $\sup B - \e < b$  
+			Thus $\sup B$ is an upper bound for $A$, but it cannot be the \textit{least} upper bound because we assumed that $\sup A < \sup B$. Then by negating the $\e$ Characterization of the Supremum we see that $\exists \e > 0$ $\forall a \in A$ ($\sup B - \e \ge  a$). Let $\e_0$ be the $\e$ such that $\forall a \in A\left( \sup B - \e_0 \ge a\right) $. Since $\sup B$ is the least upper bound of $B$, again we can use the $\e$ Characterization of the supremum, $\forall $ $\e > 0 \exists b \in B$ ($\sup B - \e < b$) thus $\exists b \in B\left( \sup B - \e_0 < b \right) $. Thus, $\exists b \in B$ $\forall a \in A\left( b > \sup B - \e_0 \ge a \right) $. Therefore, there exists $b \in B$ such that $b \ge a$ for all $ a \in A$.
+		\item Take $A = \left( 1, 2 \right) $ and $B = \left( 0, 2 \right) $. In this case, $\sup A = \sup B$, but there is no element of $b$ which is an upper bound of $A$.
 	\end{enumerate}
 \end{proof}
 
