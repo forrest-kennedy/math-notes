@@ -1,0 +1,79 @@
+\lecture{10}{Monday 03 February 2025}{2-3-25 Lecture}
+
+Recall from last time
+\begin{theorem}
+	If $A \subset B$ and $B$ is countable, then $A$ is countable.
+\end{theorem}
+
+\begin{note}
+	if $B = \N$ and $A = \emptyset$.  $\emptyset$ is a finite set and thus countable. $\emptyset \subset  \N$.
+\end{note}
+
+\begin{theorem}
+	A set $A$ is countable if and only if there exists an injective function $f:A \to \N$.
+\end{theorem}
+
+\begin{proof}
+	We will prove the forward and backward direction:
+	\begin{itemize}
+		\item $\left( \implies \right) $ Either $A$ is finite or countably infinite. If $A = \emptyset$, then statement is true vacuously. If $A$ is a nonempty finite set, let $\left|A\right| = n$, $n \in \N$. Then clearly there exists a bijection between $A$ and $\{1, 2, \ldots, n\}$. Then we just change the function from being $f: A \to \{1, 2, \ldots, n\}$ to $f: A \to \N$. If  $A$ is countably infinite, $\exists f: A \to \N$ a bijection. In particular, it is injective.
+		\item $\left( \impliedby \right) $ Let $f: A \to \N$ be injective. Consider $\text{Range}\left( f \right) \subset \N$. Observe that $f: A \to \text{Range}\left( f \right) $ is a bijection. As $\text{Range}\left( f \right) \subset \N \implies \text{Range}\left( f \right)  is countable$. We also have $A \sim \text{Range}\left( f \right) \implies A$ is countable.
+	\end{itemize}
+\end{proof}
+
+\begin{theorem}
+	If $A_n$ is a countable set for each $n \in \N$, then $\cup_{n=1}^{\inf} A_n$ is also countable, i.e. a countable union of countable sets is countable.
+\end{theorem}
+
+INCLUDE GRID OF $\N^{2}$.
+
+\begin{note}
+	$A_n$s may not be disjoint! Consider $A_1 = \{1, 2\}$, $A_2 = \{2, 3\}$,  $A_3 = \{3, 4, 5\}$. We will try to make these sets disjoint before we get to the proof.
+\end{note}
+
+\begin{proof}
+	Define $B_1 = A_1$, $B_2 = A_2 \setminus A_1, \ldots, B_n = A_n \setminus \{A_1 \cup A_2 \sup \ldots\} $ So we have:
+	\begin{align}
+		B_{1} &= \{1, 2\} \\
+		B_2   &= \{3\} \\
+		B_3   &= \{4, 5\} 
+	\end{align}
+	Therefore we have $B_1, B_2, B_3, \ldots$ are all disjoint and $\cup_{n=1}^{\inf}A_n = \cup_{n=1}^{\inf} B_n$. As $B_n \subset  A_n$ and $A_n$ is countable, $B_n$ is countable. Therefore $\exists f_n : B_n \to \N$ which is injective for all $n \in \N$.
+
+	Define $g: \cup_{n=1}^{\inf}N_n \to \N^{2}$ given as follows if $b \subset \cup_{n=1}^{\inf}$, the as $B_n$'s are all disjoint, there exists a unique $N \in \N$ such  $b \in B_n$. Define:
+	\[
+	g\left( b \right) = \left( f_N\left( b \right), N \right) 
+	.\] 
+	As $f_N$ is injective $\implies$ $g$ is injective. As $\N^{2}$ is countably infinite, $\exists h: \N^{2} \to \N$ is a bijection. Therefore, $h \circ g: \cup_{n=1}^{\inf}B_n \to \N$ is injective and $\cup_{n=1}^{\inf}B_n$ is countable.
+
+	
+
+\end{proof}
+
+\begin{theorem}
+	If $m \in \N$, and $A_1, A_2, \ldots, A_n$ are countable, then $A_1 \cup A_2\cup \ldots \cup A_m$ is also countable.
+\end{theorem}
+
+\begin{proof}
+	Define $A_n = \emptyset$ for $n \ge m+1$. Therefore each $A_n$, $n \in \N$ is countable. By previous theorem $\cup_{n=1}^{\inf}A_n$ is countable. But $\cup_{n=1}^{\inf}A_n = \cup_{n=1}^{\inf}B_n$.
+\end{proof}
+
+\begin{theorem}
+	Suppose $I = \R \setminus \Q$ is countable which implies $\R = \Q \cup I$ is also countable by the previous corollary, a contradiction!
+\end{theorem}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
