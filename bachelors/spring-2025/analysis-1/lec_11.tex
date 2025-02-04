@@ -3,7 +3,19 @@
 1. Let $A \subset \R$ be non-empty and bounded above, and let $s \in \R$ be such that for any $n \in \N$, $s + \frac{1}{n}$ is an upper bound for $A$ and $s-\frac{1}{n}$ is not an upper bound for $A$. Show that $s = \sup A$.
 
 \begin{proof}
-	
+	Since $\forall n \in \N \left( s - \frac{1}{n} \text{ is not an upper bound for } A \right)$, we know that 
+	\[
+		\forall n \in \N,  \exists a \in A\left( s - \frac{1}{n}< a \right)
+	.\] 
+	Let $\e$ be any arbitrary element of $\R^{+}$, then by the Archimedean principle we know that it is possible to pick an $n_0 \in \N$ such that $\frac{1}{n_0} < \e$. Then we have
+	\[
+		s - \e < s - \frac{1}{n_0} < a
+	.\]
+	Thus
+	\[
+		\forall \e > 0, \exists a \in A \left( s - \e < a \right) 
+	.\]
+	Therefore, by the $\e$ Characterization of the Supremum, $s = \sup A$.
 \end{proof}
 
 
@@ -44,6 +56,7 @@
 5. Give an example for each of the following: 
 \begin{enumerate}
 	\item Two sets $A$ and $B$ with $A \cap B = \emptyset$, $\sup A = \sup B$, $\sup A \not\in A$ and $\sup B \not\in B$.
+		Take $A = \{\}$  and  $B = \left( 1, 2 \right) \cup \{2\} $	
 	\item A sequence of nested open intervals $J_1 \supset J_2 \supset J_3 \supset \ldots$ with $\cap_{n=1}^{\inf}J_n$ non-empty but containing only a finite number of elements.
 	\item A sequence of nested unbounded closed intervals $L_1 \supset L_2 \supset L_3 \supset \ldots$, where each $L_n = [a_n, \inf)$ for some $a_n \in \R$, such that $\cap_{n=1}^{\inf}L_n = \emptyset$.
 \end{enumerate}
