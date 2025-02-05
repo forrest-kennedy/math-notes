@@ -1,0 +1,146 @@
+\lecture{12}{Wed 05 February 2025}{02-05-25}
+
+-Sequences and series are the most important part of the class. "If you don't understand this, you are going to fail."
+
+\begin{theorem}
+	$\R \setminus \Q$ is uncountable: $\R \setminus \Q \sim \R$
+\end{theorem}
+
+\begin{definition}
+	Given a set $A$, the power set $P\left( A \right) $ is the set of all subsets of $A$.
+\end{definition}
+
+\begin{theorem}
+	If $A$ is a finite set with $\left|A\right| = n$ then $\left|P\left( A \right) \right| = 2^{n}$
+\end{theorem}
+
+This works even for infinite sets!
+
+\begin{theorem}
+	$P\left( \N \right) \sim \R$ 
+\end{theorem}
+
+\begin{theorem}
+	Given any set $A$, there does not exist a surjective function $f: A \to P\left( A \right) $.
+\end{theorem}
+
+This means that if $A$ is infinite, then $P\left( A \right) $ is a "bigger" infinite than $A$.
+
+\begin{eg}
+	$\N \to P\left( \N \right) \sim \R \to P\left( P\left( \N \right)  \right) \sim P\left( \R \right) \to \ldots  $
+\end{eg}
+
+Won't be asking too many questions about this stuff.
+
+\section{Sequences and Series}
+
+Recall from the example given on day 1 that we cannot sum up infinite stiff. Instead, you add up finitely many things and then take a "limit." Now we define what a limit is.
+
+\begin{definition}
+	A sequence is a function whose domain is $\N$.
+\end{definition}
+
+\begin{eg}
+	$2, 4, 8, 16, 32, \ldots$ is a sequence of natural numbers. $\pi, \pi^{2}, \pi^{3}, \ldots$ is a sequence of real numbers.
+\end{eg}
+
+Sequences are not series. Limits apply to sequences, not series.
+
+\begin{eg}
+	$\left( 1, \frac{1}{2}, \frac{1}{3}, \ldots \right) $
+\end{eg}
+
+\begin{eg}
+	$\left( \frac{1+n}{n}_{n=1}^{\inf} \right) = \left( 2, \frac{3}{2}, \frac{4}{3}, \ldots \right) $	
+\end{eg}
+
+\begin{eg}
+	$\left( \frac{1+n}{n} \right) $ 
+
+	If you do not write the starting and ending points, it is assume that it is $n=1$ to $\inf$.
+\end{eg}
+
+\begin{eg}
+	$\left( a_n \right) $, where $a_n = 2^{n}$ for all $n \in \N$.
+\end{eg}
+
+\begin{eg}
+	$\left( x_n \right)$, where $x_1 = 2$ and $\frac{x_n + 1}{2 }$ for all $n \ge 1$.
+\end{eg}
+
+\begin{definition}[Convergence of a Sequence]
+	A sequence $a_n$ converges to a real number $a$, if for every $\e > 0$, there exists $N \in \N$ such that whenever $n \ge N$, we have $\left|a_n - a\right| < \e$. In this case we write
+	\[
+		\lim_{n \to \inf} a_n = a \iff \lim a_n = a \iff \left( a_n \right) \to a
+	.\] 
+\end{definition}
+
+\begin{definition}[Conversgence of a Sequence Topological Definition]
+	A sequence $\left( a_n \right) $ converges to $a$, if every $\e$-neighborhood of $a$ contains all but a finite number of the terms of $\left( a_n \right) $.
+\end{definition}
+
+\begin{definition}
+	Given $a \in \R$ and $\e > 0$, the set
+	\[
+		V_\e\left( a \right) = \{x \in \R : \left|x - a\right| < \e\} 
+	.\] 
+	is called the $\e$-neighborhood of $a$
+\end{definition}
+
+\begin{eg}
+	Prove $\lim\left( \frac{1}{\sqrt{n}} \right) = 0$
+\end{eg}
+
+\begin{proof}
+	\begin{enumerate}
+		\item Challenge: $\e = \frac{1}{2}$ Response: let  $N = 5$. To confirm, notice $n \ge 5 \implies \left|\frac{1}{\sqrt{n}} - 0\right| = \frac{1}{\sqrt{n} } < \frac{1}{2}$
+		\item Challenge: $\e = \frac{1}{10}$. Response: let $N = 101$. To confirm check  $n \ge 101 \implies \frac{1}{\sqrt{n}} < \frac{1}{10}$ 
+	\end{enumerate}
+\end{proof}
+
+\begin{proof}
+	WTS: $\lim\left( \frac{1}{\sqrt{n} } \right) = 0$. If $n \ge N$ we want 
+	\begin{align}
+		\left|\frac{1}{\sqrt{n} } - 0\right| &< \e \\
+		\iff \frac{1}{\sqrt{n}} &< \e \\
+		\iff \frac{1}{\e^{2}} &< n
+	\end{align}
+	Choose $N \in \N$ such that $\frac{1}{\e^{2}} < N \le  n $
+\end{proof}
+
+\begin{proof}
+	Let $\e >0$ be given. Let  $N \in \N$ be such that 
+	 \[
+		 N > \frac{1}{\e^{2}}
+	.\] 
+	Let $n \ge N$. Then we observe that
+	\[
+		n > \frac{1}{\e^{2}} \implies \frac{1}{\sqrt{n} } < \e \implies\left|\frac{1}{\sqrt{n}} - 0\right| < \e	
+	.\] 
+	Hence, the theorem is proved.
+\end{proof}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

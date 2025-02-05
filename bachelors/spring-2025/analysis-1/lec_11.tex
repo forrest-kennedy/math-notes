@@ -6,11 +6,11 @@
 		s - \frac{1}{n} &\le \sup A \le s + \frac{1}{n} \\
 		- \frac{1}{n}   &\le \sup A - s \le \frac{1}{n}
 	\end{align} 
-	for all $n \in \N$. From here there are 3 cases:
-	\begin{enumerate}
+	for all $n \in \N$. From here there are 3 cases and we can immediately eliminate two:
+	\begin{itemize}
 		\item Assume $\sup A - s > 0$, then $\forall n \in \N \left( \sup A - s \le \frac{1}{n} \right) $ which contradicts the Archimedean Principle since $\sup A - s > 0$.
 		\item Assume $\sup A - s < 0$, then $\forall n \in \N \left( -\left( \sup A - s \right)  \le \frac{1}{n} \right) $ which contradicts the Archimediean Principle since $-\left( \sup A - s \right) > 0 $
-	\end{enumerate}
+	\end{itemize}
 
 	Therefore, it must be that $\sup A - s = 0  \implies s = \sup A$.
 \end{proof}
