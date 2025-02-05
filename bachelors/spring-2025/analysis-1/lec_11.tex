@@ -1,21 +1,18 @@
 \lecture{11}{Monday 03 February 2025}{Homework 3}
 
-1. Let $A \subset \R$ be non-empty and bounded above, and let $s \in \R$ be such that for any $n \in \N$, $s + \frac{1}{n}$ is an upper bound for $A$ and $s-\frac{1}{n}$ is not an upper bound for $A$. Show that $s = \sup A$.
-
 \begin{proof}
-	Since $\forall n \in \N \left( s - \frac{1}{n} \text{ is not an upper bound for } A \right)$, we know that 
-	\[
-		\forall n \in \N,  \exists a \in A\left( s - \frac{1}{n}< a \right)
-	.\] 
-	Let $\e$ be any arbitrary element of $\R^{+}$, then by the Archimedean principle we know that it is possible to pick an $n_0 \in \N$ such that $\frac{1}{n_0} < \e$. Then we have
-	\[
-		s - \e < s - \frac{1}{n_0} < a
-	.\]
-	Thus
-	\[
-		\forall \e > 0, \exists a \in A \left( s - \e < a \right) 
-	.\]
-	Therefore, by the $\e$ Characterization of the Supremum, $s = \sup A$.
+	From the definitions, we have $\forall n \in \N, \forall a \in A \left(s + \frac{1}{n} \ge a \right)$ and $\forall n \in \N, \exists a \in A\left( s - \frac{1}{n} < a \right) $ Notice that for all $n \in \N$, $s - \frac{1}{n + 1} < s - \frac{1}{n}$, so $\forall n \in \N$ $s - \frac{1}{n}$ is a not the least upper bound. Thus we get 
+	\begin{align}
+		s - \frac{1}{n} &\le \sup A \le s + \frac{1}{n} \\
+		- \frac{1}{n}   &\le \sup A - s \le \frac{1}{n}
+	\end{align} 
+	for all $n \in \N$. From here there are 3 cases:
+	\begin{enumerate}
+		\item Assume $\sup A - s > 0$, then $\forall n \in \N \left( \sup A - s \le \frac{1}{n} \right) $ which contradicts the Archimedean Principle since $\sup A - s > 0$.
+		\item Assume $\sup A - s < 0$, then $\forall n \in \N \left( -\left( \sup A - s \right)  \le \frac{1}{n} \right) $ which contradicts the Archimediean Principle since $-\left( \sup A - s \right) > 0 $
+	\end{enumerate}
+
+	Therefore, it must be that $\sup A - s = 0  \implies s = \sup A$.
 \end{proof}
 
 
@@ -34,7 +31,11 @@
 3. Let $a, b \in \R$ with $a < b$. Let $T = \Q \cap [a, b]$. Prove that $\sup T = b$.
 
 \begin{proof}
-	
+	Notice $b$ is the maximum of $[a, b]$, and $\Q \cap [a, b] \subset [a, b]$. Thus $\forall t \in T, t \in [a, b] \implies b \ge t$. Thus $b$ is an upper bound of $T$.
+
+	To show that $b$ is the supremum of $T$, assume FSOC that $\exists s$ such that $s < b$ and $\forall t \in T \left(s < t \right)$. By the density of the rationals in $ \R$, $\exists r \in \Q \left( s < r < b \right)$. Since $a \le r \le b$ and $r \in \Q$ and $s$ is an upper bound, we have $s \ge r$. Now we have both $s < r$ and $s \ge r$, a contradiction! Therefore there is no upper bound $s$ such that $s < b$. 
+
+	Therefore, we have shown the two conditions for $b$ to be the supremum of $T$. 
 \end{proof}
 
 
@@ -56,9 +57,14 @@
 5. Give an example for each of the following: 
 \begin{enumerate}
 	\item Two sets $A$ and $B$ with $A \cap B = \emptyset$, $\sup A = \sup B$, $\sup A \not\in A$ and $\sup B \not\in B$.
-		Take $A = \{\}$  and  $B = \left( 1, 2 \right) \cup \{2\} $	
+
+		Take $A = \{x : x \in \Q, 0 < x < 1\}$  and  $B = \{x : x \in \R \setminus \Q, 0 < x < 1\} $	
 	\item A sequence of nested open intervals $J_1 \supset J_2 \supset J_3 \supset \ldots$ with $\cap_{n=1}^{\inf}J_n$ non-empty but containing only a finite number of elements.
-	\item A sequence of nested unbounded closed intervals $L_1 \supset L_2 \supset L_3 \supset \ldots$, where each $L_n = [a_n, \inf)$ for some $a_n \in \R$, such that $\cap_{n=1}^{\inf}L_n = \emptyset$.
+
+		Take $J_n = [1, 1 + \frac{1}{n})$
+	\item A sequence of nested unbounded closed intervals $L_1 \supset L_2 \supset L_3 \supset \ldots$, where each $L_n = [a_n, \inf)$ for some $a_n \in \R$, such that $\cap_{n=1}^{\inf}L_n = \emptyset$. 
+
+		Take $L_n = [n, \inf]$ $\forall n \in \Z$. For any $x \in \R$ we know that $x \not\in L_{x + 1}$, so $\forall x \in \R$, $x \not\in \cap_{n=1}^{\inf} L_n$.
 \end{enumerate}
 
 
