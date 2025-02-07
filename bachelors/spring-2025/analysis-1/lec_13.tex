@@ -1,0 +1,70 @@
+\lecture{13}{Friday 07 February 2025}{02-07-25 Lecture}
+
+\begin{eg}
+	Template for a proof of $\left( x_n \to x \right) $:
+\end{eg}
+
+
+\begin{enumerate}
+	\item Let $\e > 0$ be given.
+	\item Choose  $N$ (depending on $\e$ in general). This step takes the most amount of work and this work is not shown and is rough work.
+	\item let $n \ge N$ 
+	\item Now prove that $\left|x_n - x\right| < \e$ for all $n \ge N$. Then the proof is complete.
+\end{enumerate}
+	
+\begin{eg}
+	Prove that $\lim \left(\frac{n+1}{n}  \right) = 1$
+\end{eg}
+
+Rough work:
+
+$x_n = \frac{n+1}{n} = 1 + \frac{1}{n}$ 
+
+$x = 1$
+
+Now we want: 
+
+\begin{align}
+	\left|x_n - x\right| < \e\\
+	\left|1 + \frac{1}{n} - 1\right| < \e \\
+	\left|\frac{1}{n}\right| < \e \\
+	\frac{1}{n} < \e \\ 
+	\frac{1}{\e} < n \\
+\end{align}
+
+What I really want: Find $N$ so that $\forall n \ge N$, $\frac{1}{\e} < n$, so choose $N \in \N$ such that $\frac{1}{\e} < N$, then if $n \ge N \implies \frac{1}{\e} < N < n$.
+
+
+
+\begin{proof}
+	Let $\e > 0$ be given. Choose $N \in \N$ such that $\frac{1}{\e} < N$. Let $n \ge N$. This implies that
+	\begin{align}
+		\frac{1}{\e} < N \le n \\
+		\frac{1}{n} < \e \\
+		\left|\left( 1+ \frac{1}{n} \right) - 1\right| < \e \\
+		\left|\left( \frac{n+1}{n} \right) - 1\right| < \e \\
+	\end{align}
+
+	Thus we have shown the condition for the proof.
+\end{proof}
+
+\begin{eg}
+	Prove that $\lim \left( \frac{1}{n^{2}} \right) = 0$
+\end{eg}
+
+\begin{proof}
+	Let $\e > 0$ be given. Choose $N \in \N$ such that 
+	\[
+	N > \frac{1}{\sqrt{\e} }
+	.\]
+	Therefore
+	\begin{align}
+		n > \frac{1}{\sqrt{\e} } \\
+		\frac{1}{n} < \sqrt{\e} \\
+		\frac{1}{n^{2}} < \e \\
+		\left|\frac{1}{n^{2}} - 0\right| < \e
+	\end{align}
+\end{proof}
+
+
+

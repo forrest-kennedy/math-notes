@@ -21,7 +21,7 @@
 2. Prove that $\cap_{n=1}^{\inf}\left( 5, 5+\frac{1}{n} \right) = \emptyset$.
 
 \begin{proof}
-	
+	Assume for the sake of contradiction, that $x \in \cap_{n=1}^{\inf}$, then $5 < x < 5 + \frac{1}{n} \implies x = 5 + \e$ for some $\e>0 \in \R$. By the archimedean principle,  $\exists n \in \N\left( \e > \frac{1}{n} \right) $, thus $x = 5 + \e > 5 + \frac{1}{n}$. But then we have $x > 5 + \frac{1}{n}$ from the previous statement and $x < 5 + \frac{1}{n}$ from the given. This is a contradiction, so it must be that $\nexists x \in \R \left( x \in \cap_{n=1}^{\inf} \left( 5, 5 + \frac{1}{n} \right)  \right)  $. Therefore, $\cap_{n=1}^{\inf} \left( 5, 5 + \frac{1}{n} \right) = \emptyset$.
 \end{proof}
 
 
@@ -33,7 +33,7 @@
 \begin{proof}
 	Notice $b$ is the maximum of $[a, b]$, and $\Q \cap [a, b] \subset [a, b]$. Thus $\forall t \in T, t \in [a, b] \implies b \ge t$. Thus $b$ is an upper bound of $T$.
 
-	To show that $b$ is the supremum of $T$, assume FSOC that $\exists s$ such that $s < b$ and $\forall t \in T \left(s < t \right)$. By the density of the rationals in $ \R$, $\exists r \in \Q \left( s < r < b \right)$. Since $a \le r \le b$ and $r \in \Q$ and $s$ is an upper bound, we have $s \ge r$. Now we have both $s < r$ and $s \ge r$, a contradiction! Therefore there is no upper bound $s$ such that $s < b$. 
+	To show that $b$ is the supremum of $T$, assume FSOC that $\exists s$ such that $s < b$ and $\forall t \in T \left(s \ge  t \right)$. By the density of the rationals in $ \R$, $\exists r \in \Q \left( s < r < b \right)$. Using the fact that rationals are dense in  $\R$ again, we know $\exists q \in \Q$ such that $a < q < s < r < b$, thus $r \in T$. Since $r \in T$ and $s$ is an upper bound of $T$, we have $s \ge r$. Now we have both $s < r$ by the construction of $r$ and $s \ge r$ by assumption, a contradiction! Therefore there is no upper bound $s$ such that $s < b$.
 
 	Therefore, we have shown the two conditions for $b$ to be the supremum of $T$. 
 \end{proof}
@@ -61,7 +61,7 @@
 		Take $A = \{x : x \in \Q, 0 < x < 1\}$  and  $B = \{x : x \in \R \setminus \Q, 0 < x < 1\} $	
 	\item A sequence of nested open intervals $J_1 \supset J_2 \supset J_3 \supset \ldots$ with $\cap_{n=1}^{\inf}J_n$ non-empty but containing only a finite number of elements.
 
-		Take $J_n = [1, 1 + \frac{1}{n})$
+		Take $J_n = (-\frac{1}{n}, \frac{1}{n})$
 	\item A sequence of nested unbounded closed intervals $L_1 \supset L_2 \supset L_3 \supset \ldots$, where each $L_n = [a_n, \inf)$ for some $a_n \in \R$, such that $\cap_{n=1}^{\inf}L_n = \emptyset$. 
 
 		Take $L_n = [n, \inf]$ $\forall n \in \Z$. For any $x \in \R$ we know that $x \not\in L_{x + 1}$, so $\forall x \in \R$, $x \not\in \cap_{n=1}^{\inf} L_n$.
@@ -75,7 +75,17 @@
 6. If $a, b \in \R$ with $a < b$, show that $[a, b] \sim \left( a, b \right) $.
 
 \begin{proof}
-	
+	We will use the Cantor-Schroeder-Bernstein theorem to prove the statement. Defining the injective function $f: \left( a, b \right) \to [a, b]$ is trivial; let $f\left( x \right) = x$ $\forall x \in \left( a,b \right) $. Defining the injective function $g: [a, b] \to \left( a, b \right) $ requires a little more doing. Intuitively, we will shrink the set from the range down to any closed set that we want which is contained in $[a, b]$, then we will allow the endpoints of the domain to map to the endpoints of the new closed set. Finally, we linearly map the rest of the uncountably many elements of the domain to the uncountably many elements between the endpoints of the new set which is contained in the range. Formally, we will define a linear function such that $g\left( a \right) = \frac{b}{4}$ and $g\left( b \right) = \frac{3b}{4}$:
+	\[
+		g\left( x \right) =
+		\begin{cases}
+			\frac{b}{4} & x = a \\
+			\frac{b}{2\left( b - a \right)}x + \frac{b}{4} & a < x < b \\
+			\frac{3b}{4} & x = b
+		\end{cases}
+	.\]
+	Thus, $f: \left( a, b \right) \to [a, b]$ is injective and $g: [a, b] \to \left( a, b \right) $ is injective. Therefore, $\exists h: \left( a, b \right) \to [a, b]$ which is a bijective, and $[a, b] \sim \left( a, b \right) $.
+
 \end{proof}
 
 

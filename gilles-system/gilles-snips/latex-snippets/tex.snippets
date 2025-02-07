@@ -119,13 +119,23 @@ snippet iff "iff" Ai
 endsnippet
 
 context "math()"
-snippet abv "Insert \left| ... \right| (math mode only)" Ai
+snippet abs "Insert \left| ... \right| (math mode only)" Ai
 \left|${1:}\right|$0
 endsnippet
 
 context "math()"
 snippet txt "Insert \text{}" Ai
 \text{${1:}}$0
+endsnippet
+
+context "math()"
+snippet der "derivative" iA
+\frac{d$1}{d$2} $0
+endsnippet
+
+context "math()"
+snippet pdrv "partial derivative" iA
+\frac{\partial $1}{\partial $2} $0
 endsnippet
 
 
@@ -369,6 +379,26 @@ snippet AA "forall" iA
 endsnippet
 
 context "math()"
+snippet lim "limit" iA
+\lim_{$1}
+endsnippet
+
+context "math()"
+snippet inf "infinity" iA
+\inf 
+endsnippet
+
+context "math()"
+snippet cap "intersection" iA
+\cap_{$1}^{$2}$0
+endsnippet
+
+context "math()"
+snippet cup "union" iA
+\cup_{$1}^{$2}$0
+endsnippet
+
+context "math()"
 snippet xnn "xn" iA
 x_{n}
 endsnippet
@@ -473,7 +503,7 @@ endsnippet
 priority 300
 context "math()"
 snippet dint "integral" wA
-\int_{${1:-\infty}}^{${2:\infty}} ${3:${VISUAL}} $0
+\int_{${1}}^{${2}} ${3:${VISUAL}} $0
 endsnippet
 
 priority 200
