@@ -1,0 +1,97 @@
+\lecture{14}{Monday 10 February 2025}{02-10-25 Lecture}
+
+\begin{theorem}
+	The limit of a sequence, when it exists, is unique.
+\end{theorem}
+
+\begin{proof}
+	Let $\left( a_n \right) $ be a sequence and assume that  $s, t \in \R$ such that $\lim_{} a_n = s$ and $\lim_{} a_n = t$. Let $\e > 0$ be arbitrary. As $\lim_{} a_n = s$, hence $\exists N_1 \in \N$ such that $\forall n \ge N_1$, we have $\left|a_n - s\right| < \frac{\e}{2}$. Similarly, as $\lim_{} a_n = t$, $\exists N_2 \in \N $ such that $\forall n \ge N_2$, we have $\left|a_n - t\right| < \frac{\e}{2}$. Let
+	\begin{equation}
+		N = \text{max}\{N_1, N_2\}
+	\end{equation}
+	hence $\left|a_N - s\right| < \frac{\e}{2}$ and $\left|a_N - t\right| < \frac{\e}{2}$.
+
+	\begin{align}
+		\left|s - t\right| = \left|\left( s - a_N \right) + \left( a_N - t \right) \right| \\
+		\le \left|s - a_N\right| + \left|a_N - t\right|\\
+		< \frac{\e}{2} + \frac{\e}{2} \\
+		= \e \\
+		\implies \left|s - t\right| < \e
+	\end{align}
+	As  $\e > 0$ is arbitrary, this implies that $s=t$
+\end{proof}
+
+\begin{definition}
+	A sequence that does not converge is said to diverge.
+\end{definition}
+
+\begin{eg}
+	Prove that the sequence $a_n = \left( -1 \right)^{n}$ diverges.
+\end{eg}
+
+\begin{note}
+	The strategy for these is to assume that it converges, then show that it must converge to two different numbers.
+\end{note}
+
+\begin{proof}
+	Suppose by contradiction, let $L \in \R$ be such that $\lim_{} a_n = L$. Therefore, given $\e = \frac{1}{2}$, there exists $N \in \N$ such that $\forall n \ge N$ we have $\left|a_n - L\right| < \frac{1}{2}$. Let $n_1 \ge N$ be odd $\implies \left|a_n - L\right| < \frac{1}{2} \implies \left|\left( -1 \right) ^{n_1} - L\right| < \frac{1}{2} \implies \left|\left( -1 \right) - L\right| < \frac{1}{2}$ as $n_1 + 1 \ge N$ and is even.
+	\begin{equation}
+		\implies \left|a_{n_1 + 1} - L\right| < \frac{1}{2} \implies \left|1 - L\right| < \frac{1}{2} \implies 2 < 1 
+	\end{equation}
+	a contradiction!
+\end{proof}
+
+\begin{eg}
+	Prove that $\lim_{} \left( \frac{1}{n} \right) \neq 1$
+\end{eg}
+
+\begin{proof}
+	By contradiction, assume that $\lim_{} \frac{1}{n} = 1$. Then for $\e = \frac{1}{2}$, $\exists N \in \N$ such that $\forall n \ge N$ 
+	\begin{align}
+		\left|\frac{1}{n} - 1\right| < \frac{1}{2} \\
+		\implies 1 - \frac{1}{2} < \frac{1}{n} < 1 + \frac{1}{2} \\
+		\implies \forall n \ge N \left( \frac{1}{2} < \frac{1}{n} \right)
+	\end{align}
+
+	By the Archimedean property, $\exists m \in \N$ such that
+	\begin{align}
+		m  \ge N \text{ and } \frac{1}{m} < \frac{1}{2} \\
+	\end{align}
+	This is a contradiction!
+\end{proof}
+
+\begin{definition}
+	A sequence $\left( x_n \right) $ is \textbf{bounded} if there exists $M > 0$ such that $\left|x_n\right| \le M$ $\forall n \in \N$.
+\end{definition}
+
+\begin{theorem}
+	Every convergent sequence is bounded.
+\end{theorem}
+
+This is a standard kind of argument that we will see again and again:
+
+\begin{proof}
+	Let $L \in \R$ be such that $\lim_{} x_n = L$. Hence for $\e = 1$, $\exists N \in \N$ such that $\forall n \ge N$ we have
+	\begin{align}
+		\left|x_n - L\right| < 1
+	\end{align}
+	Therefore, $\forall n \ge N$ 
+	\begin{align}
+		\left|x_n\right| &= \left|x_n - L + L\right| \\
+				 &\le  \left|x_n - L\right|+ \left|L\right| \\
+				 &< \left|L\right| + 1
+	\end{align}
+	Let $M = \text{max}\{\left|x_1\right|, \left|x_2\right|, \ldots, \left|x_{N-1}\right|, \left|L\right| + 1\} > 0$. We see that $\left|x_n\right| \le M$ $\forall n \in \N$. Hence $\left( x_n \right)$ is bounded.
+\end{proof}
+
+
+
+
+
+
+
+
+
+
+
+
