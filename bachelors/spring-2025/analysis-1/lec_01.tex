@@ -124,5 +124,68 @@
 	Statement 1 in the above theorem is equivalent to the statement: $\N$ is not bounded above. FSOC, assume that $\N$ is bounded above, then let $\alpha = \sup \N$. By the definition of the supremum, $\alpha - 1$ is not an upper bound. Thus, $\alpha - 1 < n$ for some $n \in \N$ implies $\alpha < n + 1$, but $n+1 \in \N$ by definition so $\alpha$ is less than some natural number and cannot be the supremum, a contradiction! Thus $\N$ is not bounded above, and we have proven statement 1. To prove statement 2, let $x = \frac{1}{y}$ and substitute into the expression in statement 1.
 \end{proof}
 
+\begin{definition}[Sequence]
+	A \textbf{sequence} is a function whose domain is  $\N$.
+\end{definition}
+
+\begin{definition}[Convergent Property of a Sequence / Limit of a Sequence]
+	A sequence $a_n$ \textbf{converges} to a real number $a$, if for every $\e > 0$ there exists $N \in \N$ such that whenever $n \ge N$, we have $\left|a_n - a\right| < \e$. In this case we write
+	\begin{align}
+		\lim_{n \to \inf} a_n = \lim_{} a_n = a
+	\end{align} 
+\end{definition}
+
+\begin{definition}[$\e$-Neighborhood]
+	Given a real number $a \in \R$ and a positive number $\e > 0$, the set
+	\begin{align}
+		V_{\e} \left( a \right)  = \{x \in \R : \left|x - a\right| < \e\} 
+	\end{align}
+	is called the \textbf{$\e$-neighborhood} of $a$. 
+\end{definition}
+
+\begin{definition}[Topological Definition of the Convergent Property/Limit of a Sequence]
+	A sequence $\left( a_n \right) $ converges to $a$ if every $\e$-neighborhood of $a$ contains all but a finite number of the terms of $\left( a_n \right) $.
+\end{definition}
+
+\begin{theorem}[Limit Uniqueness Theorem]
+	The limit of a sequence, when it exists, is unique.
+\end{theorem}
+
+\begin{proof}
+	For the sake of contradiction, let $\left( a_n \right) $ be a sequences which converges to both $s$ and $t$. Then we know that $\exists N_1, N_2 \in \N$ such that for all $\e > 0$ 
+	\begin{align}
+		\left|a_{N_{1}} - s\right| < \frac{\e}{2} \text{   and   } \left|a_{N_{2}} - t\right| < \frac{\e}{2}
+	\end{align}
+	Now let 
+	\begin{align}
+		N = \text{ max}\{N_{1}, N_{2}\}.
+	\end{align}
+	And consider $\left|s - t\right|$ We can now use the "adding zero" algebraic trick and the triangle inequality:
+	\begin{align}
+		\left|s - t\right| &= \left|\left( s - a_N \right) + \left( a_N - t \right) \right| \\
+				   &\le  \left|a_N - s\right| + \left|a_N - t\right| \\
+				   &< \frac{\e}{2} + \frac{\e}{2} \\
+				   &= \e
+	\end{align}
+	Thus $\left|s - t\right| < \e$ for all $\e > 0$, by the $\e$-Criteria for Equality, $s=t$.
+\end{proof}
+
+\begin{definition}[Divergent Property of a Sequence]
+	A sequence that does not converge is said to  \textbf{diverge}.
+\end{definition}
+
+\begin{definition}[Bounded Property of a Sequence]
+	A sequence $\left( x_n \right) $ is \textbf{bounded} if there exists a number $M > 0$ such that $\left|x_n\right| \le M$ for all $n \in \N$.
+\end{definition}
+
+\begin{theorem}
+	Every convergent sequence is bounded.
+\end{theorem}
+
+
+
+
+
+
 
 

@@ -1,0 +1,127 @@
+\lecture{16}{Wednesday 12 February 2025}{02-12-25 Lecture}
+
+\begin{eg}
+	Prove that $\left( a_n \right) $ where $a_n = n^{2}$ is divergent.
+\end{eg}
+
+\begin{proof}
+	Assume by contradiction that $\left( a_n \right) $ is convergent. Therefore $\left( a_n \right) $ is a bounded sequence, so $\exists M > 0$ such that 
+	\begin{align}
+		\forall n \in \N (\left|a_n\right| \le M)\\
+		\forall n \in \N \left( n^{2} \le M \right) \\
+	\end{align}
+	Let $N \in \N$ be such that $N > M$ then
+	\begin{align}
+		N^{2} > MN \ge M \\
+		N^{2} > M
+	\end{align}
+
+	this is a contradiction!
+\end{proof}
+
+This next theorem is used all the time.
+
+\begin{theorem}
+	Suppose $\left( a_n \right) $ is a convergent sequence with $\lim_{} a_n = L$. If $L\neq 0$ and $a_n\neq 0$ for all $n \in \N$, then $\exists \delta > 0$ such that $\left|a_n\right| \ge \delta > 0$ for all $n \in \N$.
+\end{theorem}
+
+\begin{proof}
+	As $L \neq 0$, choose $\e = \frac{\left|L\right|}{2} > 0$ $\exists N \in \N$ such that $\forall n \ge N$ we have
+	\begin{align}
+		\left|a_n - L\right| < \frac{\left|L\right|}{2}\\
+	\end{align}
+	for $n \ge N$ we have
+	\begin{align}
+		\left|L\right| \le \left|L - a_n\right| + \left|a_n\right| \le \frac{\left|L\right|}{2} + \left|a_n\right|\\
+	\end{align}
+	Therefore, for all $n \ge N$ we have
+	\begin{align}
+		\frac{\left|L\right|}{2} \le \left|a_n\right| \\
+	\end{align}
+	Define $\delta = \text{ min}\{\left|a_1\right|, \left|a_2\right|, \ldots, \left|a_{N-1}\right|, \left|\frac{L}{2}\right|\} > 0$. We see that  $\left|a_n\right| \ge \delta > 0$ $\forall n \in \N$.
+\end{proof}
+
+\begin{theorem}[Algebraic limit theorem]
+	Let $a, b \in \R$ and let $\lim_{} a_n = a$ and $\lim_{} b_n = b$. Then
+	\begin{enumerate}
+		\item $\lim_{} \left( c a_n \right)  = ca$ for all $c \in \R$
+		\item $\lim_{} \left( a_n +b _n \right)  = a + b$ 
+		\item $\lim_{} \left( a_n b_n \right)  = ab$ 
+		\item If  $b \neq 0$ and $b_n \neq 0$ $\forall n \in \N$, then $\lim_{} \left( \frac{a_n}{b_n} \right)  = \frac{a}{b}$
+	\end{enumerate}
+\end{theorem}
+
+\begin{eg}
+	Given $a_n = \frac{3n^{2} + 5}{n^{2} + 10}$. Prove $\lim_{} a_n = 0$
+\end{eg}
+
+\begin{eg}
+	\begin{align}
+		a_n = \frac{n^{2} \left( 3 + \frac{5}{n^{2}} \right) }{n^{3} \left( 1 + \frac{10}{n^{3}} \right) } \\
+		\frac{1}{n} \cdot \frac{3 + \frac{5}{n^{2}}}{1 + \frac{10}{n^{3}}}
+	\end{align}
+	We know that $\lim_{} \frac{1}{n} = 0$ 
+	\begin{align}
+		&\implies \lim_{} \frac{1}{n^{2}} = 0 \\
+		&\implies \lim_{} \frac{5}{n^{2}} = 0 \implies \lim_{} \left( 3 + \frac{5}{n^{2}} \right) = 3
+	\end{align}
+\end{eg}
+
+\begin{proof}
+	We will consider each case in turn:	
+	\begin{enumerate}
+		\item If $c = 0$ then $c a_n = 0$ $\forall n \in \N$. Clearly $\left( c a_n \right) \to 0$ in this case. Let $\e > 0$ be given. Choose $N = 1$. Therefore, $\forall n \ge N$ we have
+		\begin{align}
+			\left|c a_n - c a\right| = \left|0 - 0\right| = 0 < \e
+		\end{align}
+		Therefore $\left( c a_n \right) \to ca$ in this case
+
+		Let $c \neq 0$ and let $\e > 0$ be given. Let $N \in \N$ be such that $\forall n \ge N$ we have 
+			\begin{align}
+				\left|a_n - a \right|< \frac{\e}{\left|c\right|} 
+			\end{align}
+
+			Sidebar: we want :
+			\begin{align}
+				c a_n - ca < \e \\
+				\left|c\right|\left|a_n - a\right| < \e \\ 
+				\left|a_n - a\right| < \frac{\e}{\left|c\right|}	
+			\end{align}
+			Therefore for $n \ge N$ we have
+			\begin{align}
+				\left|c a_n - ca\right| \\
+				= \left|c\right|\left|a_n - a\right|\\
+				< \left|c\right|\frac{\e}{\left|c\right|} \\
+				= \e
+			\end{align}
+			Therefore $\left|c a_n - ca\right| < \e$ $\forall n \ge N$ hence proved.
+
+		\item 
+			Sidebar: WTS
+			\begin{align}
+				\left|\left( a_n + b_n \right) - \left( a + b \right)\right| < \e \\
+				\left|\left( a_n - a \right) + \left( b_n - b \right) \right| < \e
+			\end{align}
+
+			Now on to the actual proof:
+
+			Let $\e > 0$ be given. Let $N_1 \in \N$ be such that $\forall n \ge N_1$ we have
+			\begin{align}
+				\left|a_n - a\right| < \frac{\e}{2}
+			\end{align}
+			Let $N_2 \in \N$ be such that $\forall n \ge N_2$ we have
+			\begin{align}
+				 \left|b_n - b\right| < \frac{\e}{2}
+			\end{align}
+			Let $N = \text{ max}\{N_1, N_2\} $. Therefore for all $n \ge N$ we have
+			\begin{align}
+				&\left|\left( a_n + b_n \right) - \left( a+b \right) \right| \\
+				&= \left|\left( a_n - a \right) + \left( b_n - b \right) \right|\\
+				&\le \left|a_n - a\right| + \left|b_n - b\right|\\
+				&< \frac{\e}{2} + \frac{\e}{2}\\
+				&= \e
+			\end{align}
+			Therefore, $\left| c a_n - c a\right| < \e$ $\forall n \ge N$ hence proved.
+	\end{enumerate}
+		
+\end{proof}

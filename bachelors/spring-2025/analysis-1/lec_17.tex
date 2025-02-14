@@ -1,0 +1,54 @@
+\lecture{17}{Friday 14 February 2025}{02-14-25 Lecture}
+
+\begin{eg}
+	$a_n = \frac{1}{n^{2} + 10}$ and $\lim_{} a_n = 0$ 
+\end{eg}
+
+\begin{align}
+	a_n = \frac{1}{n^{2} \left( 1 + \frac{10}{n^{2}} \right) } \\
+	\left( \frac{1}{n^{2}} \right) \frac{1}{\left( 1 + \frac{10}{n^{2}} \right) }
+\end{align}
+
+We know that $\lim_{} \frac{1}{n} = 0$ so
+
+\begin{align}
+	\text{(By ALT) } \lim_{} \frac{1}{n^{2}} = 0 \\
+	\lim_{} \left( 1 + \frac{1}{n^{2}} \right) = 1 \\
+	\lim_{} \frac{1}{1+\frac{10}{n^{2}}} = 1\\
+	\lim_{} \frac{1}{n^{2}} \cdot \frac{1}{\left( 1 + \frac{10}{n^{2}} \right) }= 0.
+\end{align}
+
+Hence proved.
+
+\begin{theorem}
+	Let $a,b \in \R$ and $\lim_{} a_n = a$ and $\lim_{} b_n = b$.
+	\begin{enumerate}
+		\item If $a_n \ge 0$ $\forall n \in \N$, then $a \ge 0$ 
+		\item If $a_n \le b_n$ $\forall n \in \N$, then $a \le b$ 
+		\item If $\exists c \in \R$ such that $c \le b_n$ $\forall n \in \N$, then $c \le b$. Similarly, if $a_n \le c$ $\forall n \in \N$, then $a \le c$.
+	\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+	By contradiction, assume that $a < 0 $, therefore $\exists N \in \N$ such that $\forall n \ge  N$ we have 
+	\begin{align}
+		\left|a_n - a\right| < \frac{\left|a\right|}{2} \implies a_n - a < \frac{\left|a\right|}{2} \\
+		\implies a_n < a + \frac{\left|a\right|}{2} < 0 \\
+		\implies a_n < 0 \text{ } \forall n \ge \N.
+	\end{align}
+	A contradiction!
+\end{proof}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
