@@ -1,0 +1,102 @@
+\lecture{18}{Monday 17 February 2025}{02-17-25 Lecture}
+
+- DeLong Lecture today 3:30 - 4:30pm in Kitt Multipurpose room. Speaker: Prof. Laura DeMarco (Harvard)
+
+
+\begin{definition}
+	A sequence $\left( a_n \right) $ is called \textbf{increasing} if $a_n \le a_{n+1}$ for all $n \in N$. It is called \textbf{decreasing} if $a_n \ge a_{n+1}$ for all $n \in \N$. A sequence is called monotone if it is either increasing or decreasing.
+\end{definition}
+
+\begin{eg}
+	$1, 1, 2, 2, 3, 3, 4, 4, \ldots$ is increasing.
+\end{eg}
+
+\begin{eg}
+	$1, 1, 0, 0, -1, -1, \ldots$ is decreasing
+\end{eg}
+
+\begin{eg}
+	$1, 1, 1, 1, 1, \ldots$	is constant and monotone.
+\end{eg}
+
+\begin{eg}
+	$1, 0, 1, 0, 1, 0, 1, \ldots$ is \textit{not} monotone.
+\end{eg}
+
+\begin{theorem}[Monotone Convergence Theorem]
+	If a sequence is monotone and bounded, then it converges.	
+\end{theorem}
+\begin{note}
+	There are two enemies of convergence:
+	\begin{enumerate}
+		\item Oscillations (killed by monotone)
+		\item Growth (killed by boundedness)
+	\end{enumerate}
+\end{note}
+
+\begin{proof}
+	Let $\left( a_n \right) $ be monotone and bounded. Let us assume that $\left( a_n \right) $ is increasing (the case for decreasing is proved similarly). Define the set
+	\begin{align}
+		S = \{a_n | n \in \N\} 
+	\end{align}
+
+	As $\left( a_n \right) $ is bounded, this means that the set $S$ is bounded above. Let $x = \sup S$ Now we just need to show that  $\lim_{} a_n = x$ to prove the statement. Let $\e > 0$ be given. As $x$ is the least upper bound, $x - \e$ is not an upper bound for $S$. Then there exists $n \in \N$ such that $x - \e < a_N$. Therefore, for all $n \ge N$ we have
+	\begin{align}
+		x- \e < a_N \le a_n \le x \\
+		x - \e < a_n < x + \e \\
+		\left|a_n - x\right| < \e
+	\end{align}
+	Hence proved.
+\end{proof}
+
+\begin{definition}
+	Let $\left( b_n \right) $ be a sequence. An \textbf{infinite series} is a formal expression of the form 
+	\begin{align}
+		\sum_{n=1}^{\inf } b_n = b_1 +b_2 + b_3 + \ldots
+	\end{align}
+	We define the corresponding \textbf{sequence of partial sums}, $\left( S_m \right) $ by
+	\begin{align}
+		S_m = b_1 + b_2 + \ldots + b_m
+	\end{align}
+	we say that the series $\sum_{n=1}^{\inf } b_n$ \textbf{converges to B} if the sequence $\left( S_m \right) $ converges to $B$. In this case, we write  $\sum_{n=1}^{\inf } = B$.
+\end{definition}
+
+\begin{note}
+	When we write the first sum, we are literally just writing symbols. If we want to assign meaning to this, we need to construct a sequence of partial sums $b_1, b_1 + b_2, b_1 +b_2 +b_3, \ldots$.
+\end{note}
+
+\begin{eg}
+	Recall from day 1:
+	\begin{align}
+		b_n &= \left( -1 \right)^{n} \\
+		S_1 &= b_1 = -1 \\
+		S_2 &= b_1 + b_2 = 0 \\
+		S_2 &= b_1 + b_2 + b_3 = -1 \\
+		\ldots
+	\end{align}
+	Then construct the sequence: 
+	\begin{align}
+		\left( S_1, S_2, S_3, \ldots \right) = \left(-1, 0, -1, 0, -1, \ldots  \right) 
+	\end{align}
+	The sequence does not converge, therefore the series doesn't converge.
+\end{eg}
+
+\begin{eg}
+	Consider 
+	\begin{align}
+		\sum_{n=1}^{\inf} \frac{1}{n^{2}} = \frac{1}{1} + \frac{1}{2^{2}} + \frac{1}{3^{2}} + \ldots
+	\end{align}
+	As all the terms in the series are positive, we observe that the sequence $\left( S_m \right) $ is an increasing sequence. Now we will apply a trick
+	\begin{align}
+		S_m &= 1 + \frac{1}{2^{2}} + \frac{1}{3^{2}} + \ldots + \frac{1}{m^{2}}\\
+		&< 1 + \frac{1}{1 \cdot 2} + \frac{1}{2 \cdot 3} + \frac{1}{3 \cdot 4} + \ldots + \frac{1}{\left( m-1 \right)m} \\
+		&= 1 + \left( \frac{1}{1} - \frac{1}{2} \right) + \left( \frac{1}{2} - \frac{1}{3} \right) + \left( \frac{1}{3} - \frac{1}{4} \right) + \ldots + \left( \frac{1}{m-1} - \frac{1}{m} \right) \\
+		&= 1 + 1 - \frac{1}{m} \\
+		&< 2
+	\end{align}
+	Therefore $S_m < 2$ for all $M \in \N$. Hence the sequence $\left( S_m \right) $ is bounded. As $\left( S_m \right) $ is an increasing bounded sequence, by the monotone convergence theorem, it converges.
+\end{eg}
+
+\begin{note}
+	The above is the Basel Problem. The value that it converges to was found by Euler in 1734 and surprisingly is $\frac{\pi^{2}}{6}$. This is connected to the Riemann Zeta function. 
+\end{note}

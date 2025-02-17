@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1739551338.38132 "master.tex" "master.pdf" "master" 1739551339.10391 0
+["pdflatex"] 1739811402.67663 "master.tex" "master.pdf" "master" 1739811403.4041 0
   "../preamble.tex" 1738951060.91909 5291 de6eca95f4f8cb33e097c7a6ac626f6b ""
   "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1136849721 2971 def0b6c1f0b107b3b936def894055589 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -64,7 +64,6 @@
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/stmaryrd/stmary8.tfm" 1302307949 848 6125cdd3627e68d3db8013b98e587508 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb" 1248133631 30251 6afa5cb1d0204815a708a080681d4674 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb" 1248133631 36299 5f9df58c2139e7edcf37c8fca4bd384d ""
-  "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb" 1248133631 37912 77d683123f92148345f3fc36a38d9ab1 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb" 1248133631 36281 c355509802a035cadc5f15869451dcee ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb" 1248133631 35752 024fb6c41858982481f6968b5fc26508 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb" 1248133631 31809 8670ca339bf94e56da1fc21c80635e2a ""
@@ -251,11 +250,11 @@
   "/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1715791304 5483668 9e45798515b35c9eab0413928a3e8881 ""
   "/usr/local/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt" 1715791425 8225176 3c3737aca26247d8bf3f347d1cf08211 ""
   "/usr/local/texlive/2024/texmf.cnf" 1715791300.0711 455 5b996dcaa0eb4ef14a83b026bc0a008c ""
-  "lec_16.tex" 1739385834.03968 4564 b80932434767110bce73e757c102bc05 ""
   "lec_17.tex" 1739551337.21674 1401 02070970fe9df5bc543ced79444291a2 ""
-  "master.aux" 1739551339.01647 426 a80b0170e1e5d0d1b62d414f39a68cff "pdflatex"
-  "master.tex" 1739549004.76239 243 6a9b97efa4d9d9455e5e018fca2ec599 ""
-  "master.toc" 1739551339.01747 30 283c90c47f0e16887e96cec4ba110f76 "pdflatex"
+  "lec_18.tex" 1739811402.29914 4118 f6d90a782f534747a5a0daf5d80744e3 ""
+  "master.aux" 1739811403.31213 506 7845b4f81dab9a27ed395ee738a322b8 "pdflatex"
+  "master.tex" 1739808190.13914 243 b4dbdefd6da052a72603f6ebf00efc12 ""
+  "master.toc" 1739811403.31313 30 283c90c47f0e16887e96cec4ba110f76 "pdflatex"
   (generated)
   "master.aux"
   "master.log"
