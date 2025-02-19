@@ -4,8 +4,28 @@
 
 \begin{enumerate}
 	\item $\lim_{} \left( \frac{1 + 2a_n}{1 + 3 a_n - 4 a_{n}^{2}} \right) $ 
+	\begin{align}
+		&= \frac{\lim_{} \left( 1 + 2 a_n \right)}{\lim_{} \left( 1 + 3 a_n - 4a_n^{2} \right)} \\
+		&= \frac{\lim_{} 1 + \lim_{} 2 \cdot \lim_{} a_n}{\lim_{} 1 + \lim_{} 3 \cdot  \lim_{} a_n - \lim_{} 4 \cdot \lim_{} a_n \cdot \lim_{} a_n} \\
+		&= 1
+	\end{align}
+
 	\item $\lim_{} \left( \frac{\left( a_n + 2 \right)^{2} - 4}{a_n} \right) $
-	\item $\lim_{} \left( \frac{\frac{2}{a_n} + 3}{\frac{1}{a_n} + 5} \right) $
+		\begin{align}
+			&= \frac{\lim_{} \left( a_n + 2 \right) \cdot \lim_{} \left( a_n + 2 \right) - \lim_{} 4}{\lim_{} a_n} \\
+			&= \frac{\left( \lim_{} a_n + \lim_{} 2 \right) \left( \lim_{} a_n + \lim_{} 2 \right) - \lim_{} 4}{\lim_{} a_n} \\
+			&= \frac{\left( \lim_{} a_n + 2 \right) \left( \lim_{} a_n + 2 \right) - 4}{\lim_{} a_n} \\
+			&= \frac{\left( \lim_{} a_n \right)^{2} + 4 \lim_{} a_n + 4 - 4}{\lim_{} a_n} \\
+			&= \lim_{} a_n + 4 = 4
+		\end{align}
+
+	\item $\lim_{} \left( \frac{\frac{2}{a_n} + 3}{\frac{1}{a_n} + 5} \right)$
+		\begin{align}
+			&= \frac{\lim_{} \left( \frac{2}{a_n} + 3 \right) }{\lim_{} \left( \frac{1}{a_n} + 5 \right)} \\
+			&= \frac{\lim_{} \frac{2}{a_n} + \lim_{} 3}{\lim_{} \frac{1}{a_n} + \lim_{} 5} \\
+			&= \frac{\frac{\lim_{} 2}{\lim_{} a_n} + 3}{\frac{\lim_{} 1}{\lim_{} a_n} + 5} \cdot \frac{\lim_{} a_n}{\lim_{} a_n} \\
+			&= \frac{\lim_{} 2 + 3 \lim_{} a_n}{\lim_{} 1 + 5 \lim_{} a_n} = 2
+		\end{align}
 \end{enumerate}
 %----------------------------------------------------------------------------------
 2. Prove that the following sequences diverge:
@@ -14,19 +34,94 @@
 		\begin{align}
 			a_n = \left( -1 \right)^{n} n^{2} + 1
 		\end{align}
+
+		
+
+
+	\begin{proof}
+			Assume for the sake of contradiction that $\left( a_n \right) $ converges. Since $\left( a_n \right) $ converges, it is bounded. Therefore $\exists M > 0$ such that 
+			\begin{align}
+				&\forall n \in \N\left( \left|a_n\right| \le M \right) \\	
+				&\forall n \in \N \left( \left|\left( -1 \right)^{n} n^{2} + 1 \right| \le M\right) 
+			\end{align}
+			If we force $n$ to be even, then
+			\begin{align}
+				\forall n \in \N \left( n^{2} + 1 \le M \right) 
+			\end{align}
+			But by the Archimedean principle, we can always pick $N$ such that $N$ is even and $N > \sqrt{M - 1} $. Then we have
+			\begin{align}
+				N > \sqrt{M - 1} \implies N^{2} + 1 > M 	
+			\end{align}
+			Which contradicts our assumption that $\left( a_n \right) $ converges. Thus $\left( a_n \right) $ must diverge.
+
+	\end{proof}
+
+
+
+
+
+
 	\item The sequence $\left( a_n \right)$ where
 		\begin{align}
 			\left( -1 \right)^{n} + \frac{1}{n}
 		\end{align}
+
+
+
+	\begin{proof}
+			Assume for the sake of contradiction that $\left( a_n \right) $ converges. Since $\left( a_n \right) $ converges, it is bounded. Therefore $\exists M > 0$ such that 
+			\begin{align}
+				&\forall n \in \N\left( \left|a_n\right| \le M \right) \\	
+				&\forall n \in \N \left( \left|\left( -1 \right)^{n} + \frac{1}{n} \right| \le M\right) 
+			\end{align}
+			If we force $n$ to be even, then
+			\begin{align}
+				\forall n \in \N \left( \frac{1}{n} \le M \right) 
+			\end{align}
+			By the Archimedean property of $\N$, we can always pick an $N \in \N$ such that $N$ is even and $N \ge \frac{1}{M}$, and we can be sure that our sequence is defined there since it is defined for all natural numbers. Then we have
+			Which contradicts our assumption that $\left( a_n \right) $ converges. Thus $\left( a_n \right) $ must diverge.
+
+	\end{proof}
+
+
+
+	
 	\end{enumerate}
 %----------------------------------------------------------------------------------
 
 3. (Squeeze Theorem). Show that if $x_n \le y_n \le z_n$ for all $n \in \N$ and if $\lim_{} x_n = \lim_{} z_n = l$, then $\lim_{} y_n = l$ as well.
+
+\begin{proof}
+	Take the first given statement, and subtract $l$ from everything: 
+	\begin{align}
+		x_n - l \le y_n - l \le z_n - l
+	\end{align}
+	Since we are given that $\lim_{} x_n = \lim_{} z_n = l$, we can say that for all $\e > 0$ there exists $n_1, n_2 \in \N$ such that, if $N_1 \ge  n_1$ and $N_2 \ge n_2$  
+	\begin{align}
+		\left|x_{N_1} - l\right| < \e \implies -\e < x_{N_1} - l < \e \\
+		\left|z_{N_2} - l\right| < \e \implies -\e < z_{N_2} - l < \e
+	\end{align}
+	Therefore, if we let $p = \text{max }\{n_1, n_2\} $ we can say that for all $P > p$
+	\begin{align}
+		-\e < x_P - l \le y_P -l \le z_P - l < \e  
+	\end{align}
+	Thus for all $\e > 0$ there exists a $P \in \N$ such that 
+	\begin{align}
+		\left|y_P - l\right| < \e 
+	\end{align}
+	Therefore, $\lim_{} y_n = l$
+	
+\end{proof}
 %----------------------------------------------------------------------------------
 
 4. Let $x_n \ge 0$ for all $n \in \N$.
 \begin{enumerate}
-	\item If  $\left( x_n \right) \to 0$, show that $\sqrt{s_n}  \to 0$.
+	\item If  $\left( x_n \right) \to 0$, show that $\sqrt{x_n}  \to 0$.
+	\begin{proof}
+		We know that if $\lim_{} x_n = 0$ that for all $\e > 0$ there exists an $n \in \N$ such that if $N > n$, $\left|x_n - 0\right| < \e$. Since $x_n \ge 0$ for all $n \in \N$, we have for all $\e > 0$ there exists an $n$ such that $x_n < \e$ $\implies \sqrt{x_n} < \e \implies \sqrt{x_n} - 0 < \e $. Now since $x_n \ge 0$ we know that $\sqrt{x_n} > 0$. Since we also have  $\e > 0$, we can just take an absolute value on both sides to get 
+	\end{proof}
+
+
 	\item If $\left( x_n \right) \to x$, show that $\left( \sqrt{x_n}  \right) \to \sqrt{x} $.
 \end{enumerate}
 %----------------------------------------------------------------------------------
@@ -45,7 +140,25 @@
 \end{enumerate}
 %----------------------------------------------------------------------------------
 
-7. Let $\left( a_n \right) $ be a bounded (not necessarily convergent) sequence, and assume that $\lim_{} b_n = 0$. Show that $\lim_{a_n b_n} = 0$. Why are we not allowed to use the Algebraic limit theorem to prove this?
+7. Let $\left( a_n \right) $ be a bounded (not necessarily convergent) sequence, and assume that $\lim_{} b_n = 0$. Show that $\lim_{} a_n b_n = 0$. Why are we not allowed to use the Algebraic limit theorem to prove this?
+
+\begin{proof}
+	From the triangle inequality, we have
+	\begin{align}
+		\left|a_n b_n - 0\right| = \left|a_n\right| \left|b_n\right| = \left|a_n\right| \left|b_n - 0\right|
+	\end{align}
+	Since $a_n$ is bounded, we know that there exists an $M$ such that $a_n \le M$ for all $n \in \N$. Therefore
+	\begin{align}
+		\left|a_n b_n - 0\right| = \left|a_n\right|\left|b_n - 0\right| < M \left|b_n - 0\right|
+	\end{align}
+
+	Finally, we know that for all $\e > 0$,  $\left|b_n - 0\right| < \e$, so, from the definition of convergence, $\left|b_n - 0\right| < \frac{\e}{M}$ and
+	\begin{align}
+		\left|a_n b_n - 0\right| = \left|a_n\right|\left|b_n - 0\right| < M \left|b_n - 0\right| < M \frac{\e}{M} = \e
+	\end{align}
+
+	Therefore, $\lim_{} a_n b_n = 0$. Notice that we could not use the Algebraic limit theorem because that theorem requires both $a_n$ and $b_n$ to converge. We know that $b_n$ converges, but we are only given that $a_n$ is bounded, so it is not necessarily convergent.
+\end{proof}
 
 
 

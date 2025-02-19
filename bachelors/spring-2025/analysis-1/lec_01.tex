@@ -182,9 +182,63 @@
 	Every convergent sequence is bounded.
 \end{theorem}
 
+\begin{proof}
+\end{proof}
+
+\begin{theorem}
+        Suppose $\left( a_n \right) $ is a convergent sequence with $\lim_{} a_n = L$. If $L\neq 0$ and $a_n\neq 0$ for all $n \in \N$, then $\exists \delta > 0$ such that $\left|a_n\right| \ge \delta > 0$ for all $n \in \N$.
+\end{theorem}
+
+\begin{proof}
+        As $L \neq 0$, choose $\e = \frac{\left|L\right|}{2} > 0$ $\exists N \in \N$ such that $\forall n \ge N$ we have
+        \begin{align}
+                \left|a_n - L\right| < \frac{\left|L\right|}{2}\\
+        \end{align}
+        for $n \ge N$ we have
+        \begin{align}
+                \left|L\right| \le \left|L - a_n\right| + \left|a_n\right| \le \frac{\left|L\right|}{2} + \left|a_n\right|\\
+        \end{align}
+        Therefore, for all $n \ge N$ we have
+        \begin{align}
+                \frac{\left|L\right|}{2} \le \left|a_n\right| \\
+        \end{align}
+Define $\delta = \text{ min}\{\left|a_1\right|, \left|a_2\right|, \ldots, \left|a_{N-1}\right|, \left|\frac{L}{2}\right|\} > 0$. We see that  $\left|a_n\right| \ge \delta > 0$ $\forall n \in \N$.
+\end{proof}
 
 
+\begin{theorem}
+	Let $\lim_{} a_n = a$, and $\lim_{} b_n =b$. Then,
+	\begin{enumerate}
+		\item $\lim_{} ca_n = ca$ for all $c \in \R$;
+		\item $\lim_{} a_n + b_n = a + b$;
+		\item $\lim_{} a_n b_n = ab$;
+		\item $\lim_{} \left( a_n / b_n \right) = a / b$, provided $b \neq 0$.
+	\end{enumerate}
+\end{theorem}
 
+\begin{proof}
+	
+\end{proof}
+
+
+`\begin{theorem}
+        Let $a,b \in \R$ and $\lim_{} a_n = a$ and $\lim_{} b_n = b$.
+        \begin{enumerate}
+                \item If $a_n \ge 0$ $\forall n \in \N$, then $a \ge 0$
+                \item If $a_n \le b_n$ $\forall n \in \N$, then $a \le b$
+                \item If $\exists c \in \R$ such that $c \le b_n$ $\forall n \in \N$, then $c \le b$. Similarly, if $a_n \le c$ $\forall n \in \N$, then $a \le c$.
+        \end{enumerate}
+\end{theorem}
+
+\begin{proof}
+        By contradiction, assume that $a < 0 $, therefore $\exists N \in \N$ such that $\forall n \ge  N$ we have
+        \begin{align}
+                \left|a_n - a\right| < \frac{\left|a\right|}{2} \implies a_n - a < \frac{\left|a\right|}{2} \\
+                \implies a_n < a + \frac{\left|a\right|}{2} < 0 \\
+                \implies a_n < 0 \text{ } \forall n \ge \N.
+        \end{align}
+        A contradiction!
+\end{proof}
 
 
 
