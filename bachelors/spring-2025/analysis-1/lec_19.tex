@@ -63,24 +63,28 @@
 
 	\item The sequence $\left( a_n \right)$ where
 		\begin{align}
-			\left( -1 \right)^{n} + \frac{1}{n}
+			a_n = \left( -1 \right)^{n} + \frac{1}{n}
 		\end{align}
 
 
 
 	\begin{proof}
-			Assume for the sake of contradiction that $\left( a_n \right) $ converges. Since $\left( a_n \right) $ converges, it is bounded. Therefore $\exists M > 0$ such that 
+			Assume for the sake of contradiction that $\left( a_n \right) $ converges. Let $a = \lim_{} a_n$. Then pick  $\e < a$; and, by the definition of convergence, we have:
 			\begin{align}
-				&\forall n \in \N\left( \left|a_n\right| \le M \right) \\	
-				&\forall n \in \N \left( \left|\left( -1 \right)^{n} + \frac{1}{n} \right| \le M\right) 
+				\left|a_n - a\right| &\le \e\\	
+				\left|\left( -1 \right)^{n} + \frac{1}{n} - a \right| &\le \e \\
+				-\e \le \left( -1 \right)^{n} + \frac{1}{n} - a &\le \e 	\\
+				a -\e \le \left( -1 \right)^{n} + \frac{1}{n} &\le \e+ a 	
 			\end{align}
-			If we force $n$ to be even, then
+			If we force $n$ to be even and consider the left side of the inequality, then for all even $n$ we have
 			\begin{align}
-				\forall n \in \N \left( \frac{1}{n} \le M \right) 
+				a - \e \le \frac{1}{n}
 			\end{align}
-			By the Archimedean property of $\N$, we can always pick an $N \in \N$ such that $N$ is even and $N \ge \frac{1}{M}$, and we can be sure that our sequence is defined there since it is defined for all natural numbers. Then we have
-			Which contradicts our assumption that $\left( a_n \right) $ converges. Thus $\left( a_n \right) $ must diverge.
-
+			But notice that because of how we picked $\e$, we know that $a - \e > 0$. Then, by the Archimedean property of $\N$, there exists an $N \in \N$ such that $N$ is even and 
+			\begin{align}
+			a - \e > \frac{1}{N}. 
+			\end{align}
+			Thus, we have reached a contradiction. Therefore, the sequence must diverge.
 	\end{proof}
 
 
@@ -132,11 +136,24 @@
 6. Give an example of each of the following:
 \begin{enumerate}
 	\item Sequences $\left( a_n \right)$ and $ \left( b_n \right) $, which both diverge, but whose sum $\left( a_n + b_n \right) $ converges.
+
+	Consider $\left( a_n \right) = n$ and $\left( b_n \right) = -n$
+
 	\item Sequences $\left( a_n \right) $ and $\left( b_n \right)$, which both diverge, but whose product $\left( a_n b_n \right) $ converges.
+
+	Consider $\left( a_n \right) = \left( -1 \right)^{n}$ and $\left( b_n \right) = \left( -1 \right)^{n+2}$
 	\item Convergent sequences $\left( a_n \right) $ and $\left( b_n \right) $ with $a_n < b_n$ for all $n \in \N$ such that $\lim_{} \left( a_n \right) = \lim_{} \left( b_n \right) $.
+
+	Consider $\left( a_n \right) = \left( \frac{1}{4} \right)^{n}$ and $\left( b_n \right) = \left( \frac{1}{2} \right)^{n}$
 	\item A convergent sequence $\left( b_n \right) $ with $b_n \neq 0$ for all $n \in \N$, such that $\left( 1 / b_n \right)$ diverges.
+
+	Consider $\left( b_n \right) = \frac{1}{n}$
 	\item Two sequence $\left( a_n \right) $ and $\left( b_n \right) $ so that $\left( a_n \right) $ is unbounded, $\left( b_n \right) $ is bounded, and $\left( a_nb_n \right)$ converges.
+
+	Consider $\left( a_n \right) = n$ and $\left( b_n \right) = \frac{1}{n}$
 	\item Two sequences $\left( a_n \right)$ and $ \left( b_n \right) $, where $\left( a_n b_n \right) $ and $\left( a_n \right) $ converge but $\left( b_n \right) $ does not.
+
+	Consider $\left( a_n \right) = \frac{1}{n}$ and $\left( b_n \right) = n$
 \end{enumerate}
 %----------------------------------------------------------------------------------
 
