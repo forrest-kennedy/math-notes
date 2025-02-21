@@ -122,11 +122,21 @@
 \begin{enumerate}
 	\item If  $\left( x_n \right) \to 0$, show that $\sqrt{x_n}  \to 0$.
 	\begin{proof}
-		We know that if $\lim_{} x_n = 0$ that for all $\e > 0$ there exists an $n \in \N$ such that if $N > n$, $\left|x_n - 0\right| < \e$. Since $x_n \ge 0$ for all $n \in \N$, we have for all $\e > 0$ there exists an $n$ such that $x_n < \e$ $\implies \sqrt{x_n} < \e \implies \sqrt{x_n} - 0 < \e $. Now since $x_n \ge 0$ we know that $\sqrt{x_n} > 0$. Since we also have  $\e > 0$, we can just take an absolute value on both sides to get 
+		We know that if $\lim_{} x_n = 0$ that for all $\e > 0$ there exists an $N \in \N$ such that if $n > N$ then $\left|x_n - 0\right| < \e$. Therefore $x_n < \e^{2} \implies \left|\sqrt{x_n} - 0 \right| < \e$.  
 	\end{proof}
 
 
 	\item If $\left( x_n \right) \to x$, show that $\left( \sqrt{x_n}  \right) \to \sqrt{x} $.
+
+	\begin{proof}
+		Consider the following equation and apply the fact that $x_n \ge 0$ and $\sqrt{x_n} + \sqrt{x} > \sqrt{x} $, and then the definition of convergence to show the identity:
+	\begin{align}
+			&\left|\sqrt{x_n} - \sqrt{x} \right| \\
+			&= \left|\sqrt{x_n} - \sqrt{x} \right| \cdot \frac{\sqrt{x_n} + \sqrt{x}}{\sqrt{x_n} + \sqrt{x} }\\ 
+			&= \frac{\left|x_n - x\right|}{\sqrt{x_n} + \sqrt{x}} < \frac{\left|x_n - x\right|}{\sqrt{x}} < \frac{\e}{\sqrt{x} }
+		\end{align}
+		Therefore, $\left|x_n - x\right| < \e$, hence proved.
+	\end{proof}
 \end{enumerate}
 %----------------------------------------------------------------------------------
 

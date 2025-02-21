@@ -1,0 +1,59 @@
+\lecture{21}{Friday 21 February 2025}{02-21-25 Lecture}
+
+\begin{eg}
+	Let $a_n = \left( -1 \right)^{n}$. Prove that $\left( a_n \right) $ diverges.
+\end{eg}
+
+\begin{proof}
+	Already done once in class. Now we present a second proof.
+	\begin{align}
+		\left( a_n \right) = \left( -1, 1, -1, 1, -1, 1, \ldots \right).
+	\end{align}
+Observe that $\left( 1, -1, 1, -1, 1, -1, \ldots \right) $ is a subsequence of $\left( a_n \right) $ and this subsequence has a limit of $1$. We also observe that $\left( -1, 1, -1, 1, -1, \ldots \right) $ is a subsequence of $\left( a_n \right) $ and this subsequence has limit $-1$. We have found that the sequence has subsequences which converge to different limits, therefore  $\left( a_n \right) $ diverges.
+\end{proof}
+
+
+Very fundamental theorem:
+\begin{theorem}[Bolzano-Weirstrass Theorem]
+	Every bounded sequence contains a convergent subsequence. 
+\end{theorem}
+
+\begin{proof}
+	Let $\left( a_n \right) $ be a bounded sequence. Hence there exists $M > 0$ such that $\left|a_n\right| \le M$  $\forall n \in \N$. Let $a_{n_{1}} = a_1$ and let $I_1 = [-M, M]$. Now, we sketch the plan for the rest of the proof:
+	 \begin{enumerate}
+		\item We divinde $I_1$ into two intervals $[-M, 0]$ and $[0, M]$
+		\item At least one of these closed intervals must contain an infinite number of terms in the sequence  $\left( a_n \right) $. Call this interval $I_2$.
+		\item Let $a_{n_{2}}$ be such that $a_{n_{2}} \in I_2$ and $n_2 > n_1 = 1$
+	\end{enumerate}
+
+	We repeat this procedure inductively, so if $a_{n_{k}} \in I_k$, then
+
+	\begin{enumerate}
+		\item Divide the interval $I_k$ into two equal closed intervals.
+		\item Let $I_{k+1}$ be a closed interval such that it contains infinite number of terms of the sequence $\left( a_n \right) $.
+		\item Let $a_{n_{k+1}}$ be such that $a_{n_{k+1}} \in I_{k+1}$ and $n_{k+1} > n_k$
+	\end{enumerate}
+	This gives us a subsequence $a_{n_{k}}$ with $a_{n_{k}} \in I_k$ and 
+	\begin{align}
+		I_1 \subset I_2 \subset I_3 \subset \ldots \text{(FIX DIRECTION OF SUBSET)} 
+	\end{align}
+	By the nester interval property, $\exists x \in \cap_{k=1}^{\inf } I_k$
+
+	Claim: $\lim_{k \to \inf } a_{n_{k}} = x$
+	\begin{proof}
+		Let $\e > 0$ be given. Observe from construction the length of $I_k$ is $\left( 2M \right) \cdot 2^{-\left( k-1 \right) }$. We know that $\lim_{k \to \inf } \left( 2M \right) 2^{-\left( k+1 \right) } = 0$ by the ALT since 
+		\begin{align}
+			\lim_{k \to \inf } \left( \frac{2M}{2^{k} \cdot 2^{-1}} \right) \\
+			\frac{1}{2^{n}} \to 0
+		\end{align}
+	\end{proof}
+
+	So choose $N \in \N$ such that the lenth of $I_N$ is less than $\e$. Therefore, for all $k \ge N$ we observe that $a_{n_{k}} \in I_{N}$ and hence $x \in I_{N}$. Therefore for all $k \ge N$
+	\begin{align}
+		\left|a_{n_{k}} - x\right| < \e
+	\end{align}
+	Hence proved.
+\end{proof}
+
+
+

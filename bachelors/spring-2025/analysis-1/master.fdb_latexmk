@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1740085095.36793 "master.tex" "master.pdf" "master" 1740085096.45699 0
+["pdflatex"] 1740160818.97041 "master.tex" "master.pdf" "master" 1740160819.99333 0
   "../preamble.tex" 1738951060.91909 5291 de6eca95f4f8cb33e097c7a6ac626f6b ""
   "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1136849721 2971 def0b6c1f0b107b3b936def894055589 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
@@ -274,11 +274,12 @@
   "lec_16.tex" 1739902617.00364 4562 e9cfe28412e491ee74741ace41463ec8 ""
   "lec_17.tex" 1739551337.21674 1401 02070970fe9df5bc543ced79444291a2 ""
   "lec_18.tex" 1739811413.19304 4118 f6d90a782f534747a5a0daf5d80744e3 ""
-  "lec_19.tex" 1740085095.22796 8791 56d22a7312cd9e9ac3d530d2b63c14bc ""
+  "lec_19.tex" 1740160817.27295 9117 458dc4f85aa3fc13d8b9d6561cf03503 ""
   "lec_20.tex" 1739984115.66194 4900 41e1d0e1b3c0b1dd6df392534e9597a9 ""
-  "master.aux" 1740085096.33497 6878 1472cb3b238529b8f233d647c3401f0b "pdflatex"
-  "master.tex" 1739984518.19185 657 2bef510b72c5dd463e5fcc3e0627d0b4 ""
-  "master.toc" 1740085096.33597 225 a407f9bd49c78c26e02a354100eecabe "pdflatex"
+  "lec_21.tex" 1740159420.98668 2824 36ec04171f9c494d65be85b748d24629 ""
+  "master.aux" 1740160819.8909 6963 a61047f584914dc3d48e650309f8d912 "pdflatex"
+  "master.tex" 1740159451.11729 680 b4c30fbf3f746727b619ef29ef39884c ""
+  "master.toc" 1740160819.8919 225 a407f9bd49c78c26e02a354100eecabe "pdflatex"
   (generated)
   "master.aux"
   "master.log"
