@@ -385,8 +385,14 @@ endsnippet
 
 context "math()"
 snippet inf "infinity" iA
-\inf 
+\inf$1
 endsnippet
+
+context "math()"
+snippet sum "summation" iA
+\sum_{$1}^{$2}$0
+endsnippet
+
 
 context "math()"
 snippet cap "intersection" iA
@@ -485,6 +491,7 @@ snippet xx "cross" iA
 endsnippet
 
 priority 100
+context "math()"
 snippet ** "cdot" iA
 \cdot 
 endsnippet
@@ -569,8 +576,13 @@ endsnippet
 
 
 context "math()"
-snippet cc "subset" Ai
+snippet ss "subset" Ai
 \subset 
+endsnippet
+
+context "math()"
+snippet SS "superset" Ai
+\supset 
 endsnippet
 
 snippet notin "not in " iA

@@ -9,7 +9,6 @@
 \usepackage{booktabs}
 \usepackage{enumitem}
 \usepackage{esvect}
-\usepackage{enumitem}
 \pdfminorversion=7
 
 % Don't indent paragraphs, leave some space between them
@@ -203,6 +202,18 @@
 % Make boxes breakable
 \tcbuselibrary{breakable}
 
+
+% Emumerate, Alphabetize, Romanize 
+% Default enumeration style: numbers (1, 2, 3, ...)
+\setlist[enumerate,1]{label=\arabic*)}
+
+% Define "alphabetize" for lettered lists (a, b, c, ...)
+\newlist{alphabetize}{enumerate}{1}
+\setlist[alphabetize,1]{label=\alph*)}
+
+% Define "romanize" for Roman numeral lists (i, ii, iii, ...)
+\newlist{romanize}{enumerate}{1}
+\setlist[romanize,1]{label=\roman*)}
 
 
 % Figure support as explained in my blog post.
