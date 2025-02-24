@@ -82,7 +82,7 @@
 \end{definition}
 
 
-\begin{definition}
+\begin{definition}[The Maximum is a Set]
 	A real number $a_0$ is a \textbf{maximum} of the set $A$ if $a_0$ is an elemnt of $A$ and $a_0 \ge a$ for all $a \in A$. Similarly, a number $a_1$ is a \textbf{minimum} of $A$ if $a_1 \in A$ and $a_1 \le a$ for all $a \in A$.
 \end{definition}
 
@@ -99,6 +99,10 @@
 		\item $\left( \impliedby \right) $ Assume $s$ is an upper bound of $A$ and that for every $\e > 0$, $s-\e <a$. That is, no number smaller than $s$ is an upper bound of $A$. Thus for all $b$ where $b$ is an upper bound of $A$, $s \le b$. Since we assumed that $s$ is an upper bound, $s$ meets both conditions to be the supremum. 
 	\end{itemize}	
 \end{proof}
+
+\begin{axiom}[Axoim of Completeness]
+	Every nonempty set of real numbers that is bounded above has a least upper bound.	
+\end{axiom}
 
 \begin{theorem}[Nested Interval Property of Subsets of $\R$]
 	For each $n \in \N$, assume we are given a closed interval $I_n = [a_n, b_n] = \{x \in R : a_n \le x\le b_n\}$. Assume also that each $I_n$ contains $I_{n+1}$. Then, the resulting nested sequence of closed intervals
@@ -178,14 +182,23 @@
 	A sequence $\left( x_n \right) $ is \textbf{bounded} if there exists a number $M > 0$ such that $\left|x_n\right| \le M$ for all $n \in \N$.
 \end{definition}
 
-\begin{theorem}
+\begin{theorem}[Convergence-Boundedness Theorem]
 	Every convergent sequence is bounded.
 \end{theorem}
 
 \begin{proof}
+	Assume that the sequence $\left( x_n \right) $ converges to $l$. Then we can say that for some particular $\e$, say $\e = 1$, that $\exists N \in  \N$ such that if $n \ge N$, then $x_n \in \left( l - 1, l + 1 \right) $. We don't know for sure if $l$ is positive or negative, but we can say for sure that
+	\begin{align}
+		\left|x_n\right| < \left|l\right| + 1 		
+	\end{align}
+	For all $n \ge N$. Therefore if we let 
+	\begin{align}
+		M = \text{max}\{\left|x_1\right|, \left|x_2\right|, \left|x_3\right|, \ldots, \left|x_{N-1}\right|, \left|l\right| + 1\} 
+	\end{align}
+	it follows that $\left|x_n\right| \le M$ for all $n \in \N$ as desired. 
 \end{proof}
 
-\begin{theorem}
+\begin{theorem}[Partial Sequence Gap Theorem]
         Suppose $\left( a_n \right) $ is a convergent sequence with $\lim_{} a_n = L$. If $L\neq 0$ and $a_n\neq 0$ for all $n \in \N$, then $\exists \delta > 0$ such that $\left|a_n\right| \ge \delta > 0$ for all $n \in \N$.
 \end{theorem}
 
@@ -196,7 +209,7 @@
         \end{align}
         for $n \ge N$ we have
         \begin{align}
-                \left|L\right| \le \left|L - a_n\right| + \left|a_n\right| \le \frac{\left|L\right|}{2} + \left|a_n\right|\\
+                \left|L\right| = \left|L - a_n + a_n \right|\le \left|L - a_n\right| + \left|a_n\right| \le \frac{\left|L\right|}{2} + \left|a_n\right|\\
         \end{align}
         Therefore, for all $n \ge N$ we have
         \begin{align}
@@ -206,22 +219,76 @@ Define $\delta = \text{ min}\{\left|a_1\right|, \left|a_2\right|, \ldots, \left|
 \end{proof}
 
 
-\begin{theorem}
+\begin{theorem}[Algebraic Limit Theorem]
 	Let $\lim_{} a_n = a$, and $\lim_{} b_n =b$. Then,
-	\begin{enumerate}
+	\begin{alphabetize}
 		\item $\lim_{} ca_n = ca$ for all $c \in \R$;
 		\item $\lim_{} a_n + b_n = a + b$;
 		\item $\lim_{} a_n b_n = ab$;
 		\item $\lim_{} \left( a_n / b_n \right) = a / b$, provided $b \neq 0$.
-	\end{enumerate}
+	\end{alphabetize}
 \end{theorem}
 
 \begin{proof}
-	
+	We will prove each in turn:
+	\begin{alphabetize}
+		\item Consider
+			\begin{align}
+				\left|ca_n - ca\right| \\
+				= \left|c\right|\left|a_n - a\right|
+			\end{align}
+			We know from the given that $\exists N \in  \N$ such that if $n \ge N$ we have $\left|a_n - a\right| < \e$ therefore
+			\begin{align}
+				\left|ca_n - ca\right| = \left|c\right|\left|a_n - a\right| < \left|c\right| \frac{\e}{\left|c\right|} = \e
+			\end{align}
+		\item Consider
+			\begin{align}
+				\left|\left( a_n + b_n \right) - \left( a - b \right) \right| \\
+				= \left|\left( a_n - a \right) + \left( b_n - b \right) \right|
+			\end{align}
+			Apply the triangle inequality
+			\begin{align}
+				\le \left|a_n - a\right| + \left|b_n - b\right| 
+			\end{align}
+			Finally apply the fact that $a_n$ and $b_n$ converge to get
+			\begin{align}
+				\left|\left( a_n + b_n \right) - \left( a - b \right) \right| \le \frac{\e}{2} + \frac{\e}{2} = \e
+			\end{align}
+		\item Consider 
+			\begin{align}
+				\left|a_n b_n - ab\right|
+			\end{align}
+			Use the add-subtract trick and the triangle inequality:
+			\begin{align}
+				\left|a_n b_n - ab\right| &= \left|a_n b_n - ab_n + ab_n -ab\right| \\
+							  &\le \left|b_n\right|\left|a_n - a\right| + \left|a\right|\left|b_n - b\right|
+			\end{align}
+			Then use the convergence of $a_n$ and the boundedness of $b_n$ to get
+			\begin{align}
+				&\le M \left|a_n - a\right| + \left|a\right|\left|b_n - b\right| \\
+				&\le M \frac{\e}{2 M} + \left|a\right|\frac{\e}{2 \left|a\right|} = \e
+			\end{align}
+		\item The final statement will follow from (c) if we can prove that
+			\begin{align}
+				\left( b_n \right) \to b \implies \left( \frac{1}{b_n} \right) \to \frac{1}{b}
+			\end{align}
+			Consider
+			\begin{align}
+				\left|\frac{1}{b_n} - \frac{1}{b}\right| = \frac{\left|b - b_n\right|}{\left|b\right|\left|b_n\right|}
+			\end{align}
+			Notice that $\exists N_1 \in \N$ such that if $n \ge N_1$ we have $\left|b_n - b\right| < \e$. Before we can continue with our usual strategy, notice that we still have a sequence, $b_n$, in the denominator. We need to find a number that is \textit{smaller} than every element of the sequence so that we can we a fraction that is always \textit{bigger} than $\frac{\left|b_n -b \right|}{\left|b\right|\left|b_n\right|}$. To do this, we will use the fact that $\forall n \in \N$ $\left|b_n\right| > \frac{\left|b\right|}{2}$ which we used in our proof of the Partial Sum Gap Theorem. Choose $N_2$ so that $n \ge N_2$ implies
+			\begin{align}
+				\left|b_n - b\right| < \frac{\e \left|b\right|^{2}}{2}
+			\end{align}
+			Now let $N = \text{ max}\{N_1, N_2\} $, the $n \ge N$ implies
+			\begin{align}
+				\left|\frac{1}{b_n} - \frac{1}{b}\right| = \left|b - b_n\right|\frac{1}{\left|b\right|\left|b_n\right|} < \frac{\e \left|b\right|^{2}}{2} \frac{1}{\left|b\right|\frac{\left|b\right|}{2}} = \e
+			\end{align}
+	\end{alphabetize}	
 \end{proof}
 
 
-`\begin{theorem}
+`\begin{theorem}[Order Limit Theorem]
         Let $a,b \in \R$ and $\lim_{} a_n = a$ and $\lim_{} b_n = b$.
         \begin{enumerate}
                 \item If $a_n \ge 0$ $\forall n \in \N$, then $a \ge 0$
@@ -231,15 +298,64 @@ Define $\delta = \text{ min}\{\left|a_1\right|, \left|a_2\right|, \ldots, \left|
 \end{theorem}
 
 \begin{proof}
-        By contradiction, assume that $a < 0 $, therefore $\exists N \in \N$ such that $\forall n \ge  N$ we have
-        \begin{align}
-                \left|a_n - a\right| < \frac{\left|a\right|}{2} \implies a_n - a < \frac{\left|a\right|}{2} \\
-                \implies a_n < a + \frac{\left|a\right|}{2} < 0 \\
-                \implies a_n < 0 \text{ } \forall n \ge \N.
-        \end{align}
-        A contradiction!
+	We will show each part in turn. Notice that parts (b) and (c) can be bootstrapped from part (a).
+	\begin{alphabetize}
+		\item By contradiction, assume that $a < 0 $, therefore $\exists N \in \N$ such that $\forall n \ge  N$ we have
+	        	\begin{align}
+       	        		\left|a_n - a\right| < \frac{\left|a\right|}{2} \implies a_n - a < \frac{\left|a\right|}{2} \\
+                		\implies a_n < a + \frac{\left|a\right|}{2} < 0 \\
+                		\implies a_n < 0 \text{ }.
+        		\end{align}
+        		A contradiction!
+		\item The Algebraic Limit THeorem ensures that the sequence $\left( b_n - a_n \right) $ converges to $b - a$. Because $b_n - a_n \ge 0$, we can apply part (a) to get that $b - a \ge 0$.
+		\item Take $a_n = c$ (or $b_n = c$) for all $n \in \N$, and apply (b).	
+	\end{alphabetize}
 \end{proof}
 
+\begin{definition}[Increasing/Decreasing/Monotone Properties of Sequences]
+	A sequence $\left( a_n \right) $ is \textbf{increasing} if $a_n \le a_{n+1}$ for all $n \in \N$ and \textbf{decreasing} if $a_n \ge a_{n+1}$ for all $n \in \N$. A sequence is \textbf{monotone} if it is either increasing or decreasing.
+\end{definition}
 
+\begin{theorem}[Monotone Convergence Theorem]
+	If a sequence is monotone and bounded, then it converges.
+\end{theorem}
+
+\begin{proof}
+	
+\end{proof}
+
+\begin{definition}[Series and the Convergence Property of a Series]
+	Let $\left( b_n \right) $ be a sequence. An \textbf{infinite series} if a formal expression of the form
+	\begin{align}
+		\sum_{n=1}^{\inf } b_n = b_1 + b_2 + b_3 + b_4 + b_5 + \ldots
+	\end{align}
+	We define the corresponding \textbf{sequence of partial sums} $s_m$ by
+	\begin{align}
+		s_m = b_1 + b_2 + b_3 + \ldots + b_m,
+	\end{align}
+	and say that the series $\sum_{n=1}^{\inf } b_n$ \textbf{converges to} $B$ if the sequence $\left( s_m \right) $ converges to $B$. In this case, we write $\sum_{n=1}^{\inf } b_n = B$. 
+\end{definition}
+
+\begin{definition}[Subsequence]
+	Let $\left( a_n \right) $ be a sequence of real numbers, and let $n_{1} < n_2 < n_3 < n_4 < n_5 < \ldots$ be an increasing sequence of natural numbers. Then the sequence 
+	\begin{align}
+		\left( a_{n_{1}}, a_{n_{2}}, a_{n_{3}}, a_{n_{4}}, a_{n_{5}}, \ldots \right) 
+	\end{align}
+	is called a \textbf{subsequence} of $\left( a_n \right) $ and is be denoted by $\left( a_{n_{k}} \right) $, were $k in \N$ indexes the sequence.
+\end{definition}
+
+\begin{theorem}[Subsequence Limit Theorem]
+	Subsequences of a convergent sequence converge to the same limit as the original sequence.
+\end{theorem}
+
+\begin{proof}
+\end{proof}
+
+\begin{theorem}[Bolzano-Weirstrass Theorem]
+	Every bounded sequence contains a convergent subsequence. 	
+\end{theorem}
+
+\begin{proof}
+\end{proof}
 
 
