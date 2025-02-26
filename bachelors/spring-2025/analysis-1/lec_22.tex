@@ -3,10 +3,26 @@
 1. Give an example of each of the following:
 \begin{alphabetize}
 	\item A monotone sequence that diverges.
+
+		$\left( x_n \right) = n$
 	\item A sequence that has no convergent subsequence.
+
+		$\left( x_n \right) = n$
 	\item A divergent sequence that has a convergent subsequence.
+
+		We need a sequence which is bounded, but diverges: 
+
+		Consider $\left( x_n \right)  = \left( -1 \right)^{n}$ and notice that $\left( x_{n_k} \right) $ converges when $n_k = 2k$.
 	\item A sequence that does not contain $0$ or $1$ as a term, but contains subsequences converging to each of these values.
+
+		$\left( x_n \right)_{n=2}^{\infty } = 1 / n$
 	\item A sequence containing subsequences converging to every point in $\R$
+
+		We need a sequence which visits every point in $\R$ infinitely many times so that we can construct our sequence. Take
+		\begin{equation}
+			\left( x_n \right) = \tan\left( n \right) 
+		\end{equation}
+		Now if we define the subsequence $\left( x_{n_k} \right) $ where $n_k = \frac{1}{k} + \tan^{-1}\left( \alpha \right) + 2 \pi k$. Then we have that $\lim_{} x_{n_k} = \alpha$ for all $\alpha \in  \R$.
 \end{alphabetize}
 %------------------------------------------------------------------------
 2. Consider the sequence $\left( a_n \right) $ defined as follows: Let $a_1 = \sqrt{2} $ and for $n \ge 1$ let 
@@ -35,11 +51,22 @@ Prove that $\left( a_n \right) $ converges and then show that $\lim_{}\left( a_n
 
 
 %------------------------------------------------------------------------
-5. Consider a sequence $\left( a_n \right)_{n=1}^{}$ 
+5. Consider a sequence $\left( a_n \right)_{n=1}^{\inf }$ defined by 
+\begin{align}
+	a_n = \frac{1}{n} + \frac{1}{n+1} + \frac{1}{n+2} + \ldots + \frac{1}{2n}
+\end{align}
+Prove that $\left( a_n \right)_{n=1}^{\inf }$ is a convergent sequence. (Hint: prove that the sequence is bounded and monotonic).
+
 %------------------------------------------------------------------------
-6.
+6. Let $\left( a_n \right) $ be a bounded sequence and let $a \in \R$. Show that is every converges subsequence of $\left( a_n \right) $ converges to $a$, then the sequence $\left( a_n \right) $ itself converges and $\lim_{} a_n = a$
+
 %------------------------------------------------------------------------
-7.
+7. Consider the series 
+\begin{align}
+	\sum_{n=1}^{\inf } \frac{1}{n\left( n+1 \right) }
+\end{align}
+Prove that this series converges and find the limit. (See the proof of convergence of $\sum_{n=1}^{\inf } \frac{1}{n^{2}}$ done in class)
+
 %------------------------------------------------------------------------
-8.
+8. (Bonus problem. Will not be asked in the quiz or exams) Suppose the sequence $\left( a_n \right)_{n=1}^{\inf }$ converges to $a \in \R$. Prove that the sequence $\left( c_N \right)_{N=1}^{\inf }$ defined as $c_N = \frac{1}{N} \sum_{n=1}^{N} a_n$, satisfies $\lim_{N \to \inf } c_N = a$
 

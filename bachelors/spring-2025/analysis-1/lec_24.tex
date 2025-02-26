@@ -1,0 +1,155 @@
+\lecture{24}{Tuesday 26 February 2025}{02-26-25}
+
+The Cauchy Criterion. This is very important.
+
+\begin{definition}
+	A sequence $\left( a_n \right) $ is called a \textbf{Cauchy sequence} if for every $\e > 0$, $\exists N \in  \N$ such that whenever $m, n \ge N$ it follows that $\left|a_n - a_m\right| < \e$.
+\end{definition}
+
+\begin{theorem}
+	A sequence is Cauchy if and only if it is convergent.
+\end{theorem}
+
+\begin{proof}	
+	
+\end{proof}
+
+\begin{note}
+	If a sequence converges, but we don't know how to find the value of the limit  $L$, then using the above, we can still show that the sequence converges, and still use the convergent limit theorems. This will take some buildup.
+\end{note}
+
+\begin{theorem}
+	Every convergent sequence is a Cauchy sequence.
+\end{theorem}
+
+\begin{proof}
+	Let $L \in  \R$ and let $\left( a_n \right) $ be a sequence with $\lim_{n \to \infty } a_n = L$. Let $\e > 0$ be given. Therefore $\exists N \in \N$ such that $\forall n\ge N$ we have 
+	\begin{align}
+		\left|a_n - L\right| < \frac{\e}{2}
+	\end{align}
+	If $m \ge N$ we also have
+	\begin{align}
+		\left|a_m - L \right| < \frac{\e}{2}
+	\end{align}
+	Therefore if $m,n \ge N$ we have
+	\begin{align}
+		\left|a_n -a_m\right| \le \left|a_n - L\right| + \left|L - a_m\right| \\
+		< \frac{\e}{2} + \frac{\e}{2} \\
+		= \e
+	\end{align}
+\end{proof}
+
+\begin{theorem}
+	Cauchy sequences are bounded.
+\end{theorem}
+
+\begin{theorem}
+	Let $\e = 1$ and let $N \in \N$ such that $\forall m,n \ge N$ we have 
+	\begin{align}
+		\left|a_m - a_n\right| < 1
+	\end{align}
+	Let $m = N$. Therefore for all $n \ge N$ we have 
+	\begin{align}
+		\left|a_N - a_n\right| < 1 \\
+		\implies \left|a_n\right| \le \left|a_n - a_N\right| + \left|a_N\right| < \left|a_N\right| + 1
+	\end{align}
+	Let $M = \text{max}\{\left|a_1\right|, \left|a_2\right|, \left|a_3\right|, \ldots, \left|a_{N-1}\right|, \left|a_N\right| + 1\} $. Then we see that 
+	\begin{align}
+		\left|a_n\right| \le M
+	\end{align}
+	for all $n \in \N$. Hence $\left( a_n \right)$ is bounded.
+\end{theorem}
+
+\begin{theorem}
+	A sequence converges if and only if it is Cauchy.
+\end{theorem}
+
+\begin{proof}
+	Let $\left( x_n \right) $ be a Cauchy sequence. Therefore, $\left( x_n \right) $ is a bounded sequence. By Bolzano-Weirstrauss theorem, there exists a convergent subsequence $\left( x_{n_{k}} \right) $. Let 
+	\begin{align}
+		x = \lim_{k \to \infty} x_{n_{k}}
+	\end{align}
+	Now notice that what we want to claim is that $\lim_{n \to \infty}x_n = x$. So let $\e > 0$ be given. $\exists N \in \N$ such that $\forall m,n \ge N$ we have
+	\begin{align}
+		\left|x_n - x_n\right| < \frac{\e}{2}
+	\end{align}
+	There also exist $k \in \N$ such that $\forall k \ge K$ with $K \ge N$ such that $\forall n, m \ge N$ we have 
+	\begin{align}
+		\left|x_{n_{k}} - x\right| < \frac{\e}{2}
+	\end{align}
+	Observe that $n_{k} \ge K \ge  N$. Hence 
+	\begin{align}
+		\left|x_{n_{k} - x}\right| < \frac{\e}{2}
+	\end{align}
+	and hence $\forall n \ge K$ 
+	\begin{align}
+		\left|x_n -x\right| \le \left|x_{n} - x_{n_{k}}\right| + \left|x_{n_{k}} - x\right|\\
+		< \frac{\e}{2} + \frac{\e}{2} \\
+		= \e
+	\end{align}
+	Therefore
+	\begin{align}
+		\left|x_n - x\right| < \e
+	\end{align}
+	For all $n \ge K$. Hence $\lim_{} x_n = x$
+\end{proof}
+
+Now starting back with series. . . 
+
+Properties of Infinite Series
+
+\begin{align}
+	\sum_{n=1}^{\infty} b_n = b_1 + b_2 + b_3 + \ldots
+\end{align}
+
+\begin{note}
+	Remember the distinction between sequence and series..
+\end{note}
+
+How do we tell if a series if convergent? Construct a sequence of partial sums $\left( s_m \right) $ 
+\begin{align}
+	s_m - b_1 + b_2 + \ldots + b_m
+\end{align}
+
+If $\left( s_m \right) $ converges, the we say that the series $\sum_{n=1}^{\infty} b_n$ converges.
+
+If $\lim_{} s_m = L$, the $\sum_{n=1}^{\infty} b_n = L$
+
+\begin{theorem}[Algebraic Limit Theorem for Series]
+	If $\sum_{n=1}^{\infty} a_n = A$ and $\sum_{n=1}^{\infty} b_n = B$, then
+	\begin{enumerate}
+		\item $\sum_{n=1}^{\infty} ca_n = cA$ for any $c \in \R$
+		\item $\sum_{n=1}^{\infty} \left( a_n + b_n \right) = A + B$
+	\end{enumerate}
+\end{theorem}
+
+\begin{note}
+	The other two don't work!!!
+\end{note}
+
+\begin{proof}
+	Let $\left( s_m \right) $ and $\left( t_m \right) $ be the sequence of partial sums i.e.
+	\begin{align}
+		s_m = a_1 + a_2 + \ldots + a_m \\
+		t_m = b_1 + b_2 + \ldots + b_m
+	\end{align}
+	Therefore $\lim_{m \to \infty} s_m = A$ and $\lim_{m \to \infty} t_m = B$. By the Algebraic Limit Theorem
+	\begin{align}
+		\lim_{m \to \infty} c s_m = cA \\
+		\implies \sum_{n=1}^{\infty} c a_n = cA
+	\end{align}
+	\begin{note}
+		$c a_1 + c a_2 + \ldots + c a_m = c s_n$
+	\end{note}
+	Again by ALT
+	\begin{align}
+		\sum_{n=1}^{\infty} \left( a_n + b_n \right) = A + B
+	\end{align}
+	\begin{note}
+		$\left( a_1 + b_1 \right) + \left( a_2 + b_2 \right) + \ldots + \left( a_m + b_m \right) = s_m + t_m$.
+	\end{note}
+\end{proof}
+
+
+
+
