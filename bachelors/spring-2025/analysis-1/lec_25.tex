@@ -1,0 +1,113 @@
+\lecture{25}{Friday 28 February 2025}{02-28-25 Lecture}
+
+-Midterm next Friday!
+
+\begin{theorem}[Cauchy Criterion for Series]
+	The series $\sum_{n=1}^{\infty} a_n$ converges if and only if given $\e > 0$ there exists $N \in \N$ such that whenever $n > m \ge N$ we have
+	\begin{align}
+		\left|a_{m+1} + a_{m+2} + \ldots + a_n\right| < \e
+	\end{align}
+\end{theorem}
+
+\begin{proof}
+	Let $\left( s_m \right) $ be the sequence of partial sums. Observe that if $n > m$, then 
+	\begin{align}
+		\left|s_n - s_m\right| = \left|\left( a_1 + a_2 + \ldots + a_n \right) - \left( a_1 + a_2 + \ldots + a_m \right)\right| \\
+		= \left|a_{m+1} + a_{m+2} + \ldots + a_n\right|
+	\end{align}
+
+	Now the sequence $\left( s_m \right) $ converges if and only if it is Cauchy $\left( s_m \right) $ is Cauchy if given $\e > 0$, $\exists N \in \N$ such that whenever $n, m \ge N$ we have
+	\begin{align}
+		\left|s_n - s_m\right| < \e
+	\end{align}
+	we can assume without loss of generality that $n > m$, i.e.  $n > m \ge N$ then 
+	\begin{align}
+		\left|s_n - s_m\right| < \e
+	\end{align}
+\end{proof}
+
+\begin{theorem}
+	If the series $\sum_{n=1}^{\infty} a_n$ converges, then $\lim_{} a_n = 0$
+\end{theorem}
+
+\begin{proof}
+	As $\sum_{n=1}^{\infty} a_n$ converges, it satisfies the Cauchy criterion. So let $\e > 0$ be given. By Cauchy criterion, there $\exists N \in \N$ such that if $n > m \ge N$ we have
+	\begin{align}
+		\left|a_{m+1} + \ldots + a_n\right| < \e
+	\end{align}
+	Choose $n = m + 1$ then 
+	\begin{align}
+		\left|a_{m+1}\right| < \e
+	\end{align}
+	Thus $\forall n \ge N+1$ we have
+	\begin{align}
+		\left|a_n - 0 \right| < \e
+	\end{align}
+\end{proof}
+
+\begin{eg}
+	$\sum_{n=1}^{\infty} \left( -1 \right)^{n}$ we observe that the sequence $\left( -1 \right)^{n}$ does not converge to 0. Therefore, $\sum_{n=1}^{\infty} \left( -1 \right)^{n}$ converges.
+\end{eg}
+
+\begin{theorem}[Comparison Test]
+	Assume that $\left( a_n \right) $ and $\left( b_n \right) $ are sequences satisfying $0 \le a_n \le b_n$ $\forall n \in \N$, then
+	\begin{enumerate}
+		\item If $\sum_{n=1}^{\infty} b_n$ converges, the $\sum_{n=1}^{\infty} a_n$ also converges.
+		\item If $\sum_{n=1}^{\infty} a_n$ diverges, then $\sum_{n=1}^{\infty} b_n$ also diverges.
+	\end{enumerate}
+\end{theorem}
+
+\begin{note}
+	Notice that (1) and (2) are contrapositives, we only really need one, but both are useful.
+\end{note}
+
+\begin{proof}
+	As $\sum_{n=1}^{\infty} b_n$ converges, it satisfies the Cauchy criterion. We \textbf{want to show}
+	\begin{align}
+		\sum_{n=1}^{\infty} a_n \text{ satisfies the Cauchy criterion}
+	\end{align}
+	Let $\e>0$ be given. There exist $N \in \N$ such that whenever $n > m \ge N$ we have 
+	\begin{align}
+		\left|b_{m+1} + \ldots + b_n\right| < \e
+	\end{align}
+	But $0 \le a_k \le b_k$ so 
+	\begin{align}
+		\implies \left|a_{m+1} + \ldots + a_n\right| < \e
+	\end{align}
+	Hence proved.
+\end{proof}
+
+\begin{eg}
+	Prove that $\sum_{n=1}^{\infty} \frac{1}{n^{p}}$ diverges for $p \le 1$
+\end{eg}
+
+\begin{proof}
+	We have proved that $\sum_{n=1}^{\infty} \frac{1}{n}$ diverges. Observe that for all $n \in \N$ and $p \le 1$ we have 
+	\begin{align}
+		0 < \frac{1}{n} \le  \frac{1}{n^{p}}
+	\end{align}
+	Therefore, by the comparison test, $\sum_{n=1}^{\infty} \frac{1}{n^{p}}$ diverges for $p \le 1$.
+\end{proof}
+
+\begin{eg}[Geometric Series]
+	\begin{align}
+		\sum_{n=0}^{\infty} a r^{n} = a + a r + a r^{2} + \ldots
+	\end{align}
+	is called a geometric series
+	\begin{align}
+		s_m = a + a r + \ldots + a r^{m-1}
+	\end{align}
+	by induction we can prove that for $r \neq 1$ 
+	\begin{align}
+		s_m = \frac{a\left( 1 - r^{m} \right) }{1 - r}
+	\end{align}
+	If $\left|r\right| < 1$, then $\lim_{} r^{n} = 0$. By the ALT, $\lim_{} s_m = \frac{a}{1 - r}$
+\end{eg}
+
+
+
+
+
+
+
+

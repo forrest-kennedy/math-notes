@@ -370,9 +370,9 @@ INPUT ./master.toc
 INPUT ./master.toc
 INPUT master.toc
 OUTPUT master.toc
-INPUT ./lec_24.tex
-INPUT ./lec_24.tex
-INPUT lec_24.tex
+INPUT ./lec_25.tex
+INPUT ./lec_25.tex
+INPUT lec_25.tex
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/jknappen/ec/ecbx1200.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/jknappen/ec/ecrm0900.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/base/t1cmss.fd
