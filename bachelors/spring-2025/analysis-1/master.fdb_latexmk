@@ -1,7 +1,8 @@
 # Fdb version 4
-["pdflatex"] 1740761061.87186 "master.tex" "master.pdf" "master" 1740761062.57987 0
+["pdflatex"] 1741021101.64738 "master.tex" "master.pdf" "master" 1741021102.61172 0
   "../preamble.tex" 1740598353.22746 5665 331cd60d9bd8980b2cd8d9b6fb672d43 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1136849721 2971 def0b6c1f0b107b3b936def894055589 ""
+  "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/jknappen/ec/ecbx1000.tfm" 1136768653 3584 2d666ecf6d466d8b007246bc2f94d9da ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/jknappen/ec/ecbx1200.tfm" 1136768653 3584 402da0b29eafbad07963b1224b222f18 ""
@@ -15,6 +16,7 @@
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/jknappen/ec/ecrm1728.tfm" 1136768653 3584 3c76ccb63eda935a68ba65ba9da29f1a ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/jknappen/ec/ecss0900.tfm" 1136768653 3584 a2942197ec66aeb183eee81f827a1d92 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/jknappen/ec/ecti1000.tfm" 1136768653 3072 3bce340d4c075dffe6d4ec732b4c32fe ""
+  "/usr/local/texlive/2024/texmf-dist/fonts/tfm/jknappen/ec/tcrm1000.tfm" 1136768653 1536 e07581a4bb3136ece9eeb4c3ffab8233 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy5.tfm" 1246382020 1120 1e8878807317373affa7f7bba4cf2f6a ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy6.tfm" 1246382020 1124 14ccf5552bc7f77ca02a8a402bea8bfb ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy7.tfm" 1246382020 1120 7f9f170e8aa57527ad6c49feafd45d54 ""
@@ -67,6 +69,7 @@
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb" 1248133631 37912 77d683123f92148345f3fc36a38d9ab1 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb" 1248133631 36281 c355509802a035cadc5f15869451dcee ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb" 1248133631 35752 024fb6c41858982481f6968b5fc26508 ""
+  "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb" 1248133631 31809 8670ca339bf94e56da1fc21c80635e2a ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb" 1248133631 32762 224316ccc9ad3ca0423a14971cfa7fc1 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1248133631 32569 5e5ddc8df908dea60932f3c484a54c0d ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb" 1248133631 32716 08e384dc442464e7285e891af9f45947 ""
@@ -250,10 +253,10 @@
   "/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1715791304 5483668 9e45798515b35c9eab0413928a3e8881 ""
   "/usr/local/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt" 1715791425 8225176 3c3737aca26247d8bf3f347d1cf08211 ""
   "/usr/local/texlive/2024/texmf.cnf" 1715791300.0711 455 5b996dcaa0eb4ef14a83b026bc0a008c ""
-  "lec_25.tex" 1740761059.92282 3718 3c7ee9d309c447106d28a8467a9c950e ""
-  "master.aux" 1740761062.49581 426 5480cf87b0f9419846385a30ba87b541 "pdflatex"
-  "master.tex" 1740758845.59535 220 71eb630bb542f4797f7965513731ee5f ""
-  "master.toc" 1740761062.49581 30 283c90c47f0e16887e96cec4ba110f76 "pdflatex"
+  "lec_26.tex" 1741021100.4871 5109 54a33d8fc833e7b2a351c4be466a9105 ""
+  "master.aux" 1741021102.47208 506 ff42b537eccba58cfdc53336a4fb25c8 "pdflatex"
+  "master.tex" 1741018339.42319 220 5002546ee82ce27875987dacf9fe9072 ""
+  "master.toc" 1741021102.47308 30 283c90c47f0e16887e96cec4ba110f76 "pdflatex"
   (generated)
   "master.aux"
   "master.log"
