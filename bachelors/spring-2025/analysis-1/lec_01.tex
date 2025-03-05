@@ -321,7 +321,13 @@ Define $\delta = \text{ min}\{\left|a_1\right|, \left|a_2\right|, \ldots, \left|
 \end{theorem}
 
 \begin{proof}
-	
+	Assume that $\left( a_n \right) $ is a bounded, monotone sequence. Then consider the set $\{a_n | n \in \N\} $. We will proceede by using the definition of convergence, so we will need to guess the exact value so that we can use that definition. Since the sequence is bounded, we can let $s = \sup \{a_n | n \in \N\} $ and be sure that $s$ exists. To see why $s$ is a reasonable choice for a value of the limit, consider $s - \e < s$. Since $s$ is the least upper bound of the set, $s - \e$ is not an upper bound and $\exists N \in \N$ such that if $n \ge N$
+	\begin{align}
+		s - \e < a_N < &a_n \le  s < s + \e \\
+		-\e < &a_n - s < \e\\
+		\left|a_n - s\right|< \e
+	\end{align}
+	Note that we needed to know that the sequence is monotonically increasing to write $\forall n > N \left( a_N < a_n \right) $. Hence proved.
 \end{proof}
 
 \begin{definition}[Series and the Convergence Property of a Series]
@@ -349,6 +355,19 @@ Define $\delta = \text{ min}\{\left|a_1\right|, \left|a_2\right|, \ldots, \left|
 \end{theorem}
 
 \begin{proof}
+	Assume that $\left( a_n \right) $ converges to $a$. Then we know that for any $\e > 0$, there exists an $N \in \N$ such that if $n \ge N$ we have
+	\begin{align}
+		\left|a_n - a\right| < \e
+	\end{align}
+	Now consider this statement which contains a subsequence of  $\left( a_n \right) $ :
+	\begin{align}
+		\left|a_{n_{k}} - a\right|
+	\end{align}
+	We already proved that the we can pick an $n$ such that when $n \ge N$ the former statement is true. Notice that  $n_k > k$ for all $k \in \N$ since the point of $n_k$ is to skip values in the sequence. Therefore, for the ladder statement, all we have to do is pick $k \ge N$ and we are guaranteed to have $n_k > N$ and
+		\begin{align}
+			\left|a_{n_{k}} - a\right| < \e
+		\end{align}
+	Therefore $\left( a_{n_{k}} \right) $ converges to $a$ as well.
 \end{proof}
 
 \begin{theorem}[Bolzano-Weirstrass Theorem]
@@ -356,6 +375,142 @@ Define $\delta = \text{ min}\{\left|a_1\right|, \left|a_2\right|, \ldots, \left|
 \end{theorem}
 
 \begin{proof}
+	To prove the theorem, we will use the definition of convergence. To use that definition, we will need to come up with an accurate guess for the limit. We will use the Nester Interval Property to construct such a number.
+
+	Assume that $\left( a_n \right) $ is a bounded sequence. Then we know that for all $n \in \N$ we have $\left|a_n\right| \le  M$. Now consider the intervals  $[-M, 0]$ and  $[0, M]$. Because of boundedness, either one or both of these intervals contain an infinite number of points in the sequence. Let $I_1$ be one of the intervals which contains an infinite number of terms and pick some $a_{n_1} \in I_1$ from the sequence to begin constructing a subsequence of $\left( a_n \right) $. Let $I_2$ be the interval obtained by bisecting $I_1$ and then picking an interval with infinitely many terms, and then pick $a_{n_2}$ from the initial sequence so that $a_{n_2} \in I_2$ and $n_2 > n_1$. 
+
+We can continue this process indefinitely by constructing $I_k$ by bisecting $I_{k-1}$, picking a half which contains an infinite number of terms, and selecting $a_{n_k}$ with $a_{n_k} \in I_k$ and $n_k > n_{k-1} > n_{k - 2} > \ldots > n_2 > n_1$ 
+
+Notice that the sets
+\begin{align}
+	I_1 \supset I_2 \supset I_3 \supset \ldots
+\end{align}
+form a nested sequence of closed intervals; therefore, by the Nested Interval Property, there exists at least one point $x \in \R$ such that $x \in I_k$. We will now show that $\left( a_n \right) \to x$ which will complete our proof.
+
+Let $\e > 0$. We constructed $I_k$ to have a length of $M\left( 1 / 2 \right)^{k-1}$. From the Algebraic Limit Theorem, we know that this length converges to $0$. Now pick $N$ so that $k \ge N$ implies that the length of $I_k$ is less that $\e$. Because $x$ and $a_{n_k}$ are both in $I_{k}$, and the distance between two points in an interval must be less than or equal to the length of the interval, we have 
+\begin{align}
+	\left|a_{n_k} - x\right| < \e
+\end{align}
 \end{proof}
 
+\begin{definition}[Cauchy Property of Sequences]
+	A sequence $\left( a_n \right) $ is called a \textbf{Cauchy sequence} if, for every $\e > 0$, there exists an $N \in \N$ such that whenever $m, n \ge N$ if follows that $\left|a_n - a_m\right| < \e$
+\end{definition}
 
+\begin{theorem}
+	Cauchy sequences are bounded.
+\end{theorem}
+
+\begin{proof}
+	Let $\left( a_n \right) $ be a Cauchy sequence, then we know for $\e = 1$ if $m, n > N$ we have
+	\begin{align}
+		\left|a_n - a_m\right| < \e = 1
+	\end{align}
+	If we set $m = N$, we have
+	\begin{align}
+		\left|a_n - a_N\right| < 1
+	\end{align}
+	Now consider $\left|a_n\right|$. We can choose to rewrite this and apply the triangle inequality:
+	\begin{align}
+		\left|a_n\right| = \left|a_n - a_N + a_N\right| \le \left|a_n - a_N\right| + \left|a_N\right|
+	\end{align}
+	Using the fact that we have $\left|a_n - a_N\right| < 1$:
+	\begin{align}
+		\left|a_n\right| < 1 + \left|a_N\right|
+	\end{align}
+	Finally let
+	\begin{align}
+		M = \text{ max}\{\left|a_1\right|, \left|a_2\right|, \left|a_3\right|, \ldots, \left|a_{N-1}\right|, \left|a_N\right| + 1\} 
+	\end{align}
+	Then we know that $\left|a_n\right| < M$ for all $n \in \N$ and the sequence is bounded.
+\end{proof}
+
+\begin{theorem}[Cauchy Criterion]
+	A sequence converges if and only if it is a Cauchy sequence.
+\end{theorem}
+
+\begin{proof}
+	We will prove both the forward and backward direction
+	\begin{itemize}
+		\item ($\implies$) Assume that $\left( x_n \right) $ converges to $L$. Then consider
+			\begin{align}
+				\left|x_m - x_n\right|\\
+				=\left|x_m - L + L - x_n\right|\\
+				\le \left|x_m - L\right| + \left|L - x_n\right|\\
+				\le \frac{\e}{2} + \frac{\e}{2} = \e
+			\end{align}
+			Therefore $\left|x_m - x_n\right| \le \e$ and the sequence is Cauchy.
+		\item ($\impliedby$) Assume that $\left( x_n \right) $ is a Cauchy sequence, then we know that $\left( x_n \right) $ is bounded. By the Bolzano-Weierstrauss theorem, we know that there exists $\left( x_{n_k} \right) $ which converges. Let
+			\begin{align}
+				x = \lim_{} x_{n_k}
+			\end{align}
+			Because $\left( x_n \right) $ is Cauchy, we know that there exists an $N \in \N$ such that if $n, m > N$
+			\begin{align}
+				\left|x_n - x_m\right| < \frac{\e}{2}
+			\end{align}
+			By using the definition of convergence and picking $n_K \ge N$, we can also write
+			\begin{align}
+				\left|x_{n_K} - x\right| < \frac{\e}{2}
+			\end{align}
+			To see that $N$ has the desired property, observe that if $n \ge N$, then
+			\begin{align}
+				\left|x_n - x\right| = \left|x_n - x_{n_K} + x_{n_K} - x\right| \\
+				\le \left|x_n - x_{n_k}\right| + \left|x_{n_k} - x\right|\\
+				< \frac{\e}{2} + \frac{\e}{2} = \e
+			\end{align}
+	\end{itemize}	
+\end{proof}
+
+\begin{theorem}[Algebraic Limit Theorem for Series]
+	If $\sum_{n=1}^{\infty} a_n = A$ and $\sum_{n=1}^{\infty} b_n = B$, then
+	\begin{romanize}
+		\item $\sum_{n=1}^{\infty} c a_n = cA$ for all $c \in \R$ and
+		\item $\sum_{n=1}^{\infty} \left( a_n + b_n \right) = A + B$
+	\end{romanize}
+\end{theorem}
+
+\begin{proof}
+\end{proof}
+
+\begin{theorem}[Cauchy Criterion for Series]
+	The series $\sum_{n=1}^{\infty} a_n$ converges if and only if, given $\e > 0$, there exists an $N \in \N$ such that whenever $n > m \ge N$ if follows that
+	\begin{align}
+		\left|a_{m+1} + a_{m+2} + \ldots + a_n\right| < \e
+	\end{align}
+\end{theorem}
+
+\begin{proof}
+	
+\end{proof}
+
+\begin{theorem}[Comparison Test]
+	Assume $\left( a_n \right) $ and $\left( b_n \right) $ are sequences satisfying $0 \le a_n \le  b_n$ for all $n \in \N$.
+\end{theorem}
+
+\begin{proof}
+	
+\end{proof}
+
+\begin{theorem}[Absolute Convergence Test]
+	If the series $\sum_{n=1}^{\infty} \left|a_n\right|$ converges, then $\sum_{n=1}^{\infty} a_n$ converges as well. 
+\end{theorem}
+
+\begin{proof}
+	
+\end{proof}
+
+\begin{theorem}[Alternating Series Test]
+	Let $\left( a_n \right) $ be a sequence satisfying,
+	\begin{romanize}
+		\item $a_1 \ge a_2 \ge a_3 \ge  \ldots \ge  a_n \ge  a_{n+1} \ge \ldots$ and
+		\item $\left( a_n \right) \to 0$
+	\end{romanize}
+\end{theorem}
+
+\begin{proof}
+	
+\end{proof}
+
+\begin{definition}
+	If $\sum_{n=1}^{\infty} \left|a_n\right|$ converges, then we say that the original series $\sum_{n=1}^{\infty} a_n$ \textbf{converges absolutely}. If, on the other hand, the series $\sum_{n=1}^{\infty} a_n$ converges but the series of absolute values $\sum_{n=1}^{\infty} \left|a_n\right|$ does not converge, the we say that the original series $\sum_{n=1}^{\infty} a_n$ \textbf{converges conditionally}.
+\end{definition}

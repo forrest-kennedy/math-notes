@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1741021101.64738 "master.tex" "master.pdf" "master" 1741021102.61172 0
+["pdflatex"] 1741193722.18681 "master.tex" "master.pdf" "master" 1741193722.90256 0
   "../preamble.tex" 1740598353.22746 5665 331cd60d9bd8980b2cd8d9b6fb672d43 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1136849721 2971 def0b6c1f0b107b3b936def894055589 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
@@ -64,7 +64,6 @@
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/stmaryrd/stmary6.tfm" 1302307949 848 068dd119e13b75777e62821af7d4f2a6 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/stmaryrd/stmary7.tfm" 1302307949 848 26631fcb3e4cb6757598b9cda7967b63 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/stmaryrd/stmary8.tfm" 1302307949 848 6125cdd3627e68d3db8013b98e587508 ""
-  "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb" 1248133631 30251 6afa5cb1d0204815a708a080681d4674 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb" 1248133631 36299 5f9df58c2139e7edcf37c8fca4bd384d ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb" 1248133631 37912 77d683123f92148345f3fc36a38d9ab1 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb" 1248133631 36281 c355509802a035cadc5f15869451dcee ""
@@ -253,10 +252,10 @@
   "/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1715791304 5483668 9e45798515b35c9eab0413928a3e8881 ""
   "/usr/local/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt" 1715791425 8225176 3c3737aca26247d8bf3f347d1cf08211 ""
   "/usr/local/texlive/2024/texmf.cnf" 1715791300.0711 455 5b996dcaa0eb4ef14a83b026bc0a008c ""
-  "lec_26.tex" 1741021100.4871 5109 54a33d8fc833e7b2a351c4be466a9105 ""
-  "master.aux" 1741021102.47208 506 ff42b537eccba58cfdc53336a4fb25c8 "pdflatex"
-  "master.tex" 1741018339.42319 220 5002546ee82ce27875987dacf9fe9072 ""
-  "master.toc" 1741021102.47308 30 283c90c47f0e16887e96cec4ba110f76 "pdflatex"
+  "lec_27.tex" 1741193722.085 3372 b94804c291603d9c44d5653906898415 ""
+  "master.aux" 1741193722.81513 726 e887364b4653606d144b87654291eb8f "pdflatex"
+  "master.tex" 1741191343.53725 220 080d886ab104d322f8342bbdb69ece78 ""
+  "master.toc" 1741193722.81513 122 1c977d70ffcef7bc8047daefa28d9626 "pdflatex"
   (generated)
   "master.aux"
   "master.log"
