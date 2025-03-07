@@ -470,6 +470,22 @@ Let $\e > 0$. We constructed $I_k$ to have a length of $M\left( 1 / 2 \right)^{k
 \end{theorem}
 
 \begin{proof}
+	We will prove each part separately.
+	\begin{romanize}
+		\item We need to show that $\sum_{n=1}^{\infty} ca_n = cA$, and we know that $\sum_{n=1}^{\infty} a_n = A$ so consider the partial sums 
+			\begin{align}
+				t_m &= c a_1 + c a_2 + c a_3 + \ldots + c a_m \\
+				s_m &= a_1 + a_2 + a_3 + \ldots + a_m
+			\end{align}
+		Notice that $t_m = c s_m$, therefore by the Algebraic Limit Theorem  $\lim_{} t_m = \lim_{} c s_m = cA$. Therefore, since the partial sum converges to $cA$, $\sum_{n=1}^{\infty} c a_n = A$.
+		\item Consider the partial sums:
+			\begin{align}
+				t_m &= (a_1 + b_1) + \left( a_2 + b_2 \right) + \ldots + \left( a_m + b_m \right)\\
+				s_m &= a_1 + a_2 + a_3 + \ldots + a_m
+			\end{align}
+		Notice that $t_m = a_m + b_m$, therefore $\lim_{} t_m = \lim_{} \left( a_m + b_m \right)$, and by the Algebraic Limit Theorem $\lim_{} t_m = A + B$. Therefore, since the partial sum converges to $A + B$, $\sum_{n=1}^{\infty} \left( a_n + b_n \right) = A + B$.
+
+	\end{romanize}
 \end{proof}
 
 \begin{theorem}[Cauchy Criterion for Series]
@@ -480,7 +496,34 @@ Let $\e > 0$. We constructed $I_k$ to have a length of $M\left( 1 / 2 \right)^{k
 \end{theorem}
 
 \begin{proof}
-	
+	Notice that 
+	\begin{align}
+		\left|a_{m+1} + a_{m+2} + \ldots + a_{n}\right|	&= \left|s_n - s_m\right|\\
+								&= \left|s_n - L + L - s_m\right|\\
+								&\le \left|s_n - L\right| + \left|L - s_m\right|\\
+								&\le \frac{\e}{2} + \frac{\e}{2} = \e
+	\end{align}
+	Hence proved.
+\end{proof}
+
+\begin{theorem}
+	If the series $\sum_{n=1}^{\infty} a_n$ converges, then $\left( a_n \right) \to 0$.
+\end{theorem}
+
+\begin{proof}
+	If $\sum_{n=1}^{\infty} a_n$ is a converges, then it is a Cauchy sequence, therefore $\exists N \in \N$ such that if $m, n > N$
+	\begin{align}
+		\left|a_{m+1} + a_{m+2} + \ldots + a_n\right| < \e
+	\end{align}
+	Pick $n = m + 1$, then
+	\begin{align}
+		\left|a_{m+1}\right| < \e
+	\end{align}
+	Therefore, if $n > m + 1$ 
+	\begin{align}
+		\left|a_n - 0\right| < \e
+	\end{align} 
+	Hence proved.
 \end{proof}
 
 \begin{theorem}[Comparison Test]
